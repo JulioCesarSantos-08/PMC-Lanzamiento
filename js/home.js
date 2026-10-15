@@ -417,109 +417,105 @@ function createServiceCard(service) {
         );
 
     article.className =
-        "featured-service-card";
+        "service-card";
 
     article.innerHTML = `
-        <a
-            href="servicio.html?servicio=${encodeURIComponent(
-                serviceId
-            )}"
-            class="featured-service-card__link"
-        >
+        <div class="service-card__media">
 
-            <div class="featured-service-card__media">
+            ${
+                image
+                    ? `
+                        <img
+                            src="${escapeHTML(
+                                image
+                            )}"
+                            alt="${escapeHTML(
+                                service.nombre ||
+                                "Servicio PMC"
+                            )}"
+                            loading="lazy"
+                        >
+                      `
+                    : `
+                        <div class="service-card__placeholder">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                      `
+            }
 
-                ${
-                    image
-                        ? `
-                            <img
-                                src="${escapeHTML(
-                                    image
-                                )}"
-                                alt="${escapeHTML(
-                                    service.nombre ||
-                                    "Servicio PMC"
-                                )}"
-                                loading="lazy"
-                            >
-                          `
-                        : `
-                            <div class="featured-service-card__placeholder">
-                                <i data-lucide="sparkles"></i>
-                            </div>
-                          `
-                }
+        </div>
 
-                <span class="featured-service-card__category">
-                    ${escapeHTML(
-                        getServiceCategory(
-                            service
-                        )
-                    )}
-                </span>
+        <div class="service-card__content">
 
-            </div>
+            <span class="service-card__category">
+                ${escapeHTML(
+                    getServiceCategory(
+                        service
+                    )
+                )}
+            </span>
 
-            <div class="featured-service-card__content">
+            <h3>
+                ${escapeHTML(
+                    service.nombre ||
+                    "Servicio PMC"
+                )}
+            </h3>
 
-                <div>
+            <p>
+                ${escapeHTML(
+                    getServiceDescription(
+                        service
+                    )
+                )}
+            </p>
 
-                    <h3>
-                        ${escapeHTML(
-                            service.nombre ||
-                            "Servicio PMC"
-                        )}
-                    </h3>
+            <div class="service-card__bottom">
 
-                    <p>
-                        ${escapeHTML(
-                            getServiceDescription(
-                                service
-                            )
-                        )}
-                    </p>
+                <div class="service-card__price">
 
-                </div>
+                    ${
+                        price
+                            ? `
+                                <small>
+                                    Desde
+                                </small>
 
-                <div class="featured-service-card__bottom">
+                                <strong>
+                                    ${formatCurrency(
+                                        price
+                                    )}
+                                </strong>
+                              `
+                            : `
+                                <small>
+                                    Precio
+                                </small>
 
-                    <div class="featured-service-card__price">
-
-                        ${
-                            price
-                                ? `
-                                    <span>
-                                        Desde
-                                    </span>
-
-                                    <strong>
-                                        ${formatCurrency(
-                                            price
-                                        )}
-                                    </strong>
-                                  `
-                                : `
-                                    <span>
-                                        Precio
-                                    </span>
-
-                                    <strong>
-                                        Cotizar
-                                    </strong>
-                                  `
-                        }
-
-                    </div>
-
-                    <span class="featured-service-card__arrow">
-                        <i data-lucide="arrow-up-right"></i>
-                    </span>
+                                <strong>
+                                    Cotizar
+                                </strong>
+                              `
+                    }
 
                 </div>
 
+                <a
+                    href="servicio.html?servicio=${encodeURIComponent(
+                        serviceId
+                    )}"
+                    class="service-card__link"
+                    aria-label="Ver ${escapeHTML(
+                        service.nombre ||
+                        "servicio"
+                    )}"
+                >
+                    <i data-lucide="arrow-up-right"></i>
+                </a>
+
             </div>
 
-        </a>
+        </div>
     `;
 
     return article;
