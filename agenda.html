@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Agenda tu servicio en PMC Auto Detailing."
+    >
+
+    <meta
+        name="theme-color"
+        content="#05070a"
+    >
+
+    <title>Agenda | PMC Auto Detailing</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/agenda.css"
+    >
+</head>
+
+<body>
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+        aria-hidden="true"
+    >
+        <div class="page-loader__content">
+
+            <img
+                src="imagenes/logo.png"
+                alt=""
+                class="page-loader__logo"
+            >
+
+            <div class="page-loader__line">
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+
+    <header
+        class="site-header is-scrolled"
+        id="siteHeader"
+    >
+        <div class="site-header__inner container">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="PMC Auto Detailing - Inicio"
+            >
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="brand__logo"
+                >
+            </a>
+
+            <nav
+                class="desktop-nav"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="index.html"
+                    class="desktop-nav__link"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="servicios.html"
+                    class="desktop-nav__link"
+                >
+                    Servicios
+                </a>
+
+                <a
+                    href="agenda.html"
+                    class="desktop-nav__link is-active"
+                >
+                    Agenda
+                </a>
+
+                <a
+                    href="index.html#asistente"
+                    class="desktop-nav__link"
+                >
+                    Asistente PMC
+                </a>
+
+                <a
+                    href="index.html#contacto"
+                    class="desktop-nav__link"
+                >
+                    Contacto
+                </a>
+
+            </nav>
+
+            <div class="site-header__actions">
+
+                <a
+                    href="login.html"
+                    class="account-button"
+                    aria-label="Mi cuenta"
+                    title="Mi cuenta"
+                >
+                    <i data-lucide="user-round"></i>
+                </a>
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-hidden="true"
+    >
+        <div class="mobile-menu__backdrop"></div>
+
+        <div class="mobile-menu__panel">
+
+            <div class="mobile-menu__top">
+
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="mobile-menu__logo"
+                >
+
+                <button
+                    type="button"
+                    class="mobile-menu__close"
+                    id="menuClose"
+                    aria-label="Cerrar menú"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+            <nav class="mobile-menu__nav">
+
+                <a href="index.html">
+                    <span>01</span>
+                    Inicio
+                </a>
+
+                <a href="servicios.html">
+                    <span>02</span>
+                    Servicios
+                </a>
+
+                <a href="agenda.html">
+                    <span>03</span>
+                    Agenda
+                </a>
+
+                <a href="index.html#asistente">
+                    <span>04</span>
+                    Asistente PMC
+                </a>
+
+                <a href="index.html#contacto">
+                    <span>05</span>
+                    Contacto
+                </a>
+
+            </nav>
+
+            <div class="mobile-menu__actions">
+
+                <a
+                    href="login.html"
+                    class="button button--ghost button--full"
+                >
+                    Mi cuenta
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <main>
+
+        <section class="agenda-hero">
+
+            <div class="agenda-hero__glow"></div>
+
+            <div class="container agenda-hero__content">
+
+                <div class="agenda-hero__eyebrow">
+                    <span></span>
+                    Reserva PMC
+                </div>
+
+                <h1>
+                    Agenda tu próxima
+                    <span>experiencia PMC.</span>
+                </h1>
+
+                <p>
+                    Selecciona tu servicio, registra tu vehículo
+                    y encuentra una fecha disponible.
+                </p>
+
+            </div>
+
+        </section>
+
+        <section class="agenda-section">
+
+            <div class="container">
+
+                <div class="agenda-layout">
+
+                    <div class="agenda-main">
+
+                        <div class="agenda-progress">
+
+                            <div
+                                class="agenda-progress__item is-active"
+                                data-step-indicator="1"
+                            >
+                                <span>01</span>
+
+                                <div>
+                                    <strong>
+                                        Servicio
+                                    </strong>
+
+                                    <small>
+                                        Elige qué necesitas
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div
+                                class="agenda-progress__item"
+                                data-step-indicator="2"
+                            >
+                                <span>02</span>
+
+                                <div>
+                                    <strong>
+                                        Vehículo
+                                    </strong>
+
+                                    <small>
+                                        Cuéntanos sobre tu auto
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div
+                                class="agenda-progress__item"
+                                data-step-indicator="3"
+                            >
+                                <span>03</span>
+
+                                <div>
+                                    <strong>
+                                        Fecha
+                                    </strong>
+
+                                    <small>
+                                        Selecciona disponibilidad
+                                    </small>
+                                </div>
+                            </div>
+
+                            <div
+                                class="agenda-progress__item"
+                                data-step-indicator="4"
+                            >
+                                <span>04</span>
+
+                                <div>
+                                    <strong>
+                                        Confirmación
+                                    </strong>
+
+                                    <small>
+                                        Revisa tu cita
+                                    </small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <form
+                            class="agenda-form"
+                            id="agendaForm"
+                        >
+
+                            <section
+                                class="agenda-step is-active"
+                                data-step="1"
+                            >
+
+                                <div class="agenda-step__heading">
+
+                                    <span>
+                                        Paso 01
+                                    </span>
+
+                                    <h2>
+                                        ¿Qué servicio necesitas?
+                                    </h2>
+
+                                    <p>
+                                        Selecciona uno de los servicios
+                                        disponibles de PMC Auto Detailing.
+                                    </p>
+
+                                </div>
+
+                                <div class="agenda-service-search">
+
+                                    <i data-lucide="search"></i>
+
+                                    <input
+                                        type="search"
+                                        id="agendaServiceSearch"
+                                        placeholder="Buscar servicio..."
+                                        autocomplete="off"
+                                    >
+
+                                </div>
+
+                                <div
+                                    class="agenda-services"
+                                    id="agendaServices"
+                                >
+
+                                    <div class="agenda-service-skeleton"></div>
+                                    <div class="agenda-service-skeleton"></div>
+                                    <div class="agenda-service-skeleton"></div>
+
+                                </div>
+
+                                <div
+                                    class="agenda-service-empty"
+                                    id="agendaServiceEmpty"
+                                    hidden
+                                >
+                                    <i data-lucide="search-x"></i>
+
+                                    <strong>
+                                        No encontramos servicios
+                                    </strong>
+
+                                    <span>
+                                        Intenta con otra búsqueda.
+                                    </span>
+                                </div>
+
+                            </section>
+
+                            <section
+                                class="agenda-step"
+                                data-step="2"
+                                hidden
+                            >
+
+                                <div class="agenda-step__heading">
+
+                                    <span>
+                                        Paso 02
+                                    </span>
+
+                                    <h2>
+                                        Cuéntanos sobre tu vehículo
+                                    </h2>
+
+                                    <p>
+                                        Estos datos nos ayudan a preparar
+                                        correctamente tu servicio.
+                                    </p>
+
+                                </div>
+
+                                <div class="agenda-fields">
+
+                                    <div class="agenda-field">
+
+                                        <label for="vehicleType">
+                                            Tipo de vehículo
+                                        </label>
+
+                                        <div class="agenda-select">
+
+                                            <select
+                                                id="vehicleType"
+                                                required
+                                            >
+                                                <option value="">
+                                                    Selecciona
+                                                </option>
+
+                                                <option value="hatchback">
+                                                    Hatchback
+                                                </option>
+
+                                                <option value="sedan">
+                                                    Sedán
+                                                </option>
+
+                                                <option value="suv">
+                                                    SUV
+                                                </option>
+
+                                                <option value="pickup">
+                                                    Pick-up
+                                                </option>
+
+                                                <option value="camioneta">
+                                                    Camioneta
+                                                </option>
+
+                                                <option value="otro">
+                                                    Otro
+                                                </option>
+                                            </select>
+
+                                            <i data-lucide="chevron-down"></i>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="agenda-field">
+
+                                        <label for="vehicleBrand">
+                                            Marca
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="vehicleBrand"
+                                            placeholder="Ej. Chevrolet"
+                                            autocomplete="off"
+                                            required
+                                        >
+
+                                    </div>
+
+                                    <div class="agenda-field">
+
+                                        <label for="vehicleModel">
+                                            Modelo
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="vehicleModel"
+                                            placeholder="Ej. Aveo"
+                                            autocomplete="off"
+                                            required
+                                        >
+
+                                    </div>
+
+                                    <div class="agenda-field">
+
+                                        <label for="vehicleYear">
+                                            Año
+                                        </label>
+
+                                        <input
+                                            type="number"
+                                            id="vehicleYear"
+                                            min="1950"
+                                            max="2030"
+                                            placeholder="Ej. 2020"
+                                            required
+                                        >
+
+                                    </div>
+
+                                    <div class="agenda-field agenda-field--full">
+
+                                        <label for="vehicleColor">
+                                            Color
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            id="vehicleColor"
+                                            placeholder="Ej. Negro"
+                                            autocomplete="off"
+                                        >
+
+                                    </div>
+
+                                    <div class="agenda-field agenda-field--full">
+
+                                        <label for="vehicleNotes">
+                                            ¿Hay algo que debamos saber?
+                                        </label>
+
+                                        <textarea
+                                            id="vehicleNotes"
+                                            rows="5"
+                                            placeholder="Ej. La pintura tiene rayones, hay manchas en los asientos, quiero proteger el cofre..."
+                                        ></textarea>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                            <section
+                                class="agenda-step"
+                                data-step="3"
+                                hidden
+                            >
+
+                                <div class="agenda-step__heading">
+
+                                    <span>
+                                        Paso 03
+                                    </span>
+
+                                    <h2>
+                                        Selecciona fecha y horario
+                                    </h2>
+
+                                    <p>
+                                        Te mostraremos únicamente horarios
+                                        disponibles.
+                                    </p>
+
+                                </div>
+
+                                <div class="agenda-date-layout">
+
+                                    <div class="agenda-calendar">
+
+                                        <div class="agenda-calendar__header">
+
+                                            <button
+                                                type="button"
+                                                class="agenda-calendar__button"
+                                                id="previousMonth"
+                                                aria-label="Mes anterior"
+                                            >
+                                                <i data-lucide="chevron-left"></i>
+                                            </button>
+
+                                            <strong id="calendarMonth">
+                                                Mes
+                                            </strong>
+
+                                            <button
+                                                type="button"
+                                                class="agenda-calendar__button"
+                                                id="nextMonth"
+                                                aria-label="Mes siguiente"
+                                            >
+                                                <i data-lucide="chevron-right"></i>
+                                            </button>
+
+                                        </div>
+
+                                        <div class="agenda-calendar__week">
+
+                                            <span>Dom</span>
+                                            <span>Lun</span>
+                                            <span>Mar</span>
+                                            <span>Mié</span>
+                                            <span>Jue</span>
+                                            <span>Vie</span>
+                                            <span>Sáb</span>
+
+                                        </div>
+
+                                        <div
+                                            class="agenda-calendar__days"
+                                            id="calendarDays"
+                                        ></div>
+
+                                    </div>
+
+                                    <div class="agenda-times">
+
+                                        <div class="agenda-times__heading">
+
+                                            <span>
+                                                Horarios disponibles
+                                            </span>
+
+                                            <strong id="selectedDateLabel">
+                                                Selecciona una fecha
+                                            </strong>
+
+                                        </div>
+
+                                        <div
+                                            class="agenda-times__list"
+                                            id="availableTimes"
+                                        >
+
+                                            <div class="agenda-times__empty">
+                                                <i data-lucide="calendar-days"></i>
+
+                                                <span>
+                                                    Selecciona primero una fecha.
+                                                </span>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                            <section
+                                class="agenda-step"
+                                data-step="4"
+                                hidden
+                            >
+
+                                <div class="agenda-step__heading">
+
+                                    <span>
+                                        Paso 04
+                                    </span>
+
+                                    <h2>
+                                        Revisa tu cita
+                                    </h2>
+
+                                    <p>
+                                        Confirma que toda la información
+                                        sea correcta antes de continuar.
+                                    </p>
+
+                                </div>
+
+                                <div class="agenda-confirmation">
+
+                                    <div class="agenda-confirmation__group">
+
+                                        <span>
+                                            Servicio
+                                        </span>
+
+                                        <div class="agenda-confirmation__value">
+
+                                            <strong id="confirmServiceName">
+                                                -
+                                            </strong>
+
+                                            <small id="confirmServicePrice">
+                                                -
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="agenda-confirmation__group">
+
+                                        <span>
+                                            Vehículo
+                                        </span>
+
+                                        <div class="agenda-confirmation__value">
+
+                                            <strong id="confirmVehicle">
+                                                -
+                                            </strong>
+
+                                            <small id="confirmVehicleType">
+                                                -
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="agenda-confirmation__group">
+
+                                        <span>
+                                            Fecha
+                                        </span>
+
+                                        <div class="agenda-confirmation__value">
+
+                                            <strong id="confirmDate">
+                                                -
+                                            </strong>
+
+                                            <small id="confirmTime">
+                                                -
+                                            </small>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="agenda-login-notice">
+
+                                    <div class="agenda-login-notice__icon">
+                                        <i data-lucide="user-round-check"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Inicia sesión para confirmar tu cita
+                                        </strong>
+
+                                        <p>
+                                            Guardaremos la cita en tu cuenta
+                                            para que puedas consultar su estado,
+                                            historial y recibos.
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </section>
+
+                            <div class="agenda-navigation">
+
+                                <button
+                                    type="button"
+                                    class="button button--ghost"
+                                    id="agendaPrevious"
+                                    hidden
+                                >
+                                    <i data-lucide="arrow-left"></i>
+                                    Anterior
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="button button--primary"
+                                    id="agendaNext"
+                                    disabled
+                                >
+                                    Continuar
+                                    <i data-lucide="arrow-right"></i>
+                                </button>
+
+                                <button
+                                    type="submit"
+                                    class="button button--primary"
+                                    id="agendaConfirm"
+                                    hidden
+                                >
+                                    Confirmar cita
+                                    <i data-lucide="calendar-check-2"></i>
+                                </button>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                    <aside class="agenda-summary">
+
+                        <div class="agenda-summary__card">
+
+                            <span class="agenda-summary__eyebrow">
+                                Tu cita
+                            </span>
+
+                            <h2>
+                                Resumen
+                            </h2>
+
+                            <div class="agenda-summary__items">
+
+                                <div class="agenda-summary__item">
+
+                                    <div class="agenda-summary__icon">
+                                        <i data-lucide="sparkles"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Servicio
+                                        </span>
+
+                                        <strong id="summaryService">
+                                            Sin seleccionar
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="agenda-summary__item">
+
+                                    <div class="agenda-summary__icon">
+                                        <i data-lucide="car-front"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Vehículo
+                                        </span>
+
+                                        <strong id="summaryVehicle">
+                                            Sin registrar
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="agenda-summary__item">
+
+                                    <div class="agenda-summary__icon">
+                                        <i data-lucide="calendar-days"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Fecha
+                                        </span>
+
+                                        <strong id="summaryDate">
+                                            Sin seleccionar
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="agenda-summary__item">
+
+                                    <div class="agenda-summary__icon">
+                                        <i data-lucide="clock-3"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Horario
+                                        </span>
+
+                                        <strong id="summaryTime">
+                                            Sin seleccionar
+                                        </strong>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="agenda-summary__price">
+
+                                <span>
+                                    Precio estimado
+                                </span>
+
+                                <strong id="summaryPrice">
+                                    -
+                                </strong>
+
+                                <small>
+                                    El precio final puede variar de acuerdo
+                                    con la evaluación del vehículo.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="agenda-summary__help">
+
+                            <i data-lucide="message-circle-more"></i>
+
+                            <div>
+
+                                <strong>
+                                    ¿Tienes dudas?
+                                </strong>
+
+                                <p>
+                                    Nuestro asistente puede ayudarte a
+                                    elegir el servicio adecuado.
+                                </p>
+
+                                <a href="index.html#asistente">
+                                    Hablar con el asistente
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </aside>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer
+        class="site-footer"
+        id="contacto"
+    >
+        <div class="container">
+
+            <div class="site-footer__top">
+
+                <div class="site-footer__brand">
+
+                    <img
+                        src="imagenes/logo.png"
+                        alt="PMC Auto Detailing"
+                    >
+
+                    <p>
+                        Cuidado, protección y estética automotriz.
+                    </p>
+
+                </div>
+
+                <div class="site-footer__columns">
+
+                    <div class="footer-column">
+
+                        <h3>Explora</h3>
+
+                        <a href="servicios.html">
+                            Servicios
+                        </a>
+
+                        <a
+                            href="imagenes/CatalogoPMC.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Catálogo PDF
+                        </a>
+
+                        <a href="agenda.html">
+                            Agenda
+                        </a>
+
+                        <a href="index.html#asistente">
+                            Asistente PMC
+                        </a>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>PMC</h3>
+
+                        <span>
+                            Río Grande, Oaxaca
+                        </span>
+
+                        <a
+                            href="mailto:PMC.Auto.Detailing@outlook.com"
+                        >
+                            PMC.Auto.Detailing@outlook.com
+                        </a>
+
+                        <a
+                            href="tel:+529542038099"
+                        >
+                            +52 954 203 8099
+                        </a>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>Síguenos</h3>
+
+                        <a
+                            href="https://www.instagram.com/pmcautodetailing/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Instagram
+                        </a>
+
+                        <span>
+                            PMC Auto Detailing
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="site-footer__bottom">
+
+                <span>
+                    © <span id="currentYear"></span>
+                    PMC Auto Detailing.
+                </span>
+
+                <span>
+                    Río Grande · Oaxaca
+                </span>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+    ></script>
+
+    <script
+        type="module"
+        src="js/agenda.js"
+    ></script>
+
+</body>
+</html>

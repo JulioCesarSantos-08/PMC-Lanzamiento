@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Clientes | Administración PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando clientes
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="admin-sidebar__profile">
+
+                    <div class="admin-sidebar__avatar">
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt=""
+                            id="adminAvatar"
+                            hidden
+                        >
+
+                        <span id="adminInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="admin-sidebar__profile-info">
+
+                        <span>
+                            Sesión administrativa
+                        </span>
+
+                        <strong id="adminName">
+                            Administrador
+                        </strong>
+
+                        <small id="adminEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="recibos.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Recibos y pagos
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="financeButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a sistema de Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span>
+                            Personas
+                        </span>
+
+                        <strong>
+                            Clientes
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <div class="admin-header__date">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="adminCurrentDate">
+                            Hoy
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="citas.html"
+                        class="admin-header__action"
+                    >
+
+                        <i data-lucide="calendar-plus-2"></i>
+
+                        <span>
+                            Nueva cita
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            BASE DE CLIENTES
+
+                        </div>
+
+                        <h1>
+                            Clientes
+                        </h1>
+
+                        <p>
+                            Consulta los clientes registrados, sus vehículos,
+                            citas, órdenes de trabajo e historial dentro de PMC.
+                        </p>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-clients-summary">
+
+                    <article class="admin-clients-summary__card">
+
+                        <div class="admin-clients-summary__icon">
+
+                            <i data-lucide="users"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="clientsTotalCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Clientes registrados
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-clients-summary__card">
+
+                        <div class="admin-clients-summary__icon">
+
+                            <i data-lucide="user-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Activos
+                            </span>
+
+                            <strong id="clientsActiveCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Con acceso habilitado
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-clients-summary__card">
+
+                        <div class="admin-clients-summary__icon">
+
+                            <i data-lucide="car-front"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Vehículos
+                            </span>
+
+                            <strong id="clientsVehiclesCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Guardados por clientes
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-clients-summary__card">
+
+                        <div class="admin-clients-summary__icon">
+
+                            <i data-lucide="calendar-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Con citas
+                            </span>
+
+                            <strong id="clientsWithAppointmentsCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Han reservado en PMC
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="admin-panel admin-clients-panel">
+
+                    <div class="admin-clients-toolbar">
+
+                        <div class="admin-clients-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input
+                                type="search"
+                                id="clientSearch"
+                                placeholder="Buscar por nombre, correo o teléfono..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <div class="admin-clients-filters">
+
+                            <label class="admin-clients-select">
+
+                                <i data-lucide="user-round-check"></i>
+
+                                <select id="clientStatusFilter">
+
+                                    <option value="todos">
+                                        Todos
+                                    </option>
+
+                                    <option value="activos">
+                                        Activos
+                                    </option>
+
+                                    <option value="inactivos">
+                                        Inactivos
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="admin-clients-select">
+
+                                <i data-lucide="arrow-up-down"></i>
+
+                                <select id="clientSort">
+
+                                    <option value="nombre">
+                                        Nombre A-Z
+                                    </option>
+
+                                    <option value="recientes">
+                                        Más recientes
+                                    </option>
+
+                                    <option value="citas">
+                                        Más citas
+                                    </option>
+
+                                    <option value="vehiculos">
+                                        Más vehículos
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-clients-results">
+
+                        <div>
+
+                            <span>
+                                Mostrando
+                            </span>
+
+                            <strong id="clientsResultsCount">
+                                0 clientes
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="resetClientFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="admin-clients-list"
+                        id="clientsList"
+                    >
+
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+
+                    </div>
+
+                    <div
+                        class="admin-empty"
+                        id="clientsEmpty"
+                        hidden
+                    >
+
+                        <div class="admin-empty__icon">
+
+                            <i data-lucide="users-round"></i>
+
+                        </div>
+
+                        <h3>
+                            No encontramos clientes
+                        </h3>
+
+                        <p>
+                            No hay usuarios que coincidan con los filtros seleccionados.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="clientsEmptyReset"
+                        >
+
+                            Limpiar filtros
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Gestión de clientes
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal admin-client-modal"
+        id="clientDetailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="clientDetailsBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-client-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="clientDetailsClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-client-modal__profile">
+
+                <div
+                    class="admin-client-modal__avatar"
+                    id="clientDetailsAvatar"
+                >
+                    C
+                </div>
+
+                <div>
+
+                    <span>
+                        CLIENTE PMC
+                    </span>
+
+                    <h2 id="clientDetailsName">
+                        Cliente
+                    </h2>
+
+                    <p id="clientDetailsEmail">
+                        Sin correo
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-client-modal__status">
+
+                <span>
+                    Estado de cuenta
+                </span>
+
+                <strong
+                    class="admin-client-status"
+                    id="clientDetailsStatus"
+                >
+                    Activo
+                </strong>
+
+            </div>
+
+            <div class="admin-client-modal__stats">
+
+                <article>
+
+                    <i data-lucide="car-front"></i>
+
+                    <div>
+
+                        <strong id="clientDetailsVehiclesCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Vehículos
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <article>
+
+                    <i data-lucide="calendar-days"></i>
+
+                    <div>
+
+                        <strong id="clientDetailsAppointmentsCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <article>
+
+                    <i data-lucide="clipboard-list"></i>
+
+                    <div>
+
+                        <strong id="clientDetailsOrdersCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </div>
+
+                </article>
+
+                <article>
+
+                    <i data-lucide="receipt-text"></i>
+
+                    <div>
+
+                        <strong id="clientDetailsReceiptsCount">
+                            0
+                        </strong>
+
+                        <span>
+                            Recibos
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+            <div class="admin-client-modal__grid">
+
+                <section class="admin-client-section">
+
+                    <div class="admin-client-section__heading">
+
+                        <div>
+
+                            <span>
+                                INFORMACIÓN
+                            </span>
+
+                            <h3>
+                                Datos de contacto
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-client-contact">
+
+                        <div>
+
+                            <i data-lucide="mail"></i>
+
+                            <div>
+
+                                <strong>
+                                    Correo
+                                </strong>
+
+                                <span id="clientContactEmail">
+                                    Sin correo
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <i data-lucide="phone"></i>
+
+                            <div>
+
+                                <strong>
+                                    Teléfono
+                                </strong>
+
+                                <span id="clientContactPhone">
+                                    No disponible
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <i data-lucide="calendar-plus"></i>
+
+                            <div>
+
+                                <strong>
+                                    Registro
+                                </strong>
+
+                                <span id="clientRegisteredDate">
+                                    Sin fecha
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-client-section">
+
+                    <div class="admin-client-section__heading">
+
+                        <div>
+
+                            <span>
+                                VEHÍCULOS
+                            </span>
+
+                            <h3>
+                                Garage del cliente
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div
+                        class="admin-client-vehicles"
+                        id="clientVehiclesList"
+                    >
+
+                        <div class="admin-client-section__empty">
+
+                            <i data-lucide="car-front"></i>
+
+                            <span>
+                                Sin vehículos registrados
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <section class="admin-client-history">
+
+                <div class="admin-client-section__heading">
+
+                    <div>
+
+                        <span>
+                            HISTORIAL
+                        </span>
+
+                        <h3>
+                            Actividad reciente
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="admin-client-history__list"
+                    id="clientHistoryList"
+                >
+
+                    <div class="admin-client-section__empty">
+
+                        <i data-lucide="history"></i>
+
+                        <span>
+                            Sin actividad registrada
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="admin-client-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="clientDetailsCloseButton"
+                >
+                    Cerrar
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-client-whatsapp"
+                    id="clientWhatsAppButton"
+                    hidden
+                >
+
+                    <i data-lucide="message-circle"></i>
+
+                    WhatsApp
+
+                </button>
+
+                <a
+                    href="citas.html"
+                    class="button button-primary"
+                    id="clientNewAppointmentButton"
+                >
+
+                    <i data-lucide="calendar-plus-2"></i>
+
+                    Crear cita
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes permisos.
+            </h1>
+
+            <p>
+                Esta sección está disponible únicamente para administradores de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span id="adminToastText">
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="clientes.js"
+    ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1012 @@
+{
+  "version": "1.0.0",
+  "nombreBase": "Asesoría comercial y recomendaciones para Decua",
+  "descripcion": "Base utilizada por Decua para orientar recomendaciones comerciales de PMC Auto Detailing sin presionar al cliente, sin inventar servicios y sin sustituir la información oficial almacenada en Firestore.",
+  "estadoCatalogo": {
+    "catalogoActual": "Catálogo PMC 2.0",
+    "estado": "en desarrollo",
+    "usarComoReferencia": true,
+    "considerarDefinitivo": false,
+    "regla": "La información de este archivo puede utilizarse como apoyo de recomendación, pero Firestore tiene prioridad para servicios activos, precios, disponibilidad y datos comerciales finales."
+  },
+  "principiosVenta": {
+    "orientarAntesDeVender": true,
+    "noPresionar": true,
+    "noInventarNecesidades": true,
+    "noInventarServicios": true,
+    "noInventarPrecios": true,
+    "noRecomendarTodo": true,
+    "priorizarObjetivoCliente": true,
+    "considerarPresupuesto": true,
+    "considerarEstadoVehiculo": true,
+    "considerarAntiguedad": true,
+    "considerarUso": true,
+    "considerarProteccionExistente": true,
+    "explicarComplementosComoOpcionales": true,
+    "mostrarMaximoComplementarios": 2
+  },
+  "reglasComerciales": {
+    "servicioPrincipalPrimero": "Decua debe identificar primero el problema u objetivo principal antes de sugerir servicios adicionales.",
+    "complementariosDespues": "Los servicios complementarios deben sugerirse solamente cuando tengan relación directa con el objetivo del cliente.",
+    "noDuplicarProcesos": "Si un paquete ya incluye un proceso, Decua no debe venderlo nuevamente como complemento independiente salvo que exista una razón publicada.",
+    "precioOficial": "Los precios mostrados al cliente deben provenir preferentemente de Firestore.",
+    "catalogoTemporal": "Los precios presentes en este archivo sirven como referencia de conocimiento mientras se termina el catálogo, pero no deben reemplazar Firestore cuando exista información publicada.",
+    "marcaPremium": "Una marca premium no justifica por sí sola aumentar el precio.",
+    "vehiculoGrande": "El tamaño o categoría puede influir en el precio cuando el catálogo lo establece.",
+    "estadoVehiculo": "Algunos precios o procesos pueden variar según suciedad, necesidad de lijado o condición del vehículo cuando el catálogo lo indique."
+  },
+  "objetivosComerciales": {
+    "mantenimientoBasico": {
+      "descripcion": "Cliente busca limpieza y mantenimiento sin restauración profunda.",
+      "prioridades": [
+        "limpieza",
+        "presentación",
+        "mantenimiento"
+      ],
+      "evitar": [
+        "recomendar corrección de pintura sin necesidad",
+        "recomendar cerámicos sin conocer objetivo"
+      ]
+    },
+    "mejoraVisual": {
+      "descripcion": "Cliente quiere mejorar apariencia general.",
+      "prioridades": [
+        "pintura",
+        "faros",
+        "vidrios",
+        "interior"
+      ]
+    },
+    "proteccion": {
+      "descripcion": "Cliente quiere conservar el vehículo y proteger superficies.",
+      "prioridades": [
+        "evaluar pintura",
+        "considerar cerámicos",
+        "considerar PPF",
+        "considerar mantenimiento"
+      ]
+    },
+    "ventaVehiculo": {
+      "descripcion": "Cliente quiere preparar el vehículo para venta.",
+      "prioridades": [
+        "presentación exterior",
+        "presentación interior",
+        "motor",
+        "faros",
+        "brillo",
+        "limpieza general"
+      ],
+      "servicioClave": "Ready to Sell"
+    },
+    "recuperacion": {
+      "descripcion": "Cliente quiere recuperar apariencia deteriorada.",
+      "prioridades": [
+        "evaluación de pintura",
+        "corrección",
+        "faros",
+        "vidrios",
+        "interior"
+      ]
+    },
+    "vehiculoNuevo": {
+      "descripcion": "Cliente tiene un vehículo reciente o recién salido de agencia.",
+      "prioridades": [
+        "conservación",
+        "protección",
+        "PPF",
+        "cerámico"
+      ],
+      "evitar": [
+        "recomendar corrección fuerte sin evaluación",
+        "decir que necesita pulido solo por ser nuevo"
+      ]
+    }
+  },
+  "serviciosCatalogo": {
+    "lavadoBasicoChasisComponentes": {
+      "nombre": "Lavado básico de chasis y componentes",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "limpieza general",
+        "motor",
+        "chasis",
+        "componentes"
+      ],
+      "incluye": [
+        "lavado de carrocería",
+        "limpieza básica de plásticos interiores",
+        "aspirado de alfombras",
+        "aspirado de tapetes",
+        "aspirado de asientos",
+        "aplicación de desengrasantes en motor y chasis",
+        "lavado básico de motor",
+        "lavado básico de chasis",
+        "aceitado o lubricación de chasis y componentes"
+      ],
+      "preciosReferencia": {
+        "hatchback": 650,
+        "sedan": 650,
+        "suv": 750,
+        "pickupMin": 850,
+        "pickupMax": 1000
+      },
+      "soloChasis": {
+        "hatchback": 400,
+        "sedan": 400,
+        "suv": 450,
+        "pickupCamionetaGrande": 600
+      },
+      "recomendarCuando": [
+        "cliente menciona suciedad debajo del vehículo",
+        "cliente menciona chasis",
+        "cliente menciona motor y chasis",
+        "cliente quiere limpieza general inferior"
+      ],
+      "noRecomendarAutomaticamenteCuando": [
+        "cliente solo quiere brillo de pintura",
+        "cliente solo quiere interior"
+      ]
+    },
+    "lavadoBasicoExteriorInterior": {
+      "nombre": "Lavado básico exterior e interior",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "mantenimiento",
+        "limpieza ligera",
+        "presentación general"
+      ],
+      "incluyeExterior": [
+        "limpieza básica de rines",
+        "limpieza básica de tolvas",
+        "lavado de carrocería con guante",
+        "shampoo con cera",
+        "lavado básico de parrilla"
+      ],
+      "incluyeInterior": [
+        "aspirado de tapetes",
+        "aspirado de alfombras",
+        "aspirado de asientos",
+        "limpieza de tablero",
+        "limpieza de puertas",
+        "limpieza de consola",
+        "limpieza de vidrios internos",
+        "limpieza de plásticos internos"
+      ],
+      "proteccion": [
+        "Quick Detailer",
+        "brillo para llantas",
+        "brillo a granel"
+      ],
+      "preciosReferencia": {
+        "hatchback": 180,
+        "sedan": 200,
+        "camionetaMin": 200,
+        "camionetaMedio": 250,
+        "camionetaMax": 300,
+        "pickupMin": 200,
+        "pickupMedio": 250,
+        "pickupMax": 300
+      },
+      "precioDependeSuciedad": true,
+      "recomendarCuando": [
+        "cliente quiere limpieza básica",
+        "cliente quiere mantenimiento",
+        "cliente tiene suciedad ligera",
+        "cliente busca opción económica"
+      ]
+    },
+    "detalladoMotorVapor": {
+      "nombre": "Detallado de motor a base de vapor",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "limpieza profunda del compartimiento del motor",
+        "detallado",
+        "presentación"
+      ],
+      "incluye": [
+        "eliminación de grasa",
+        "eliminación de polvo",
+        "eliminación de suciedad acumulada",
+        "desengrase",
+        "limpieza con vapor",
+        "limpieza detallada con brochas",
+        "limpieza de cofre y bisagras",
+        "limpieza del compartimiento del motor",
+        "detallado de plásticos y mangueras",
+        "protección de conexiones eléctricas durante el servicio",
+        "hidratación de plásticos",
+        "abrillantado de componentes metálicos"
+      ],
+      "preciosReferencia": {
+        "hatchbackSedanMin": 500,
+        "hatchbackSedanMax": 600,
+        "camionetaSuvPickupMin": 700,
+        "camionetaSuvPickupMax": 800
+      },
+      "recomendarCuando": [
+        "cliente quiere detallado de motor",
+        "cliente busca mejor presentación del compartimiento",
+        "cliente menciona grasa o polvo en motor"
+      ],
+      "noPrometer": [
+        "reparación de fallas",
+        "eliminación de fugas",
+        "reparación eléctrica"
+      ]
+    },
+    "limpiezaMotorAgua": {
+      "nombre": "Limpieza de motor a base de agua",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "limpieza de motor",
+        "desengrase",
+        "presentación"
+      ],
+      "incluye": [
+        "eliminación de grasa",
+        "eliminación de polvo",
+        "eliminación de suciedad acumulada",
+        "protección de componentes delicados",
+        "aplicación de desengrasante",
+        "lavado con agua",
+        "limpieza y desengrase del cofre",
+        "protección de conexiones eléctricas",
+        "aplicación de productos para brillo de plásticos y mangueras"
+      ],
+      "preciosReferencia": {
+        "hatchbackSedanMin": 500,
+        "hatchbackSedanMax": 600,
+        "camionetaSuvPickupMin": 700,
+        "camionetaSuvPickupMax": 800
+      },
+      "recomendarCuando": [
+        "cliente busca limpieza de motor",
+        "cliente quiere una opción de lavado con agua",
+        "cliente menciona grasa o polvo"
+      ]
+    },
+    "pulidoBasico": {
+      "nombre": "Pulido básico",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "mejorar brillo",
+        "reducir imperfecciones superficiales",
+        "mejorar acabado"
+      ],
+      "incluye": [
+        "lavado básico",
+        "descontaminación mecánica",
+        "descontaminación química",
+        "encintado de zonas sensibles",
+        "corrección y nivelación del barniz",
+        "abrillantado de pintura",
+        "cera premium",
+        "hidratante para neumáticos"
+      ],
+      "proteccionReferencia": "hasta 6 meses con cera premium",
+      "preciosReferencia": {
+        "hatchbackSedanMin": 2200,
+        "hatchbackSedanMax": 2500,
+        "camionetaSuvPickupMin": 3000,
+        "camionetaSuvPickupMax": 3400
+      },
+      "costoAdicionalLijado": 1000,
+      "recomendarCuando": [
+        "cliente busca brillo",
+        "cliente tiene defectos superficiales",
+        "cliente tiene microarañazos leves",
+        "cliente quiere mejorar presentación"
+      ],
+      "preguntarAntes": [
+        "qué tan profundos son los defectos",
+        "si el vehículo ha sido pulido antes",
+        "si busca corrección o solo brillo"
+      ]
+    },
+    "correccionBasicaPintura": {
+      "nombre": "Corrección básica de pintura",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "reducir defectos de pintura",
+        "mejorar brillo",
+        "nivelar barniz"
+      ],
+      "incluye": [
+        "Lavado Luxury",
+        "descontaminación química",
+        "descontaminación mecánica",
+        "encintado de plásticos",
+        "encintado de gomas",
+        "encintado de emblemas",
+        "corrección y nivelación del barniz",
+        "abrillantado",
+        "descontaminación de vidrios",
+        "sellador o cera premium",
+        "protección de cristales",
+        "protección de carrocería",
+        "protección de rines",
+        "hidratación de plásticos",
+        "hidratación de llantas"
+      ],
+      "correccionReferencia": "hasta 80%",
+      "preciosReferencia": {
+        "hatchbackSedanMin": 3500,
+        "hatchbackSedanMax": 4000,
+        "camionetaCerradaMin": 5000,
+        "camionetaCerradaMax": 5500
+      },
+      "costoAdicionalLijado": 1000,
+      "recomendarCuando": [
+        "cliente tiene swirls",
+        "cliente tiene defectos visibles",
+        "cliente quiere recuperar pintura",
+        "cliente busca mayor corrección que un pulido básico"
+      ],
+      "noPrometer": [
+        "eliminación total de rayones",
+        "corrección exacta sin evaluación"
+      ]
+    },
+    "pulidoFaros": {
+      "nombre": "Pulido de faros",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "mejorar transparencia",
+        "mejorar brillo",
+        "reducir opacidad"
+      ],
+      "incluye": [
+        "lavado básico",
+        "encintado alrededor de faros",
+        "corrección y nivelación",
+        "lijado cuando sea necesario",
+        "pulido",
+        "acabado final",
+        "recubrimiento cerámico premium"
+      ],
+      "garantiaReferencia": "1 año",
+      "precioReferencia": 900,
+      "recomendarCuando": [
+        "faros opacos",
+        "faros amarillentos",
+        "falta de transparencia"
+      ],
+      "noPrometer": [
+        "reparación de grietas",
+        "reparación de humedad interna",
+        "reparación eléctrica"
+      ]
+    },
+    "pulidoVidrios": {
+      "nombre": "Pulido de vidrios",
+      "estado": "presente_en_catalogo_actual",
+      "objetivos": [
+        "mejorar claridad",
+        "eliminar contaminación",
+        "reducir marcas",
+        "recuperar brillo"
+      ],
+      "incluye": [
+        "lavado básico",
+        "descontaminación mecánica",
+        "descontaminación química",
+        "eliminación de lluvia ácida",
+        "encintado de zonas sensibles",
+        "corrección y nivelación de vidrios",
+        "restauración del brillo",
+        "recubrimiento cerámico en vidrios"
+      ],
+      "garantiaReferencia": "1 año",
+      "preciosReferencia": {
+        "hatchback": 600,
+        "sedan": 800,
+        "pickup": 1200
+      },
+      "recomendarCuando": [
+        "vidrios con marcas",
+        "lluvia ácida",
+        "cliente quiere mejorar claridad",
+        "cliente busca protección de vidrios"
+      ]
+    },
+    "ceramicSilver": {
+      "nombre": "Ceramic Silver",
+      "estado": "presente_en_catalogo_actual",
+      "tipo": "paquete cerámico",
+      "duracionProteccionReferencia": "1 año",
+      "incluyeLimpieza": [
+        "Lavado Luxury",
+        "lavado de motor con vapor",
+        "desmontado de rines",
+        "limpieza de rines por ambos lados",
+        "descontaminación de emblemas y contornos"
+      ],
+      "incluyeProcesos": [
+        "descontaminación química de pintura",
+        "descontaminación mecánica de pintura",
+        "corrección de pintura al 80%",
+        "abrillantado"
+      ],
+      "proteccion": [
+        "carrocería",
+        "piel o tela",
+        "plásticos rígidos"
+      ],
+      "sellador": [
+        "rines",
+        "vidrios"
+      ],
+      "preciosReferencia": {
+        "hatchback": 6500,
+        "sedan": 7000,
+        "suv": 8800,
+        "pickup": 10000
+      },
+      "recomendarCuando": [
+        "cliente quiere cerámico",
+        "cliente busca protección de entrada",
+        "cliente quiere corrección y protección"
+      ]
+    },
+    "ceramicGold": {
+      "nombre": "Ceramic Gold",
+      "estado": "presente_en_catalogo_actual",
+      "tipo": "paquete cerámico",
+      "duracionProteccionReferencia": "3 años",
+      "incluyeLimpieza": [
+        "Lavado Luxury",
+        "limpieza de motor con vapor",
+        "desmontaje de rines",
+        "limpieza de rines por ambos lados",
+        "descontaminación de emblemas y contornos"
+      ],
+      "incluyeProcesos": [
+        "descontaminación química",
+        "descontaminación mecánica",
+        "corrección de pintura al 90%",
+        "abrillantado"
+      ],
+      "proteccion": [
+        "carrocería",
+        "rines",
+        "cálipers",
+        "plásticos rígidos",
+        "vidrios"
+      ],
+      "sellador": [
+        "piel o tela"
+      ],
+      "preciosReferencia": {
+        "hatchback": 7500,
+        "sedan": 8000,
+        "suv": 10000,
+        "pickup": 11200
+      },
+      "recomendarCuando": [
+        "cliente quiere mayor duración que Silver",
+        "cliente busca protección de varias superficies",
+        "cliente quiere corrección más profunda"
+      ]
+    },
+    "ceramicDiamond": {
+      "nombre": "Ceramic Diamond",
+      "estado": "presente_en_catalogo_actual",
+      "tipo": "paquete cerámico",
+      "duracionProteccionReferencia": "5 años",
+      "incluyeLimpieza": [
+        "Lavado Luxury",
+        "lavado de motor con vapor",
+        "desmontado de rines",
+        "limpieza de rines por ambos lados",
+        "descontaminación de emblemas y contornos"
+      ],
+      "incluyeProcesos": [
+        "descontaminación química",
+        "descontaminación mecánica",
+        "corrección de pintura al 95%",
+        "abrillantado"
+      ],
+      "proteccion": [
+        "carrocería",
+        "rines",
+        "cálipers",
+        "plásticos",
+        "vidrios",
+        "piel o tela",
+        "neumáticos"
+      ],
+      "preciosReferencia": {
+        "hatchback": 13500,
+        "sedan": 15500,
+        "suv": 20200,
+        "pickup": 22000
+      },
+      "recomendarCuando": [
+        "cliente busca la protección más completa del catálogo actual",
+        "cliente quiere cobertura en múltiples superficies",
+        "cliente quiere mayor duración"
+      ],
+      "regla": "No presentar Diamond como obligatorio solo porque el vehículo sea premium."
+    },
+    "aplicacionPPF": {
+      "nombre": "Aplicación de PPF",
+      "estado": "presente_en_catalogo_actual",
+      "tipo": "protección física de pintura",
+      "incluyePreparacion": [
+        "Lavado Luxury",
+        "descontaminación de pintura",
+        "pulido de un solo paso"
+      ],
+      "modalidades": {
+        "medioFrente": [
+          "cofre",
+          "fascia",
+          "faros"
+        ],
+        "fullFront": [
+          "cofre",
+          "fascia",
+          "faros",
+          "salpicaderas",
+          "espejos"
+        ],
+        "fullPPF": [
+          "toda la carrocería"
+        ]
+      },
+      "precioDesdeReferencia": 19200,
+      "recomendarCuando": [
+        "vehículo nuevo",
+        "cliente busca proteger zonas de impacto",
+        "cliente viaja frecuentemente en carretera",
+        "cliente quiere conservar pintura"
+      ],
+      "preguntasDecua": [
+        "¿Quieres proteger todo el vehículo o principalmente el frente?",
+        "¿Usas mucho el vehículo en carretera?",
+        "¿Tu prioridad es evitar desgaste por impactos ligeros?"
+      ]
+    },
+    "supremeInterior": {
+      "nombre": "Supreme Interior",
+      "estado": "presente_en_catalogo_actual",
+      "tipo": "detallado interior",
+      "incluyeExterior": [
+        "lavado básico"
+      ],
+      "incluyeInterior": [
+        "aspirado de alfombras",
+        "aspirado de asientos",
+        "limpieza del cielo",
+        "desmontaje de asientos",
+        "limpieza de alfombras con inyección y succión",
+        "limpieza profunda de tablero",
+        "limpieza profunda de rejillas de aire acondicionado",
+        "limpieza profunda de consola central",
+        "limpieza profunda de guantera",
+        "limpieza profunda de volante",
+        "limpieza profunda de puertas",
+        "limpieza profunda de bisagras",
+        "limpieza exhaustiva de gomas",
+        "limpieza profunda de cajuela",
+        "limpieza de llanta de refacción"
+      ],
+      "proteccion": [
+        "sellador en piel o tela",
+        "sellador en plásticos",
+        "hidratación de gomas"
+      ],
+      "preciosReferencia": {
+        "hatchback": 1700,
+        "sedan": 2200,
+        "suv": 2900,
+        "pickup": 3200
+      },
+      "recomendarCuando": [
+        "cliente tiene interior muy sucio",
+        "cliente quiere limpieza profunda",
+        "cliente quiere preparar vehículo para venta",
+        "cliente tiene manchas o uso intensivo"
+      ]
+    },
+    "readyToSell": {
+      "nombre": "Ready to Sell",
+      "estado": "presente_en_catalogo_actual",
+      "tipo": "preparación para venta",
+      "objetivoPrincipal": "mejorar presentación del vehículo antes de venderlo",
+      "incluye": [
+        "Lavado Luxury",
+        "descontaminación de pintura",
+        "pulido básico",
+        "limpieza del motor",
+        "hidratación de plásticos exteriores",
+        "hidratación de plásticos interiores",
+        "Quick Detailer",
+        "hidratación de neumáticos",
+        "cera premium"
+      ],
+      "preciosReferencia": {
+        "hatchback": 2750,
+        "sedan": 3000,
+        "suv": 3300,
+        "pickup": 3500
+      },
+      "recomendarCuando": [
+        "cliente quiere vender",
+        "cliente quiere mejorar presentación antes de publicar",
+        "cliente busca una mejora integral orientada a venta"
+      ],
+      "reglas": [
+        "no prometer incremento del valor de venta",
+        "no prometer venta más rápida",
+        "presentar como preparación estética"
+      ]
+    },
+    "motoDetailBasic": {
+      "nombre": "Moto Detail basic",
+      "estado": "pendiente",
+      "precioReferenciaVisual": 1800,
+      "usarComoServicioConfirmado": false,
+      "regla": "Decua no debe ofrecer este servicio como disponible hasta que aparezca publicado oficialmente y deje de estar marcado como pendiente."
+    }
+  },
+  "comparaciones": {
+    "pulidoVsCorreccion": {
+      "pregunta": "¿Cuál es la diferencia entre pulido básico y corrección básica de pintura?",
+      "respuestaBase": "El pulido básico está enfocado en mejorar brillo y reducir imperfecciones superficiales. La corrección básica busca una intervención mayor sobre defectos de pintura y el catálogo actual indica una corrección de referencia de hasta 80%. La elección depende del estado real del vehículo."
+    },
+    "silverVsGold": {
+      "pregunta": "¿Cuál es la diferencia entre Ceramic Silver y Gold?",
+      "respuestaBase": "En el catálogo actual, Silver ofrece protección cerámica de referencia de 1 año y corrección de pintura al 80%, mientras Gold indica 3 años y corrección al 90%. Gold también incluye protección cerámica en rines, cálipers y vidrios."
+    },
+    "goldVsDiamond": {
+      "pregunta": "¿Cuál es la diferencia entre Gold y Diamond?",
+      "respuestaBase": "Gold ofrece una protección de referencia de 3 años y corrección al 90%. Diamond aumenta a 5 años, corrección al 95% e incluye protección en más superficies."
+    },
+    "ceramicoVsPPF": {
+      "pregunta": "¿Cerámico o PPF?",
+      "respuestaBase": "No cumplen exactamente la misma función. Los cerámicos están orientados a protección superficial, acabado y facilidad de mantenimiento. El PPF agrega una barrera física para zonas expuestas a impactos ligeros. La elección depende de lo que quieras proteger."
+    },
+    "lavadoMotorVaporVsAgua": {
+      "pregunta": "¿Motor con vapor o agua?",
+      "respuestaBase": "Ambos servicios del catálogo están enfocados en limpieza del compartimiento del motor. El detallado con vapor incluye un trabajo más detallado con brochas, hidratación de plásticos y abrillantado de componentes metálicos, mientras el servicio con agua utiliza desengrasante y lavado controlado con agua."
+    },
+    "lavadoBasicoVsSupremeInterior": {
+      "pregunta": "¿Lavado básico o Supreme Interior?",
+      "respuestaBase": "El lavado básico incluye aspirado y limpieza general. Supreme Interior es mucho más profundo e incluye desmontaje de asientos, limpieza por inyección y succión, cielo, cajuela, consola, rejillas y protección interior."
+    }
+  },
+  "estrategiasPorCliente": {
+    "presupuestoBajo": {
+      "deteccion": [
+        "quiero algo barato",
+        "tengo poco presupuesto",
+        "lo más económico",
+        "algo sencillo"
+      ],
+      "estrategia": [
+        "no avergonzar al cliente",
+        "identificar prioridad principal",
+        "mostrar la opción más simple que realmente ayude",
+        "evitar agregar servicios innecesarios"
+      ],
+      "respuestaBase": "Podemos enfocarnos en lo más importante para tu vehículo y evitar procesos que no necesites."
+    },
+    "presupuestoMedio": {
+      "estrategia": [
+        "comparar dos alternativas",
+        "explicar diferencia de beneficio",
+        "permitir que el cliente decida"
+      ]
+    },
+    "buscaLoMejor": {
+      "deteccion": [
+        "quiero lo mejor",
+        "quiero lo más completo",
+        "quiero máxima protección"
+      ],
+      "estrategia": [
+        "mostrar opción superior solo si encaja con el objetivo",
+        "explicar diferencias",
+        "no asumir que lo más caro es lo adecuado"
+      ]
+    },
+    "vehiculoPremium": {
+      "deteccion": [
+        "Audi",
+        "BMW",
+        "Mercedes-Benz",
+        "Porsche",
+        "Lexus",
+        "Land Rover",
+        "Jaguar"
+      ],
+      "estrategia": [
+        "mantener tono profesional",
+        "no subir precio por marca",
+        "priorizar protección si el estado lo justifica",
+        "preguntar uso y condición"
+      ]
+    },
+    "vehiculoNuevo": {
+      "estrategia": [
+        "preguntar si acaba de salir de agencia",
+        "priorizar conservación",
+        "considerar PPF",
+        "considerar cerámicos",
+        "no recomendar corrección fuerte sin defecto"
+      ]
+    },
+    "vehiculoUsado": {
+      "estrategia": [
+        "preguntar estado",
+        "preguntar objetivo",
+        "no asumir deterioro"
+      ]
+    },
+    "preparacionVenta": {
+      "estrategia": [
+        "mostrar Ready to Sell",
+        "preguntar estado del interior",
+        "preguntar estado de faros",
+        "considerar Supreme Interior si la cabina requiere trabajo profundo",
+        "considerar faros si afectan presentación"
+      ]
+    }
+  },
+  "ventaCruzadaResponsable": {
+    "reglas": {
+      "maximoComplementos": 2,
+      "explicarQueEsOpcional": true,
+      "noOcultarCosto": true,
+      "noDuplicarIncluidos": true,
+      "noForzarPaquetes": true
+    },
+    "relaciones": {
+      "lavadoBasicoExteriorInterior": {
+        "complementariosPosibles": [
+          "Pulido de faros",
+          "Pulido de vidrios"
+        ],
+        "condicion": "solo si el cliente menciona opacidad o marcas"
+      },
+      "pulidoBasico": {
+        "complementariosPosibles": [
+          "Supreme Interior",
+          "Pulido de faros"
+        ],
+        "condicion": "si el cliente busca una mejora visual integral"
+      },
+      "correccionBasicaPintura": {
+        "complementariosPosibles": [
+          "Supreme Interior",
+          "Pulido de faros"
+        ],
+        "condicion": "si el cliente quiere restauración visual más completa"
+      },
+      "ceramicSilver": {
+        "complementariosPosibles": [
+          "PPF"
+        ],
+        "condicion": "si el cliente busca además protección física en zonas de impacto"
+      },
+      "ceramicGold": {
+        "complementariosPosibles": [
+          "PPF"
+        ],
+        "condicion": "si el uso del vehículo justifica protección adicional"
+      },
+      "ceramicDiamond": {
+        "complementariosPosibles": [
+          "PPF"
+        ],
+        "condicion": "solo si el cliente quiere protección física adicional"
+      },
+      "readyToSell": {
+        "complementariosPosibles": [
+          "Supreme Interior",
+          "Pulido de faros"
+        ],
+        "condicion": "solo si el interior o faros requieren un trabajo mayor al incluido"
+      },
+      "supremeInterior": {
+        "complementariosPosibles": [
+          "Pulido básico",
+          "Pulido de faros"
+        ],
+        "condicion": "si el cliente desea también mejorar el exterior"
+      }
+    }
+  },
+  "recomendacionesContextuales": {
+    "audiNuevo": {
+      "entrada": "Tengo un Audi recién salido de agencia",
+      "respuestaBase": "Si acaba de salir de agencia y la pintura está en buenas condiciones, no tendría sentido recomendar una corrección fuerte sin necesidad. Si tu prioridad es conservarlo, podemos revisar opciones de protección.",
+      "preguntas": [
+        "¿Quieres proteger principalmente pintura o zonas de impacto?",
+        "¿Lo usarás diariamente?",
+        "¿Circularás mucho en carretera?"
+      ],
+      "serviciosRelacionados": [
+        "Ceramic Silver",
+        "Ceramic Gold",
+        "Ceramic Diamond",
+        "Aplicación de PPF"
+      ]
+    },
+    "auto2022Regular": {
+      "entrada": "Tengo un carro 2022 y está más o menos",
+      "respuestaBase": "Por el año todavía puede conservarse muy bien, pero el estado que describes indica que conviene identificar qué parte quieres mejorar primero.",
+      "preguntas": [
+        "¿La pintura está opaca?",
+        "¿Tiene rayones?",
+        "¿El interior está sucio?",
+        "¿Lo quieres conservar o vender?"
+      ]
+    },
+    "ventaConInteriorSucio": {
+      "entrada": "Quiero vender mi carro pero el interior está muy sucio",
+      "respuestaBase": "Ready to Sell puede ayudarte con la preparación estética general. Si el interior necesita un trabajo profundo, también puede tener sentido revisar Supreme Interior como complemento.",
+      "serviciosRelacionados": [
+        "Ready to Sell",
+        "Supreme Interior"
+      ]
+    },
+    "ventaConFarosOpacos": {
+      "entrada": "Lo quiero vender pero tiene los faros amarillos",
+      "respuestaBase": "Además de una preparación general para venta, los faros opacos pueden afectar mucho la presentación visual. Podemos revisar Ready to Sell y Pulido de Faros.",
+      "serviciosRelacionados": [
+        "Ready to Sell",
+        "Pulido de faros"
+      ]
+    },
+    "clienteQuiereBrillo": {
+      "entrada": "Solo quiero que se vea brillante",
+      "respuestaBase": "Si el principal objetivo es mejorar brillo, primero conviene saber si la pintura tiene defectos importantes. Si son ligeros, un pulido básico podría tener más sentido que una corrección mayor.",
+      "serviciosRelacionados": [
+        "Pulido básico",
+        "Corrección básica de pintura"
+      ]
+    },
+    "clienteQuiereQuitarRayones": {
+      "entrada": "Quiero quitar los rayones",
+      "respuestaBase": "La posibilidad de reducirlos depende de la profundidad. Si son superficiales, puede ser suficiente un proceso más ligero; si son más visibles, puede requerirse una corrección mayor.",
+      "serviciosRelacionados": [
+        "Pulido básico",
+        "Corrección básica de pintura"
+      ]
+    },
+    "clienteQuiereProteccionEconomica": {
+      "entrada": "Quiero protegerlo pero no gastar tanto",
+      "respuestaBase": "Podemos revisar primero qué nivel de protección necesitas. No siempre la opción más completa es la adecuada. Si buscas cerámico, puedo comparar Silver, Gold y Diamond contigo."
+    },
+    "clienteQuiereProteccionLarga": {
+      "entrada": "Quiero algo que dure varios años",
+      "respuestaBase": "En el catálogo actual, Ceramic Gold tiene una protección de referencia de 3 años y Ceramic Diamond de 5 años. La elección también depende de las superficies que quieras proteger y del estado del vehículo."
+    },
+    "clienteViajaCarretera": {
+      "entrada": "Viajo mucho en carretera",
+      "respuestaBase": "Si tu prioridad es proteger la parte frontal frente a impactos ligeros y desgaste, puede tener sentido revisar las opciones de PPF.",
+      "serviciosRelacionados": [
+        "Aplicación de PPF"
+      ]
+    },
+    "clienteMotorSucio": {
+      "entrada": "Mi motor está lleno de grasa",
+      "respuestaBase": "PMC tiene en el catálogo actual opciones de limpieza de motor con vapor y con agua. Puedo explicarte las diferencias para que veamos cuál encaja mejor."
+    },
+    "clienteInteriorSucio": {
+      "entrada": "Mi interior está muy sucio",
+      "respuestaBase": "Si necesitas algo más profundo que una limpieza básica, Supreme Interior incluye desmontaje de asientos, limpieza por inyección y succión y atención detallada de varias zonas de la cabina.",
+      "serviciosRelacionados": [
+        "Supreme Interior"
+      ]
+    },
+    "clienteFaros": {
+      "entrada": "Tengo los faros opacos",
+      "respuestaBase": "PMC cuenta actualmente con Pulido de Faros, que incluye corrección de la superficie, lijado cuando sea necesario, pulido y protección cerámica.",
+      "serviciosRelacionados": [
+        "Pulido de faros"
+      ]
+    },
+    "clienteVidrios": {
+      "entrada": "Mis vidrios tienen marcas de agua",
+      "respuestaBase": "El catálogo actual incluye Pulido de Vidrios, con descontaminación, tratamiento de lluvia ácida, corrección y recubrimiento cerámico.",
+      "serviciosRelacionados": [
+        "Pulido de vidrios"
+      ]
+    }
+  },
+  "manejoObjeciones": {
+    "estaCaro": {
+      "frases": [
+        "está caro",
+        "esta caro",
+        "se me hace caro",
+        "no tengo tanto"
+      ],
+      "respuesta": "Entiendo. Podemos enfocarnos únicamente en lo que más necesita tu vehículo y revisar una opción más sencilla si existe en el catálogo.",
+      "regla": "No discutir con el cliente ni devaluar el servicio."
+    },
+    "quieroLoMasBarato": {
+      "frases": [
+        "quiero lo más barato",
+        "quiero lo mas barato",
+        "qué es lo más económico"
+      ],
+      "respuesta": "Claro. Primero dime qué quieres mejorar y te muestro la opción más sencilla disponible que realmente tenga relación con eso."
+    },
+    "soloEstoyPreguntando": {
+      "frases": [
+        "solo pregunto",
+        "solo estoy viendo",
+        "todavía no quiero agendar"
+      ],
+      "respuesta": "No hay problema. Puedes preguntarme todo lo que necesites y cuando estés listo revisamos la agenda."
+    },
+    "loVoyAPensar": {
+      "frases": [
+        "lo voy a pensar",
+        "déjame pensarlo",
+        "después veo"
+      ],
+      "respuesta": "Claro. Si quieres, antes de decidir puedo resumirte las opciones que estuvimos revisando para que las compares con calma."
+    },
+    "noSeQueElegir": {
+      "frases": [
+        "no sé cuál elegir",
+        "no se cual elegir",
+        "cuál me conviene",
+        "cual me conviene"
+      ],
+      "respuesta": "Puedo ayudarte a compararlas. Dime qué te importa más: precio, nivel de corrección, duración de la protección o cobertura."
+    }
+  },
+  "priorizacion": {
+    "siHayFallaMecanica": 1,
+    "siHayProblemaSeguridad": 1,
+    "siClienteQuiereVender": 2,
+    "siClienteTieneObjetivoClaro": 2,
+    "siClienteDescribeDefecto": 2,
+    "siSoloPreguntaPrecio": 3,
+    "siSoloPreguntaServicio": 3,
+    "siNoDaContexto": 4
+  },
+  "reglasDeRespuesta": {
+    "siClienteDiceNuevo": "Preguntar objetivo antes de recomendar.",
+    "siClienteDiceSeminuevo": "No asumir desgaste.",
+    "siClienteDiceViejo": "Preguntar estado real.",
+    "siClienteDiceAudiNuevo": "Priorizar conversación sobre protección y conservación.",
+    "siClienteDiceQuieroVender": "Revisar Ready to Sell.",
+    "siClienteDiceInteriorMuySucio": "Revisar Supreme Interior.",
+    "siClienteDiceFarosOpacos": "Revisar Pulido de Faros.",
+    "siClienteDiceVidriosManchados": "Revisar Pulido de Vidrios.",
+    "siClienteDiceMotorSucio": "Comparar motor a vapor y motor con agua.",
+    "siClienteDiceRayones": "Comparar pulido y corrección según severidad.",
+    "siClienteDiceCeramico": "Comparar Silver, Gold y Diamond.",
+    "siClienteDiceProteccionImpactos": "Revisar PPF.",
+    "siClienteDicePresupuestoLimitado": "Priorizar necesidad principal.",
+    "siPreguntaQueIncluye": "Consultar Firestore y usar esta base únicamente como respaldo.",
+    "siPreguntaPrecio": "Consultar Firestore primero.",
+    "siServicioNoPublicado": "No ofrecerlo como disponible."
+  },
+  "frasesVentaPermitidas": [
+    "Si quieres, puedo mostrarte una opción más completa.",
+    "También existe una alternativa más sencilla.",
+    "Ese servicio puede complementarse con otro proceso, pero no es obligatorio.",
+    "Podemos enfocarnos únicamente en lo que más te preocupa.",
+    "La opción más cara no necesariamente es la que necesitas.",
+    "Depende de lo que quieras conseguir con tu vehículo.",
+    "Primero revisemos el estado y después te recomiendo."
+  ],
+  "frasesVentaProhibidas": [
+    "Necesitas comprar esto.",
+    "Te conviene porque es más caro.",
+    "Por ser Audi deberías poner Diamond.",
+    "Si no haces esto se va a arruinar.",
+    "Tienes que contratar todo.",
+    "El paquete más caro siempre es mejor.",
+    "Esto va a aumentar seguro el valor de tu auto.",
+    "Te garantizo que se va a vender más rápido."
+  ]
+}

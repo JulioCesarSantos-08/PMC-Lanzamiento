@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Órdenes | Administración PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando órdenes
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+                        <i data-lucide="x"></i>
+                    </button>
+
+                </div>
+
+                <div class="admin-sidebar__profile">
+
+                    <div class="admin-sidebar__avatar">
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt=""
+                            id="adminAvatar"
+                            hidden
+                        >
+
+                        <span id="adminInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="admin-sidebar__profile-info">
+
+                        <span>
+                            Sesión administrativa
+                        </span>
+
+                        <strong id="adminName">
+                            Administrador
+                        </strong>
+
+                        <small id="adminEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="recibos.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Recibos y pagos
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="financeButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a sistema de Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span>
+                            Operación PMC
+                        </span>
+
+                        <strong>
+                            Órdenes de trabajo
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <div class="admin-header__date">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="adminCurrentDate">
+                            Hoy
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="citas.html"
+                        class="admin-header__action"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Ver citas
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            OPERACIÓN
+
+                        </div>
+
+                        <h1>
+                            Órdenes
+                        </h1>
+
+                        <p>
+                            Da seguimiento a los vehículos recibidos,
+                            servicios en proceso y trabajos terminados
+                            antes de la entrega al cliente.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-page-heading__actions">
+
+                        <a
+                            href="citas.html"
+                            class="button button-secondary"
+                        >
+
+                            <i data-lucide="calendar-days"></i>
+
+                            Ir a citas
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-orders-summary">
+
+                    <article class="admin-orders-summary__card">
+
+                        <div class="admin-orders-summary__icon">
+
+                            <i data-lucide="clipboard-list"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total activas
+                            </span>
+
+                            <strong id="ordersActiveCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Trabajos abiertos
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-orders-summary__card">
+
+                        <div class="admin-orders-summary__icon">
+
+                            <i data-lucide="car-front"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Recibidos
+                            </span>
+
+                            <strong id="ordersReceivedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Esperando inicio
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-orders-summary__card">
+
+                        <div class="admin-orders-summary__icon">
+
+                            <i data-lucide="wrench"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                En proceso
+                            </span>
+
+                            <strong id="ordersProgressCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Trabajando actualmente
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-orders-summary__card">
+
+                        <div class="admin-orders-summary__icon">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Terminados
+                            </span>
+
+                            <strong id="ordersFinishedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Pendientes de entrega
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-orders-summary__card">
+
+                        <div class="admin-orders-summary__icon">
+
+                            <i data-lucide="key-round"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Entregados
+                            </span>
+
+                            <strong id="ordersDeliveredCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Historial completado
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="admin-panel admin-orders-panel">
+
+                    <div class="admin-orders-toolbar">
+
+                        <div class="admin-orders-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input
+                                type="search"
+                                id="orderSearch"
+                                placeholder="Buscar cliente, vehículo, servicio o folio..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <div class="admin-orders-filters">
+
+                            <label class="admin-orders-select">
+
+                                <i data-lucide="activity"></i>
+
+                                <select id="orderStatusFilter">
+
+                                    <option value="todos">
+                                        Todos los estados
+                                    </option>
+
+                                    <option value="recibido">
+                                        Recibidos
+                                    </option>
+
+                                    <option value="en_proceso">
+                                        En proceso
+                                    </option>
+
+                                    <option value="terminado">
+                                        Terminados
+                                    </option>
+
+                                    <option value="entregado">
+                                        Entregados
+                                    </option>
+
+                                    <option value="cancelado">
+                                        Cancelados
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="admin-orders-select">
+
+                                <i data-lucide="arrow-up-down"></i>
+
+                                <select id="orderSort">
+
+                                    <option value="recientes">
+                                        Más recientes
+                                    </option>
+
+                                    <option value="antiguos">
+                                        Más antiguos
+                                    </option>
+
+                                    <option value="cliente">
+                                        Cliente A-Z
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-orders-results">
+
+                        <div>
+
+                            <span>
+                                Mostrando
+                            </span>
+
+                            <strong id="ordersResultsCount">
+                                0 órdenes
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="resetOrderFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="admin-orders-list"
+                        id="ordersList"
+                    >
+
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+
+                    </div>
+
+                    <div
+                        class="admin-empty"
+                        id="ordersEmpty"
+                        hidden
+                    >
+
+                        <div class="admin-empty__icon">
+
+                            <i data-lucide="clipboard-x"></i>
+
+                        </div>
+
+                        <h3>
+                            No encontramos órdenes
+                        </h3>
+
+                        <p>
+                            Las órdenes aparecerán cuando un vehículo sea recibido para trabajar.
+                        </p>
+
+                        <a
+                            href="citas.html"
+                            class="button button-secondary"
+                        >
+
+                            Ver citas
+
+                            <i data-lucide="calendar-days"></i>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Órdenes de trabajo
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal admin-order-modal"
+        id="orderDetailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="orderDetailsBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-order-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="orderDetailsClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-order-modal__heading">
+
+                <div class="admin-order-modal__icon">
+
+                    <i data-lucide="clipboard-list"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        ORDEN DE TRABAJO
+                    </span>
+
+                    <h2 id="orderDetailsTitle">
+                        Orden PMC
+                    </h2>
+
+                    <p id="orderDetailsFolio">
+                        Folio
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-order-modal__status">
+
+                <span>
+                    Estado actual
+                </span>
+
+                <strong
+                    class="admin-order-status"
+                    id="orderDetailsStatus"
+                >
+                    Recibido
+                </strong>
+
+            </div>
+
+            <div class="admin-order-modal__grid">
+
+                <section class="admin-order-detail-section">
+
+                    <span class="admin-order-detail-section__label">
+                        CLIENTE
+                    </span>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="user-round"></i>
+
+                        <div>
+
+                            <strong id="orderClientName">
+                                Cliente
+                            </strong>
+
+                            <span id="orderClientEmail">
+                                Sin correo
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="phone"></i>
+
+                        <div>
+
+                            <strong>
+                                Teléfono
+                            </strong>
+
+                            <span id="orderClientPhone">
+                                No disponible
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-order-detail-section">
+
+                    <span class="admin-order-detail-section__label">
+                        VEHÍCULO
+                    </span>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="car-front"></i>
+
+                        <div>
+
+                            <strong id="orderVehicleName">
+                                Vehículo
+                            </strong>
+
+                            <span id="orderVehicleType">
+                                Sin categoría
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="palette"></i>
+
+                        <div>
+
+                            <strong>
+                                Color
+                            </strong>
+
+                            <span id="orderVehicleColor">
+                                No especificado
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-order-detail-section">
+
+                    <span class="admin-order-detail-section__label">
+                        SERVICIO
+                    </span>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="sparkles"></i>
+
+                        <div>
+
+                            <strong id="orderServiceName">
+                                Servicio PMC
+                            </strong>
+
+                            <span id="orderServiceDuration">
+                                Sin duración
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="circle-dollar-sign"></i>
+
+                        <div>
+
+                            <strong>
+                                Precio estimado
+                            </strong>
+
+                            <span id="orderEstimatedPrice">
+                                Por confirmar
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-order-detail-section">
+
+                    <span class="admin-order-detail-section__label">
+                        RECEPCIÓN
+                    </span>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="calendar"></i>
+
+                        <div>
+
+                            <strong id="orderReceivedDate">
+                                Sin fecha
+                            </strong>
+
+                            <span id="orderReceivedTime">
+                                Sin hora
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-order-detail">
+
+                        <i data-lucide="clock-3"></i>
+
+                        <div>
+
+                            <strong>
+                                Duración estimada
+                            </strong>
+
+                            <span id="orderReservedDuration">
+                                Sin duración
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <section class="admin-order-progress">
+
+                <div class="admin-order-progress__heading">
+
+                    <div>
+
+                        <span>
+                            PROGRESO
+                        </span>
+
+                        <strong id="orderProgressLabel">
+                            Vehículo recibido
+                        </strong>
+
+                    </div>
+
+                    <span id="orderProgressPercent">
+                        25%
+                    </span>
+
+                </div>
+
+                <div class="admin-order-progress__track">
+
+                    <span
+                        id="orderProgressBar"
+                        style="width: 25%;"
+                    ></span>
+
+                </div>
+
+                <div class="admin-order-progress__steps">
+
+                    <span class="is-active">
+                        Recibido
+                    </span>
+
+                    <span>
+                        En proceso
+                    </span>
+
+                    <span>
+                        Terminado
+                    </span>
+
+                    <span>
+                        Entregado
+                    </span>
+
+                </div>
+
+            </section>
+
+            <section
+                class="admin-order-notes"
+                id="orderNotesSection"
+                hidden
+            >
+
+                <span>
+                    NOTAS
+                </span>
+
+                <p id="orderNotes">
+                    Sin notas.
+                </p>
+
+            </section>
+
+            <div class="admin-order-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="orderCloseButton"
+                >
+                    Cerrar
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-order-action"
+                    id="orderStartButton"
+                    hidden
+                >
+
+                    <i data-lucide="play"></i>
+
+                    Iniciar trabajo
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-order-action admin-order-action--success"
+                    id="orderFinishButton"
+                    hidden
+                >
+
+                    <i data-lucide="circle-check-big"></i>
+
+                    Marcar terminado
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-order-action admin-order-action--success"
+                    id="orderDeliverButton"
+                    hidden
+                >
+
+                    <i data-lucide="key-round"></i>
+
+                    Marcar entregado
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes permisos.
+            </h1>
+
+            <p>
+                Esta sección está disponible únicamente para administradores de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span id="adminToastText">
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="ordenes.js"
+    ></script>
+
+</body>
+
+</html>

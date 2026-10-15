@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Administra tus citas, vehículos, historial y recibos de PMC Auto Detailing."
+    >
+
+    <meta
+        name="theme-color"
+        content="#05070a"
+    >
+
+    <title>Mi cuenta | PMC Auto Detailing</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/cuenta.css"
+    >
+</head>
+
+<body data-account-page="true">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+        aria-hidden="true"
+    >
+        <div class="page-loader__content">
+
+            <img
+                src="imagenes/logo.png"
+                alt=""
+                class="page-loader__logo"
+            >
+
+            <div class="page-loader__line">
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+
+    <header
+        class="site-header is-scrolled"
+        id="siteHeader"
+    >
+        <div class="site-header__inner container">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="PMC Auto Detailing - Inicio"
+            >
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="brand__logo"
+                >
+            </a>
+
+            <nav
+                class="desktop-nav"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="index.html"
+                    class="desktop-nav__link"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="servicios.html"
+                    class="desktop-nav__link"
+                >
+                    Servicios
+                </a>
+
+                <a
+                    href="agenda.html"
+                    class="desktop-nav__link"
+                >
+                    Agenda
+                </a>
+
+                <a
+                    href="cuenta.html"
+                    class="desktop-nav__link is-active"
+                >
+                    Mi cuenta
+                </a>
+
+            </nav>
+
+            <div class="site-header__actions">
+
+                <a
+                    href="agenda.html"
+                    class="button button--small button--primary desktop-agenda"
+                >
+                    Nueva cita
+                </a>
+
+                <button
+                    type="button"
+                    class="account-button"
+                    id="headerAccountButton"
+                    aria-label="Mi cuenta"
+                >
+                    <i data-lucide="user-round"></i>
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-hidden="true"
+    >
+        <div class="mobile-menu__backdrop"></div>
+
+        <div class="mobile-menu__panel">
+
+            <div class="mobile-menu__top">
+
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="mobile-menu__logo"
+                >
+
+                <button
+                    type="button"
+                    class="mobile-menu__close"
+                    id="menuClose"
+                    aria-label="Cerrar menú"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+            <nav class="mobile-menu__nav">
+
+                <a href="index.html">
+                    <span>01</span>
+                    Inicio
+                </a>
+
+                <a href="servicios.html">
+                    <span>02</span>
+                    Servicios
+                </a>
+
+                <a href="agenda.html">
+                    <span>03</span>
+                    Agenda
+                </a>
+
+                <a href="cuenta.html">
+                    <span>04</span>
+                    Mi cuenta
+                </a>
+
+            </nav>
+
+            <div class="mobile-menu__actions">
+
+                <a
+                    href="agenda.html"
+                    class="button button--primary button--full"
+                >
+                    Nueva cita
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <main class="account-page">
+
+        <section class="account-hero">
+
+            <div class="account-hero__glow"></div>
+
+            <div class="container account-hero__content">
+
+                <div>
+
+                    <div class="account-hero__eyebrow">
+                        <span></span>
+                        Mi PMC
+                    </div>
+
+                    <h1>
+                        Hola,
+                        <span id="accountFirstName">
+                            cliente
+                        </span>
+                    </h1>
+
+                    <p>
+                        Administra tus citas, vehículos,
+                        servicios y recibos desde un solo lugar.
+                    </p>
+
+                </div>
+
+                <a
+                    href="agenda.html"
+                    class="button button--primary"
+                >
+                    Agendar servicio
+                    <i data-lucide="calendar-plus-2"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <section class="account-section">
+
+            <div class="container">
+
+                <div class="account-layout">
+
+                    <aside class="account-sidebar">
+
+                        <div class="account-profile-card">
+
+                            <div class="account-avatar">
+
+                                <img
+                                    id="accountAvatarImage"
+                                    src="imagenes/logo.png"
+                                    alt=""
+                                >
+
+                                <span id="accountAvatarInitials">
+                                    PMC
+                                </span>
+
+                            </div>
+
+                            <div class="account-profile-card__info">
+
+                                <strong id="accountSidebarName">
+                                    Cargando...
+                                </strong>
+
+                                <span id="accountSidebarEmail">
+                                    ...
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <nav class="account-navigation">
+
+                            <button
+                                type="button"
+                                class="account-navigation__item is-active"
+                                data-account-section="inicio"
+                            >
+                                <i data-lucide="layout-dashboard"></i>
+
+                                <span>
+                                    Resumen
+                                </span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="account-navigation__item"
+                                data-account-section="citas"
+                            >
+                                <i data-lucide="calendar-days"></i>
+
+                                <span>
+                                    Mis citas
+                                </span>
+
+                                <small
+                                    id="sidebarAppointmentCount"
+                                    hidden
+                                >
+                                    0
+                                </small>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="account-navigation__item"
+                                data-account-section="vehiculos"
+                            >
+                                <i data-lucide="car-front"></i>
+
+                                <span>
+                                    Vehículos
+                                </span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="account-navigation__item"
+                                data-account-section="recibos"
+                            >
+                                <i data-lucide="receipt-text"></i>
+
+                                <span>
+                                    Recibos
+                                </span>
+                            </button>
+
+                            <button
+                                type="button"
+                                class="account-navigation__item"
+                                data-account-section="perfil"
+                            >
+                                <i data-lucide="user-round-cog"></i>
+
+                                <span>
+                                    Mi perfil
+                                </span>
+                            </button>
+
+                        </nav>
+
+                        <button
+                            type="button"
+                            class="account-logout"
+                            id="logoutButton"
+                        >
+                            <i data-lucide="log-out"></i>
+
+                            Cerrar sesión
+                        </button>
+
+                    </aside>
+
+                    <div class="account-content">
+
+                        <section
+                            class="account-view is-active"
+                            data-account-view="inicio"
+                        >
+
+                            <div class="account-view__heading">
+
+                                <div>
+
+                                    <span>
+                                        Vista general
+                                    </span>
+
+                                    <h2>
+                                        Tu actividad PMC
+                                    </h2>
+
+                                </div>
+
+                                <a
+                                    href="agenda.html"
+                                    class="button button--small button--ghost"
+                                >
+                                    Nueva cita
+                                </a>
+
+                            </div>
+
+                            <div class="account-stats">
+
+                                <article class="account-stat">
+
+                                    <div class="account-stat__icon">
+                                        <i data-lucide="calendar-clock"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Próximas citas
+                                        </span>
+
+                                        <strong id="statUpcomingAppointments">
+                                            0
+                                        </strong>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="account-stat">
+
+                                    <div class="account-stat__icon">
+                                        <i data-lucide="car-front"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Vehículos
+                                        </span>
+
+                                        <strong id="statVehicles">
+                                            0
+                                        </strong>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="account-stat">
+
+                                    <div class="account-stat__icon">
+                                        <i data-lucide="badge-check"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Servicios realizados
+                                        </span>
+
+                                        <strong id="statCompletedServices">
+                                            0
+                                        </strong>
+
+                                    </div>
+
+                                </article>
+
+                                <article class="account-stat">
+
+                                    <div class="account-stat__icon">
+                                        <i data-lucide="receipt-text"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <span>
+                                            Recibos
+                                        </span>
+
+                                        <strong id="statReceipts">
+                                            0
+                                        </strong>
+
+                                    </div>
+
+                                </article>
+
+                            </div>
+
+                            <div class="account-dashboard-grid">
+
+                                <div class="account-dashboard-card">
+
+                                    <div class="account-dashboard-card__heading">
+
+                                        <div>
+
+                                            <span>
+                                                Próxima cita
+                                            </span>
+
+                                            <h3>
+                                                Tu siguiente visita
+                                            </h3>
+
+                                        </div>
+
+                                        <i data-lucide="calendar-days"></i>
+
+                                    </div>
+
+                                    <div
+                                        class="account-next-appointment"
+                                        id="nextAppointmentCard"
+                                    >
+
+                                        <div class="account-empty-inline">
+
+                                            <i data-lucide="calendar-plus-2"></i>
+
+                                            <div>
+
+                                                <strong>
+                                                    Sin próximas citas
+                                                </strong>
+
+                                                <span>
+                                                    Agenda un servicio cuando lo necesites.
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="account-dashboard-card">
+
+                                    <div class="account-dashboard-card__heading">
+
+                                        <div>
+
+                                            <span>
+                                                Actividad
+                                            </span>
+
+                                            <h3>
+                                                Movimientos recientes
+                                            </h3>
+
+                                        </div>
+
+                                        <i data-lucide="history"></i>
+
+                                    </div>
+
+                                    <div
+                                        class="account-activity"
+                                        id="recentActivity"
+                                    >
+
+                                        <div class="account-empty-inline">
+
+                                            <i data-lucide="sparkles"></i>
+
+                                            <div>
+
+                                                <strong>
+                                                    Aún no hay actividad
+                                                </strong>
+
+                                                <span>
+                                                    Aquí aparecerán tus servicios y citas recientes.
+                                                </span>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section
+                            class="account-view"
+                            data-account-view="citas"
+                            hidden
+                        >
+
+                            <div class="account-view__heading">
+
+                                <div>
+
+                                    <span>
+                                        Agenda
+                                    </span>
+
+                                    <h2>
+                                        Mis citas
+                                    </h2>
+
+                                </div>
+
+                                <a
+                                    href="agenda.html"
+                                    class="button button--small button--primary"
+                                >
+                                    Agendar nueva
+                                    <i data-lucide="plus"></i>
+                                </a>
+
+                            </div>
+
+                            <div
+                                class="account-filters"
+                                id="appointmentFilters"
+                            >
+
+                                <button
+                                    type="button"
+                                    class="account-filter is-active"
+                                    data-appointment-filter="proximas"
+                                >
+                                    Próximas
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="account-filter"
+                                    data-appointment-filter="historial"
+                                >
+                                    Historial
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="account-filter"
+                                    data-appointment-filter="todas"
+                                >
+                                    Todas
+                                </button>
+
+                            </div>
+
+                            <div
+                                class="account-list"
+                                id="appointmentsList"
+                            >
+
+                                <div class="account-skeleton"></div>
+                                <div class="account-skeleton"></div>
+
+                            </div>
+
+                            <div
+                                class="account-empty"
+                                id="appointmentsEmpty"
+                                hidden
+                            >
+
+                                <div class="account-empty__icon">
+                                    <i data-lucide="calendar-x-2"></i>
+                                </div>
+
+                                <h3>
+                                    No hay citas para mostrar
+                                </h3>
+
+                                <p>
+                                    Cuando agendes un servicio,
+                                    aparecerá aquí.
+                                </p>
+
+                                <a
+                                    href="agenda.html"
+                                    class="button button--primary"
+                                >
+                                    Agendar servicio
+                                </a>
+
+                            </div>
+
+                        </section>
+
+                        <section
+                            class="account-view"
+                            data-account-view="vehiculos"
+                            hidden
+                        >
+
+                            <div class="account-view__heading">
+
+                                <div>
+
+                                    <span>
+                                        Garage PMC
+                                    </span>
+
+                                    <h2>
+                                        Mis vehículos
+                                    </h2>
+
+                                </div>
+
+                                <button
+                                    type="button"
+                                    class="button button--small button--primary"
+                                    id="openVehicleModal"
+                                >
+                                    Agregar vehículo
+                                    <i data-lucide="plus"></i>
+                                </button>
+
+                            </div>
+
+                            <div
+                                class="account-vehicles"
+                                id="vehiclesGrid"
+                            >
+
+                                <div class="account-skeleton"></div>
+                                <div class="account-skeleton"></div>
+
+                            </div>
+
+                            <div
+                                class="account-empty"
+                                id="vehiclesEmpty"
+                                hidden
+                            >
+
+                                <div class="account-empty__icon">
+                                    <i data-lucide="car-front"></i>
+                                </div>
+
+                                <h3>
+                                    Aún no tienes vehículos guardados
+                                </h3>
+
+                                <p>
+                                    Guarda tus vehículos para agilizar
+                                    tus próximas citas.
+                                </p>
+
+                                <button
+                                    type="button"
+                                    class="button button--primary"
+                                    id="emptyAddVehicle"
+                                >
+                                    Agregar vehículo
+                                </button>
+
+                            </div>
+
+                        </section>
+
+                        <section
+                            class="account-view"
+                            data-account-view="recibos"
+                            hidden
+                        >
+
+                            <div class="account-view__heading">
+
+                                <div>
+
+                                    <span>
+                                        Comprobantes
+                                    </span>
+
+                                    <h2>
+                                        Mis recibos
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+                            <div
+                                class="account-list"
+                                id="receiptsList"
+                            >
+
+                                <div class="account-skeleton"></div>
+                                <div class="account-skeleton"></div>
+
+                            </div>
+
+                            <div
+                                class="account-empty"
+                                id="receiptsEmpty"
+                                hidden
+                            >
+
+                                <div class="account-empty__icon">
+                                    <i data-lucide="receipt-text"></i>
+                                </div>
+
+                                <h3>
+                                    Aún no tienes recibos
+                                </h3>
+
+                                <p>
+                                    Los comprobantes de tus servicios
+                                    aparecerán aquí cuando sean emitidos.
+                                </p>
+
+                            </div>
+
+                        </section>
+
+                        <section
+                            class="account-view"
+                            data-account-view="perfil"
+                            hidden
+                        >
+
+                            <div class="account-view__heading">
+
+                                <div>
+
+                                    <span>
+                                        Cuenta
+                                    </span>
+
+                                    <h2>
+                                        Mi perfil
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+                            <div class="account-profile-layout">
+
+                                <form
+                                    class="account-profile-form"
+                                    id="profileForm"
+                                >
+
+                                    <div class="account-form-heading">
+
+                                        <div class="account-form-heading__icon">
+                                            <i data-lucide="user-round"></i>
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Información personal
+                                            </strong>
+
+                                            <span>
+                                                Mantén tus datos actualizados.
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="account-fields">
+
+                                        <div class="account-field account-field--full">
+
+                                            <label for="profileName">
+                                                Nombre completo
+                                            </label>
+
+                                            <input
+                                                type="text"
+                                                id="profileName"
+                                                autocomplete="name"
+                                                required
+                                            >
+
+                                        </div>
+
+                                        <div class="account-field">
+
+                                            <label for="profilePhone">
+                                                Número de celular
+                                            </label>
+
+                                            <input
+                                                type="tel"
+                                                id="profilePhone"
+                                                inputmode="numeric"
+                                                maxlength="10"
+                                                autocomplete="tel"
+                                            >
+
+                                        </div>
+
+                                        <div class="account-field">
+
+                                            <label for="profileEmail">
+                                                Correo electrónico
+                                            </label>
+
+                                            <input
+                                                type="email"
+                                                id="profileEmail"
+                                                autocomplete="email"
+                                                disabled
+                                            >
+
+                                        </div>
+
+                                    </div>
+
+                                    <button
+                                        type="submit"
+                                        class="button button--primary"
+                                        id="saveProfileButton"
+                                    >
+                                        Guardar cambios
+                                        <i data-lucide="save"></i>
+                                    </button>
+
+                                </form>
+
+                                <div class="account-security-card">
+
+                                    <div class="account-form-heading">
+
+                                        <div class="account-form-heading__icon">
+                                            <i data-lucide="shield-check"></i>
+                                        </div>
+
+                                        <div>
+
+                                            <strong>
+                                                Seguridad de la cuenta
+                                            </strong>
+
+                                            <span>
+                                                Información del acceso actual.
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="account-security-list">
+
+                                        <div>
+
+                                            <span>
+                                                Método de acceso
+                                            </span>
+
+                                            <strong id="profileProvider">
+                                                -
+                                            </strong>
+
+                                        </div>
+
+                                        <div>
+
+                                            <span>
+                                                Cuenta creada
+                                            </span>
+
+                                            <strong id="profileCreatedAt">
+                                                -
+                                            </strong>
+
+                                        </div>
+
+                                        <div>
+
+                                            <span>
+                                                Último acceso
+                                            </span>
+
+                                            <strong id="profileLastLogin">
+                                                -
+                                            </strong>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <div
+        class="account-modal"
+        id="vehicleModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="account-modal__backdrop"
+            id="vehicleModalBackdrop"
+        ></div>
+
+        <div
+            class="account-modal__card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="vehicleModalTitle"
+        >
+
+            <button
+                type="button"
+                class="account-modal__close"
+                id="vehicleModalClose"
+                aria-label="Cerrar"
+            >
+                <i data-lucide="x"></i>
+            </button>
+
+            <div class="account-modal__heading">
+
+                <div class="account-modal__icon">
+                    <i data-lucide="car-front"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        Garage PMC
+                    </span>
+
+                    <h2 id="vehicleModalTitle">
+                        Agregar vehículo
+                    </h2>
+
+                </div>
+
+            </div>
+
+            <form id="vehicleForm">
+
+                <input
+                    type="hidden"
+                    id="vehicleEditId"
+                >
+
+                <div class="account-fields">
+
+                    <div class="account-field">
+
+                        <label for="accountVehicleType">
+                            Tipo de vehículo
+                        </label>
+
+                        <select
+                            id="accountVehicleType"
+                            required
+                        >
+                            <option value="">
+                                Selecciona
+                            </option>
+
+                            <option value="hatchback">
+                                Hatchback
+                            </option>
+
+                            <option value="sedan">
+                                Sedán
+                            </option>
+
+                            <option value="suv">
+                                SUV
+                            </option>
+
+                            <option value="pickup">
+                                Pick-up
+                            </option>
+
+                            <option value="camioneta">
+                                Camioneta
+                            </option>
+
+                            <option value="otro">
+                                Otro
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <div class="account-field">
+
+                        <label for="accountVehicleBrand">
+                            Marca
+                        </label>
+
+                        <input
+                            type="text"
+                            id="accountVehicleBrand"
+                            placeholder="Ej. Chevrolet"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="account-field">
+
+                        <label for="accountVehicleModel">
+                            Modelo
+                        </label>
+
+                        <input
+                            type="text"
+                            id="accountVehicleModel"
+                            placeholder="Ej. Aveo"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="account-field">
+
+                        <label for="accountVehicleYear">
+                            Año
+                        </label>
+
+                        <input
+                            type="number"
+                            id="accountVehicleYear"
+                            min="1950"
+                            max="2030"
+                            placeholder="Ej. 2020"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="account-field account-field--full">
+
+                        <label for="accountVehicleColor">
+                            Color
+                        </label>
+
+                        <input
+                            type="text"
+                            id="accountVehicleColor"
+                            placeholder="Ej. Negro"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="account-modal__actions">
+
+                    <button
+                        type="button"
+                        class="button button--ghost"
+                        id="cancelVehicleButton"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="button button--primary"
+                        id="saveVehicleButton"
+                    >
+                        Guardar vehículo
+                        <i data-lucide="save"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div
+        class="account-toast"
+        id="accountToast"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+        <i data-lucide="circle-check"></i>
+
+        <span id="accountToastText"></span>
+    </div>
+
+    <footer
+        class="site-footer"
+        id="contacto"
+    >
+        <div class="container">
+
+            <div class="site-footer__top">
+
+                <div class="site-footer__brand">
+
+                    <img
+                        src="imagenes/logo.png"
+                        alt="PMC Auto Detailing"
+                    >
+
+                    <p>
+                        Cuidado, protección y estética automotriz.
+                    </p>
+
+                </div>
+
+                <div class="site-footer__columns">
+
+                    <div class="footer-column">
+
+                        <h3>Explora</h3>
+
+                        <a href="servicios.html">
+                            Servicios
+                        </a>
+
+                        <a href="agenda.html">
+                            Agenda
+                        </a>
+
+                        <a href="cuenta.html">
+                            Mi cuenta
+                        </a>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>PMC</h3>
+
+                        <span>
+                            Río Grande, Oaxaca
+                        </span>
+
+                        <a
+                            href="mailto:PMC.Auto.Detailing@outlook.com"
+                        >
+                            PMC.Auto.Detailing@outlook.com
+                        </a>
+
+                        <a
+                            href="tel:+529542038099"
+                        >
+                            +52 954 203 8099
+                        </a>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>Síguenos</h3>
+
+                        <a
+                            href="https://www.instagram.com/pmcautodetailing/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Instagram
+                        </a>
+
+                        <span>
+                            PMC Auto Detailing
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="site-footer__bottom">
+
+                <span>
+                    © <span id="currentYear"></span>
+                    PMC Auto Detailing.
+                </span>
+
+                <span>
+                    Río Grande · Oaxaca
+                </span>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+    ></script>
+
+    <script
+        type="module"
+        src="js/cuenta.js"
+    ></script>
+
+</body>
+</html>

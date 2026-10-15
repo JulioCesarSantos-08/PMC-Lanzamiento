@@ -1,0 +1,1031 @@
+{
+  "version": "1.0.0",
+  "nombreBase": "Lenguaje natural, sinónimos y variaciones para Decua",
+  "descripcion": "Base de lenguaje utilizada por Decua para comprender expresiones coloquiales, errores ortográficos, abreviaciones, variaciones regionales y distintas maneras de referirse a vehículos, servicios y necesidades de cuidado automotriz.",
+  "principios": {
+    "entenderErroresOrtograficos": true,
+    "entenderLenguajeColoquial": true,
+    "entenderAbreviaciones": true,
+    "entenderFrasesIncompletas": true,
+    "noRidiculizarErrores": true,
+    "noCorregirAlUsuarioDeFormaInnecesaria": true,
+    "responderDeFormaProfesional": true,
+    "mantenerTonoCercano": true,
+    "evitarExcesoDeJerga": true
+  },
+  "normalizacion": {
+    "reglas": [
+      "convertir texto a minúsculas para comparación",
+      "ignorar tildes para detección de intención",
+      "reducir espacios repetidos",
+      "tolerar errores comunes de escritura",
+      "aceptar singular y plural",
+      "aceptar palabras incompletas cuando el contexto sea claro",
+      "conservar texto original para mostrar respuestas naturales"
+    ],
+    "ejemplos": [
+      {
+        "entrada": "qiero pulir mi carro",
+        "interpretacion": "quiero pulir mi carro"
+      },
+      {
+        "entrada": "tngo un aveo 2018",
+        "interpretacion": "tengo un aveo 2018"
+      },
+      {
+        "entrada": "cuanto sale el ceramic",
+        "interpretacion": "cuanto cuesta el ceramic"
+      },
+      {
+        "entrada": "mi nave esta toda rayada",
+        "interpretacion": "mi vehículo tiene rayones"
+      },
+      {
+        "entrada": "quiero dejarlo chido",
+        "interpretacion": "quiere mejorar la apariencia del vehículo"
+      }
+    ]
+  },
+  "vehiculoGeneral": {
+    "terminos": [
+      "vehiculo",
+      "vehículo",
+      "carro",
+      "auto",
+      "automovil",
+      "automóvil",
+      "coche",
+      "unidad",
+      "nave",
+      "carrito",
+      "vehículo particular"
+    ],
+    "coloquiales": [
+      "mi nave",
+      "mi carro",
+      "mi coche",
+      "mi carrito",
+      "mi unidad",
+      "el carro",
+      "el auto"
+    ]
+  },
+  "camioneta": {
+    "terminos": [
+      "camioneta",
+      "pickup",
+      "pick up",
+      "pick-up",
+      "troca",
+      "camionetita",
+      "camioneta grande",
+      "camioneta cerrada"
+    ],
+    "interpretaciones": {
+      "troca": "pickup o camioneta",
+      "pick up": "pickup",
+      "pick-up": "pickup"
+    }
+  },
+  "moto": {
+    "terminos": [
+      "moto",
+      "motocicleta",
+      "motito",
+      "motoneta"
+    ],
+    "regla": "Decua solo debe ofrecer Moto Detail si está publicado oficialmente."
+  },
+  "nuevo": {
+    "terminos": [
+      "nuevo",
+      "nuevecito",
+      "recién comprado",
+      "recien comprado",
+      "recién salido de agencia",
+      "recien salido de agencia",
+      "de agencia",
+      "cero kilometros",
+      "0 km",
+      "nuevo de agencia"
+    ]
+  },
+  "seminuevo": {
+    "terminos": [
+      "seminuevo",
+      "semi nuevo",
+      "poco usado",
+      "casi nuevo",
+      "con poco uso",
+      "tiene pocos años"
+    ]
+  },
+  "usado": {
+    "terminos": [
+      "usado",
+      "ya tiene uso",
+      "ya está correteado",
+      "ya esta correteado",
+      "ya tiene sus años",
+      "ya tiene tiempo"
+    ]
+  },
+  "estadoBueno": {
+    "terminos": [
+      "impecable",
+      "como nuevo",
+      "muy cuidado",
+      "bien cuidado",
+      "en buen estado",
+      "está entero",
+      "esta entero",
+      "se ve muy bien",
+      "anda bien cuidado"
+    ]
+  },
+  "estadoRegular": {
+    "terminos": [
+      "más o menos",
+      "mas o menos",
+      "regular",
+      "ya tiene detalles",
+      "algo descuidado",
+      "tiene sus detallitos",
+      "medio maltratado",
+      "medio rayado"
+    ]
+  },
+  "estadoMalo": {
+    "terminos": [
+      "muy descuidado",
+      "hecho polvo",
+      "muy maltratado",
+      "todo rayado",
+      "muy opaco",
+      "bien sucio",
+      "muy cochino",
+      "está acabado",
+      "esta acabado",
+      "ya está feo",
+      "ya esta feo"
+    ],
+    "regla": "Decua no debe repetir insultos o frases despectivas hacia el vehículo."
+  },
+  "brillo": {
+    "terminos": [
+      "brillo",
+      "que brille",
+      "más brillo",
+      "mas brillo",
+      "que se vea brilloso",
+      "que se vea bonito",
+      "que luzca",
+      "que resalte",
+      "que reviva",
+      "que vuelva a brillar"
+    ]
+  },
+  "opacidad": {
+    "terminos": [
+      "opaco",
+      "apagado",
+      "sin brillo",
+      "se ve muerto",
+      "se ve triste",
+      "ya no brilla",
+      "se ve deslavado",
+      "perdió brillo",
+      "perdio brillo"
+    ]
+  },
+  "rayones": {
+    "terminos": [
+      "rayon",
+      "rayón",
+      "rayones",
+      "arañazo",
+      "arañazos",
+      "raspon",
+      "raspón",
+      "raspones",
+      "marcas",
+      "rayitas",
+      "rayas",
+      "rayado",
+      "rayada"
+    ],
+    "coloquiales": [
+      "todo rayado",
+      "trae rayones",
+      "tiene unas rayitas",
+      "le dieron un llegue",
+      "lo tallaron",
+      "se marcó",
+      "se marco"
+    ]
+  },
+  "microaranazos": {
+    "terminos": [
+      "swirls",
+      "remolinos",
+      "microarañazos",
+      "micro rayones",
+      "rayitas circulares",
+      "marcas de lavado",
+      "marcas con el sol"
+    ]
+  },
+  "pulido": {
+    "terminos": [
+      "pulido",
+      "pulir",
+      "pulirlo",
+      "darle una pulida",
+      "sacarle brillo",
+      "darle brillo",
+      "abrillantar",
+      "revivir pintura"
+    ]
+  },
+  "correccionPintura": {
+    "terminos": [
+      "correccion",
+      "corrección",
+      "corregir pintura",
+      "corrección de pintura",
+      "quitar defectos",
+      "trabajar rayones",
+      "nivelar barniz"
+    ]
+  },
+  "encerado": {
+    "terminos": [
+      "cera",
+      "encerar",
+      "encerado",
+      "poner cera",
+      "darle cera",
+      "protección con cera"
+    ]
+  },
+  "ceramico": {
+    "terminos": [
+      "ceramico",
+      "cerámico",
+      "ceramic",
+      "ceramic coating",
+      "coating",
+      "nano ceramico",
+      "recubrimiento ceramico"
+    ],
+    "erroresComunes": [
+      "ceramiko",
+      "seramico",
+      "seramico",
+      "ceramik",
+      "ceramik coating"
+    ]
+  },
+  "ppf": {
+    "terminos": [
+      "ppf",
+      "paint protection film",
+      "pelicula protectora",
+      "película protectora",
+      "film protector",
+      "proteccion transparente",
+      "protección transparente"
+    ],
+    "erroresComunes": [
+      "pff",
+      "pft",
+      "pp",
+      "film ppf"
+    ]
+  },
+  "lavado": {
+    "terminos": [
+      "lavado",
+      "lavar",
+      "lavarlo",
+      "lavada",
+      "limpieza",
+      "limpiar",
+      "aseo",
+      "darle una lavada",
+      "darle una limpiada"
+    ]
+  },
+  "lavadoBasico": {
+    "terminos": [
+      "lavado básico",
+      "lavado basico",
+      "lavado normal",
+      "lavado sencillo",
+      "lavado rápido",
+      "lavado rapido",
+      "solo lavarlo",
+      "limpieza normal"
+    ]
+  },
+  "lavadoProfundo": {
+    "terminos": [
+      "lavado profundo",
+      "limpieza profunda",
+      "detallado",
+      "detailing",
+      "limpieza a fondo",
+      "lavarlo bien",
+      "dejarlo bien limpio"
+    ]
+  },
+  "interior": {
+    "terminos": [
+      "interior",
+      "por dentro",
+      "adentro",
+      "cabina",
+      "habitaculo",
+      "habitáculo",
+      "parte interna"
+    ]
+  },
+  "asientos": {
+    "terminos": [
+      "asientos",
+      "sillas",
+      "butacas",
+      "vestiduras",
+      "tapiceria",
+      "tapicería"
+    ]
+  },
+  "alfombras": {
+    "terminos": [
+      "alfombra",
+      "alfombras",
+      "tapetes",
+      "piso",
+      "piso interior"
+    ]
+  },
+  "cielo": {
+    "terminos": [
+      "cielo",
+      "techo interior",
+      "techo por dentro",
+      "tapizado del techo"
+    ]
+  },
+  "cajuela": {
+    "terminos": [
+      "cajuela",
+      "maletero",
+      "baul",
+      "baúl",
+      "parte de atrás",
+      "parte trasera"
+    ]
+  },
+  "tablero": {
+    "terminos": [
+      "tablero",
+      "dash",
+      "dashboard",
+      "consola",
+      "panel"
+    ]
+  },
+  "puertas": {
+    "terminos": [
+      "puertas",
+      "paneles de puerta",
+      "interiores de puerta"
+    ]
+  },
+  "piel": {
+    "terminos": [
+      "piel",
+      "cuero",
+      "vinipiel",
+      "asiento de piel",
+      "tapicería de piel"
+    ]
+  },
+  "tela": {
+    "terminos": [
+      "tela",
+      "asiento de tela",
+      "tapicería de tela"
+    ]
+  },
+  "manchas": {
+    "terminos": [
+      "mancha",
+      "manchas",
+      "suciedad pegada",
+      "derrame",
+      "derramado",
+      "está manchado",
+      "esta manchado"
+    ]
+  },
+  "olores": {
+    "terminos": [
+      "olor",
+      "mal olor",
+      "huele feo",
+      "huele mal",
+      "apestoso",
+      "olor raro",
+      "olor a humedad",
+      "olor a cigarro",
+      "olor a mascota"
+    ]
+  },
+  "motor": {
+    "terminos": [
+      "motor",
+      "maquina",
+      "máquina",
+      "compartimento del motor",
+      "cofre por dentro",
+      "motor sucio"
+    ]
+  },
+  "motorVapor": {
+    "terminos": [
+      "motor con vapor",
+      "lavado a vapor",
+      "detallado a vapor",
+      "vapor en motor"
+    ]
+  },
+  "motorAgua": {
+    "terminos": [
+      "lavado de motor con agua",
+      "motor con agua",
+      "lavado de maquina",
+      "lavado de máquina"
+    ]
+  },
+  "chasis": {
+    "terminos": [
+      "chasis",
+      "bajos",
+      "parte baja",
+      "parte de abajo",
+      "debajo del carro",
+      "abajo del carro",
+      "abajo de la camioneta"
+    ]
+  },
+  "faros": {
+    "terminos": [
+      "faros",
+      "luces delanteras",
+      "micas",
+      "micas de faros",
+      "faros amarillos",
+      "faros opacos"
+    ]
+  },
+  "vidrios": {
+    "terminos": [
+      "vidrios",
+      "cristales",
+      "parabrisas",
+      "ventanas",
+      "vidrios del carro"
+    ]
+  },
+  "lluviaAcida": {
+    "terminos": [
+      "lluvia acida",
+      "lluvia ácida",
+      "marcas de agua",
+      "sarro",
+      "gotas marcadas",
+      "manchas de agua"
+    ]
+  },
+  "rines": {
+    "terminos": [
+      "rines",
+      "aros",
+      "ruedas",
+      "rines sucios",
+      "rines manchados"
+    ]
+  },
+  "llantas": {
+    "terminos": [
+      "llantas",
+      "neumaticos",
+      "neumáticos",
+      "gomas"
+    ]
+  },
+  "proteccion": {
+    "terminos": [
+      "proteger",
+      "proteccion",
+      "protección",
+      "cuidar",
+      "conservar",
+      "mantener",
+      "que dure",
+      "evitar daño",
+      "evitar daños"
+    ]
+  },
+  "ventaVehiculo": {
+    "terminos": [
+      "vender",
+      "venta",
+      "lo voy a vender",
+      "quiero venderlo",
+      "lo voy a publicar",
+      "quiero anunciarlo",
+      "quiero sacarle fotos",
+      "quiero que se vea bien para vender"
+    ]
+  },
+  "presupuesto": {
+    "bajo": [
+      "barato",
+      "económico",
+      "economico",
+      "algo barato",
+      "lo más barato",
+      "lo mas barato",
+      "no tengo mucho",
+      "traigo poco presupuesto",
+      "algo sencillo"
+    ],
+    "medio": [
+      "algo bueno pero no tan caro",
+      "precio medio",
+      "algo equilibrado",
+      "algo intermedio"
+    ],
+    "alto": [
+      "quiero lo mejor",
+      "quiero lo más completo",
+      "quiero lo mas completo",
+      "no importa el precio",
+      "quiero máxima protección",
+      "quiero maxima proteccion"
+    ]
+  },
+  "preguntasPrecio": {
+    "terminos": [
+      "cuanto cuesta",
+      "cuánto cuesta",
+      "cuanto sale",
+      "cuánto sale",
+      "cuanto vale",
+      "cuánto vale",
+      "precio",
+      "precios",
+      "costo",
+      "costos",
+      "cuanto cobran",
+      "cuánto cobran",
+      "en cuanto anda",
+      "en cuánto anda",
+      "que precio tiene",
+      "qué precio tiene"
+    ]
+  },
+  "preguntasAgenda": {
+    "terminos": [
+      "quiero agendar",
+      "quiero cita",
+      "quiero una cita",
+      "quiero reservar",
+      "hay lugar",
+      "hay horario",
+      "cuando tienen espacio",
+      "cuándo tienen espacio",
+      "cuando puedo ir",
+      "a que hora puedo ir"
+    ]
+  },
+  "preguntasUbicacion": {
+    "terminos": [
+      "donde estan",
+      "dónde están",
+      "donde se ubican",
+      "direccion",
+      "dirección",
+      "ubicacion",
+      "ubicación",
+      "como llego",
+      "cómo llego",
+      "mandame la ubicacion",
+      "mándame la ubicación"
+    ]
+  },
+  "preguntasContacto": {
+    "terminos": [
+      "telefono",
+      "teléfono",
+      "numero",
+      "número",
+      "whatsapp",
+      "correo",
+      "email",
+      "instagram",
+      "facebook",
+      "como contacto"
+    ]
+  },
+  "preguntasDueno": {
+    "terminos": [
+      "quien es el dueño",
+      "quién es el dueño",
+      "de quien es pmc",
+      "quien es el propietario",
+      "quién es el propietario",
+      "quien fundo pmc",
+      "quién fundó pmc"
+    ]
+  },
+  "saludos": {
+    "terminos": [
+      "hola",
+      "holaa",
+      "holaaa",
+      "buenas",
+      "buen dia",
+      "buen día",
+      "buenas tardes",
+      "buenas noches",
+      "que tal",
+      "qué tal",
+      "hey",
+      "ey",
+      "ola",
+      "holi",
+      "que onda",
+      "qué onda"
+    ]
+  },
+  "despedidas": {
+    "terminos": [
+      "gracias",
+      "muchas gracias",
+      "va gracias",
+      "ok gracias",
+      "sale gracias",
+      "nos vemos",
+      "hasta luego",
+      "bye",
+      "adios",
+      "adiós",
+      "ya estuvo",
+      "eso es todo"
+    ]
+  },
+  "afirmaciones": {
+    "terminos": [
+      "si",
+      "sí",
+      "va",
+      "ok",
+      "okay",
+      "dale",
+      "sale",
+      "perfecto",
+      "claro",
+      "simón",
+      "simon",
+      "aja",
+      "ajá"
+    ]
+  },
+  "negaciones": {
+    "terminos": [
+      "no",
+      "nel",
+      "nop",
+      "no gracias",
+      "mejor no",
+      "todavia no",
+      "todavía no"
+    ]
+  },
+  "dudas": {
+    "terminos": [
+      "no se",
+      "no sé",
+      "no estoy seguro",
+      "no tengo idea",
+      "tu dime",
+      "recomiendame",
+      "recomiéndame",
+      "que me conviene",
+      "qué me conviene",
+      "cual me conviene",
+      "cuál me conviene"
+    ]
+  },
+  "coloquialMexico": {
+    "terminos": {
+      "chido": "bueno o atractivo",
+      "padre": "bueno o atractivo",
+      "perron": "muy bueno o llamativo",
+      "perrón": "muy bueno o llamativo",
+      "nave": "vehículo",
+      "troca": "pickup o camioneta",
+      "lana": "dinero",
+      "feria": "dinero",
+      "barato": "bajo costo",
+      "carito": "precio percibido como alto",
+      "machin": "mucho o intensamente",
+      "machín": "mucho o intensamente",
+      "bien sucio": "muy sucio",
+      "bien rayado": "muy rayado",
+      "bien opaco": "muy opaco",
+      "quedarlo chido": "mejorar apariencia",
+      "dejarlo al cien": "mejorar mucho la apariencia",
+      "al cien": "en muy buen estado visual",
+      "darle amor": "dar mantenimiento o mejorar apariencia"
+    },
+    "regla": "Decua puede entender estas expresiones, pero debe responder de forma profesional y natural sin exagerar el uso de jerga."
+  },
+  "erroresOrtograficosComunes": {
+    "vehiculo": [
+      "veiculo",
+      "vehiculo",
+      "veiculo"
+    ],
+    "ceramico": [
+      "seramico",
+      "ceramiko",
+      "ceramik",
+      "seramik"
+    ],
+    "pulido": [
+      "pulido",
+      "pulir",
+      "pulidoo",
+      "pulado"
+    ],
+    "correccion": [
+      "coreccion",
+      "correcion",
+      "correcsion"
+    ],
+    "proteccion": [
+      "protecion",
+      "protecsion",
+      "protecction"
+    ],
+    "lavado": [
+      "labado",
+      "lavdo",
+      "lavadoo"
+    ],
+    "motor": [
+      "motro",
+      "motr",
+      "motorrr"
+    ],
+    "interior": [
+      "interiro",
+      "interio",
+      "interioor"
+    ],
+    "agenda": [
+      "ajenda",
+      "agendarrr",
+      "agnda"
+    ],
+    "precio": [
+      "presio",
+      "prezio",
+      "preciosss"
+    ]
+  },
+  "abreviaciones": {
+    "q": "que",
+    "k": "que",
+    "xq": "porque",
+    "pq": "porque",
+    "xfa": "por favor",
+    "xfavor": "por favor",
+    "xfaavor": "por favor",
+    "tmb": "tambien",
+    "tamb": "tambien",
+    "dnd": "donde",
+    "cuanto": "cuánto",
+    "info": "informacion",
+    "cotiz": "cotizacion",
+    "cot": "cotizacion",
+    "aprox": "aproximadamente",
+    "hrs": "horas",
+    "min": "minutos"
+  },
+  "frasesCortas": {
+    "rayones": {
+      "entradas": [
+        "rayones",
+        "rayado",
+        "tiene rayas"
+      ],
+      "interpretacion": "cliente pregunta por defectos de pintura"
+    },
+    "ceramico": {
+      "entradas": [
+        "ceramico",
+        "ceramic",
+        "coating"
+      ],
+      "interpretacion": "cliente quiere información sobre protección cerámica"
+    },
+    "precio": {
+      "entradas": [
+        "precio",
+        "cuanto",
+        "cuánto"
+      ],
+      "interpretacion": "cliente quiere conocer costo dentro del contexto actual"
+    },
+    "agenda": {
+      "entradas": [
+        "agenda",
+        "cita",
+        "reservar"
+      ],
+      "interpretacion": "cliente quiere iniciar proceso de agenda"
+    },
+    "ubicacion": {
+      "entradas": [
+        "ubicacion",
+        "donde",
+        "mapa"
+      ],
+      "interpretacion": "cliente busca ubicación"
+    },
+    "motor": {
+      "entradas": [
+        "motor",
+        "maquina"
+      ],
+      "interpretacion": "cliente pregunta por limpieza o cuidado del motor"
+    }
+  },
+  "contextoConversacional": {
+    "reglas": [
+      "si el usuario escribe una frase corta, usar el contexto de mensajes anteriores",
+      "si pregunta cuánto cuesta después de una recomendación, usar los servicios recomendados previamente",
+      "si dice sí después de una pregunta, continuar la conversación anterior",
+      "si dice no después de una recomendación, ofrecer otra opción solo si tiene sentido",
+      "si menciona otro vehículo, actualizar el contexto",
+      "si cambia de tema dentro de PMC, actualizar la intención",
+      "si pregunta algo ambiguo, pedir aclaración"
+    ],
+    "ejemplos": [
+      {
+        "conversacion": [
+          "Tengo un Aveo 2018",
+          "Tiene rayones",
+          "¿Cuánto cuesta?"
+        ],
+        "interpretacion": "La última pregunta se refiere al servicio recomendado para los rayones del Aveo 2018."
+      },
+      {
+        "conversacion": [
+          "Quiero un cerámico",
+          "¿Cuál me recomiendas?",
+          "El Gold",
+          "¿Y cuánto sale?"
+        ],
+        "interpretacion": "La última pregunta se refiere al precio de Ceramic Gold."
+      }
+    ]
+  },
+  "tonoDecua": {
+    "caracteristicas": [
+      "amable",
+      "profesional",
+      "claro",
+      "cercano",
+      "útil",
+      "sin presión comercial",
+      "sin lenguaje excesivamente técnico"
+    ],
+    "puedeUsar": [
+      "Perfecto",
+      "Claro",
+      "Entiendo",
+      "Puedo ayudarte",
+      "Si quieres",
+      "Por lo que me cuentas",
+      "En ese caso",
+      "Te puedo mostrar"
+    ],
+    "evitar": [
+      "Obviamente",
+      "Eso está facilísimo",
+      "Tu carro está muy viejo",
+      "Eso está horrible",
+      "Tienes que comprar",
+      "Necesitas gastar",
+      "Eso sale carísimo",
+      "No sabes cuidar tu carro"
+    ]
+  },
+  "respuestasPorIntencion": {
+    "noEntendi": [
+      "No estoy seguro de haber entendido. ¿Me puedes contar un poco más?",
+      "Puedo ayudarte, pero necesito un poco más de contexto.",
+      "¿Te refieres a pintura, interior, protección, motor, chasis, faros o vidrios?"
+    ],
+    "agradecimiento": [
+      "Con gusto 👋",
+      "Para eso estoy. Si necesitas algo más sobre PMC o tu vehículo, dime.",
+      "¡Con gusto! Cuando quieras seguimos revisando opciones."
+    ],
+    "usuarioDudoso": [
+      "No hay problema. Podemos ir paso por paso.",
+      "Si quieres, primero dime qué vehículo tienes y qué quieres mejorar.",
+      "Puedo ayudarte a comparar opciones sin que tengas que decidir todavía."
+    ]
+  },
+  "variacionesPreguntas": {
+    "queMeRecomiendas": [
+      "que me recomiendas",
+      "qué me recomiendas",
+      "tu que harias",
+      "tú qué harías",
+      "que le pondrias",
+      "qué le pondrías",
+      "que le hago",
+      "qué le hago",
+      "que conviene",
+      "qué conviene"
+    ],
+    "queIncluye": [
+      "que incluye",
+      "qué incluye",
+      "que trae",
+      "qué trae",
+      "que hacen",
+      "qué hacen",
+      "que le hacen al carro",
+      "qué le hacen al carro"
+    ],
+    "cuantoDura": [
+      "cuanto dura",
+      "cuánto dura",
+      "cuanto aguanta",
+      "cuánto aguanta",
+      "por cuanto tiempo",
+      "por cuánto tiempo"
+    ],
+    "valeLaPena": [
+      "vale la pena",
+      "si conviene",
+      "sí conviene",
+      "sirve",
+      "realmente funciona",
+      "esta bueno",
+      "está bueno"
+    ]
+  },
+  "malUso": {
+    "respuesta": "Estás haciendo un uso inadecuado del chat. Decua está diseñado para ayudarte con temas relacionados con PMC Auto Detailing. Por favor, verifica tu pregunta.",
+    "reglas": [
+      "no repetir insultos",
+      "no entrar en discusión",
+      "no responder agresivamente",
+      "no personalizar la ofensa",
+      "redirigir a temas de PMC"
+    ]
+  },
+  "fueraDeTema": {
+    "respuesta": "Esa pregunta no parece estar relacionada con PMC Auto Detailing. Puedo ayudarte con servicios, precios, vehículos, citas, ubicación y cuidado automotriz.",
+    "ejemplos": [
+      "preguntas políticas",
+      "tareas escolares no relacionadas",
+      "deportes sin relación con PMC",
+      "recetas",
+      "clima general",
+      "noticias",
+      "temas de entretenimiento"
+    ]
+  },
+  "reglasFinales": {
+    "siEntiendeColoquialismo": "Responder al significado y no explicar que detectó un coloquialismo.",
+    "siHayErrorOrtografico": "No corregir al usuario salvo que sea necesario para aclarar.",
+    "siHayAbreviacion": "Interpretarla silenciosamente.",
+    "siHayDobleSentido": "Usar el contexto automotriz si es razonable.",
+    "siHayAmbiguedad": "Preguntar antes de asumir.",
+    "siHayInsulto": "Aplicar regla de mal uso.",
+    "siEsFueraDeTema": "Aplicar respuesta fuera de tema.",
+    "siPreguntaDentroDePMC": "Continuar conversación normalmente."
+  }
+}

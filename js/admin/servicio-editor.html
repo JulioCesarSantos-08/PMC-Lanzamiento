@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Editor de servicio | Administración PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Preparando editor
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+                        <i data-lucide="x"></i>
+                    </button>
+
+                </div>
+
+                <div class="admin-sidebar__profile">
+
+                    <div class="admin-sidebar__avatar">
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt=""
+                            id="adminAvatar"
+                            hidden
+                        >
+
+                        <span id="adminInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="admin-sidebar__profile-info">
+
+                        <span>
+                            Sesión administrativa
+                        </span>
+
+                        <strong id="adminName">
+                            Administrador
+                        </strong>
+
+                        <small id="adminEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="financeButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a sistema de Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span id="editorModeLabel">
+                            Catálogo PMC
+                        </span>
+
+                        <strong id="editorHeaderTitle">
+                            Nuevo servicio
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <a
+                        href="servicios.html"
+                        class="admin-header__action"
+                    >
+
+                        <i data-lucide="arrow-left"></i>
+
+                        <span>
+                            Volver
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="#"
+                        class="admin-header__action"
+                        id="servicePreviewButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver servicio
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-editor-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            EDITOR DE CATÁLOGO
+
+                        </div>
+
+                        <h1 id="editorTitle">
+                            Crear servicio
+                        </h1>
+
+                        <p id="editorSubtitle">
+                            Agrega la información que aparecerá en el catálogo público y en el sistema de citas.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-editor-heading__actions">
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="saveDraftButton"
+                        >
+
+                            <i data-lucide="file-pen-line"></i>
+
+                            Guardar borrador
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="publishServiceButton"
+                        >
+
+                            <i data-lucide="send"></i>
+
+                            Publicar servicio
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <form
+                    class="admin-editor"
+                    id="serviceForm"
+                    novalidate
+                >
+
+                    <input
+                        type="hidden"
+                        id="serviceDocumentId"
+                    >
+
+                    <input
+                        type="hidden"
+                        id="serviceStatus"
+                        value="borrador"
+                    >
+
+                    <div class="admin-editor__main">
+
+                        <section class="admin-editor-card">
+
+                            <div class="admin-editor-card__heading">
+
+                                <div class="admin-editor-card__icon">
+                                    <i data-lucide="info"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        INFORMACIÓN GENERAL
+                                    </span>
+
+                                    <h2>
+                                        Datos principales
+                                    </h2>
+
+                                    <p>
+                                        Nombre, categoría y descripción del servicio.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-fields">
+
+                                <div class="admin-editor-field admin-editor-field--full">
+
+                                    <label for="serviceName">
+                                        Nombre del servicio
+                                        <strong>*</strong>
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="serviceName"
+                                        maxlength="100"
+                                        placeholder="Ej. Ceramic Silver"
+                                        autocomplete="off"
+                                        required
+                                    >
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceSlug">
+                                        Slug
+                                        <strong>*</strong>
+                                    </label>
+
+                                    <div class="admin-editor-input-prefix">
+
+                                        <span>
+                                            servicio/
+                                        </span>
+
+                                        <input
+                                            type="text"
+                                            id="serviceSlug"
+                                            maxlength="120"
+                                            placeholder="ceramic-silver"
+                                            autocomplete="off"
+                                            required
+                                        >
+
+                                    </div>
+
+                                    <small>
+                                        Se utiliza para identificar el servicio en la web.
+                                    </small>
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceCategory">
+                                        Categoría
+                                        <strong>*</strong>
+                                    </label>
+
+                                    <select
+                                        id="serviceCategory"
+                                        required
+                                    >
+
+                                        <option value="">
+                                            Selecciona una categoría
+                                        </option>
+
+                                        <option value="Lavado">
+                                            Lavado
+                                        </option>
+
+                                        <option value="Pintura">
+                                            Pintura
+                                        </option>
+
+                                        <option value="Protección">
+                                            Protección
+                                        </option>
+
+                                        <option value="Cerámicos">
+                                            Cerámicos
+                                        </option>
+
+                                        <option value="Interior">
+                                            Interior
+                                        </option>
+
+                                        <option value="Motor y chasis">
+                                            Motor y chasis
+                                        </option>
+
+                                        <option value="PPF">
+                                            PPF
+                                        </option>
+
+                                        <option value="Motos">
+                                            Motos
+                                        </option>
+
+                                        <option value="Otro">
+                                            Otro
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                                <div class="admin-editor-field admin-editor-field--full">
+
+                                    <label for="serviceShortDescription">
+                                        Descripción corta
+                                        <strong>*</strong>
+                                    </label>
+
+                                    <textarea
+                                        id="serviceShortDescription"
+                                        rows="3"
+                                        maxlength="240"
+                                        placeholder="Descripción breve para tarjetas y resultados del catálogo."
+                                        required
+                                    ></textarea>
+
+                                    <div class="admin-editor-character-count">
+
+                                        <span id="shortDescriptionCount">
+                                            0
+                                        </span>
+
+                                        <span>
+                                            / 240
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-editor-field admin-editor-field--full">
+
+                                    <label for="serviceDescription">
+                                        Descripción completa
+                                    </label>
+
+                                    <textarea
+                                        id="serviceDescription"
+                                        rows="5"
+                                        maxlength="1200"
+                                        placeholder="Explica con mayor detalle qué ofrece este servicio."
+                                    ></textarea>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-editor-card">
+
+                            <div class="admin-editor-card__heading">
+
+                                <div class="admin-editor-card__icon">
+                                    <i data-lucide="calendar-clock"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        AGENDA
+                                    </span>
+
+                                    <h2>
+                                        Duración y orden
+                                    </h2>
+
+                                    <p>
+                                        Estos valores se utilizan para agenda y organización del catálogo.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-fields">
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceDuration">
+                                        Duración estimada
+                                    </label>
+
+                                    <div class="admin-editor-input-suffix">
+
+                                        <input
+                                            type="number"
+                                            id="serviceDuration"
+                                            min="30"
+                                            max="2880"
+                                            step="30"
+                                            placeholder="120"
+                                        >
+
+                                        <span>
+                                            minutos
+                                        </span>
+
+                                    </div>
+
+                                    <small>
+                                        Se utilizará para calcular horarios disponibles.
+                                    </small>
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceOrder">
+                                        Orden en catálogo
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        id="serviceOrder"
+                                        min="1"
+                                        max="999"
+                                        step="1"
+                                        placeholder="1"
+                                    >
+
+                                    <small>
+                                        Los números menores aparecen primero.
+                                    </small>
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceWarranty">
+                                        Garantía
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="serviceWarranty"
+                                        maxlength="120"
+                                        placeholder="Ej. 1 año"
+                                    >
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="servicePriceFrom">
+                                        Precio desde
+                                    </label>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>
+                                            $
+                                        </span>
+
+                                        <input
+                                            type="number"
+                                            id="servicePriceFrom"
+                                            min="0"
+                                            step="1"
+                                            placeholder="6500"
+                                        >
+
+                                    </div>
+
+                                    <small>
+                                        Se puede calcular automáticamente con los precios por vehículo.
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-editor-card">
+
+                            <div class="admin-editor-card__heading">
+
+                                <div class="admin-editor-card__icon">
+                                    <i data-lucide="circle-dollar-sign"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PRECIOS
+                                    </span>
+
+                                    <h2>
+                                        Precio por tipo de vehículo
+                                    </h2>
+
+                                    <p>
+                                        Puedes colocar un precio fijo o un rango mínimo y máximo.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-price-table">
+
+                                <div class="admin-price-table__header">
+
+                                    <span>
+                                        Vehículo
+                                    </span>
+
+                                    <span>
+                                        Desde
+                                    </span>
+
+                                    <span>
+                                        Hasta
+                                    </span>
+
+                                </div>
+
+                                <div class="admin-price-row">
+
+                                    <div class="admin-price-row__vehicle">
+
+                                        <i data-lucide="car"></i>
+
+                                        <div>
+
+                                            <strong>
+                                                Hatchback
+                                            </strong>
+
+                                            <span>
+                                                Vehículo compacto
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceHatchbackMin"
+                                            min="0"
+                                            step="1"
+                                            placeholder="0"
+                                        >
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceHatchbackMax"
+                                            min="0"
+                                            step="1"
+                                            placeholder="Opcional"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-price-row">
+
+                                    <div class="admin-price-row__vehicle">
+
+                                        <i data-lucide="car-front"></i>
+
+                                        <div>
+
+                                            <strong>
+                                                Sedán
+                                            </strong>
+
+                                            <span>
+                                                Automóvil sedán
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceSedanMin"
+                                            min="0"
+                                            step="1"
+                                            placeholder="0"
+                                        >
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceSedanMax"
+                                            min="0"
+                                            step="1"
+                                            placeholder="Opcional"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-price-row">
+
+                                    <div class="admin-price-row__vehicle">
+
+                                        <i data-lucide="car-front"></i>
+
+                                        <div>
+
+                                            <strong>
+                                                SUV
+                                            </strong>
+
+                                            <span>
+                                                Camioneta cerrada
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceSuvMin"
+                                            min="0"
+                                            step="1"
+                                            placeholder="0"
+                                        >
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceSuvMax"
+                                            min="0"
+                                            step="1"
+                                            placeholder="Opcional"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-price-row">
+
+                                    <div class="admin-price-row__vehicle">
+
+                                        <i data-lucide="truck"></i>
+
+                                        <div>
+
+                                            <strong>
+                                                Pick-up
+                                            </strong>
+
+                                            <span>
+                                                Camioneta con caja
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="pricePickupMin"
+                                            min="0"
+                                            step="1"
+                                            placeholder="0"
+                                        >
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="pricePickupMax"
+                                            min="0"
+                                            step="1"
+                                            placeholder="Opcional"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-price-row">
+
+                                    <div class="admin-price-row__vehicle">
+
+                                        <i data-lucide="bus-front"></i>
+
+                                        <div>
+
+                                            <strong>
+                                                Camioneta
+                                            </strong>
+
+                                            <span>
+                                                Vehículos de mayor tamaño
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceVanMin"
+                                            min="0"
+                                            step="1"
+                                            placeholder="0"
+                                        >
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceVanMax"
+                                            min="0"
+                                            step="1"
+                                            placeholder="Opcional"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-price-row">
+
+                                    <div class="admin-price-row__vehicle">
+
+                                        <i data-lucide="circle-ellipsis"></i>
+
+                                        <div>
+
+                                            <strong>
+                                                Otro
+                                            </strong>
+
+                                            <span>
+                                                Precio general opcional
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceOtherMin"
+                                            min="0"
+                                            step="1"
+                                            placeholder="0"
+                                        >
+
+                                    </div>
+
+                                    <div class="admin-editor-input-prefix admin-editor-input-prefix--money">
+
+                                        <span>$</span>
+
+                                        <input
+                                            type="number"
+                                            id="priceOtherMax"
+                                            min="0"
+                                            step="1"
+                                            placeholder="Opcional"
+                                        >
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-editor-card">
+
+                            <div class="admin-editor-card__heading">
+
+                                <div class="admin-editor-card__icon">
+                                    <i data-lucide="list-checks"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        CONTENIDO
+                                    </span>
+
+                                    <h2>
+                                        Qué incluye el servicio
+                                    </h2>
+
+                                    <p>
+                                        Escribe un punto por línea.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-sections-grid">
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceIncludes">
+                                        Incluye
+                                    </label>
+
+                                    <textarea
+                                        id="serviceIncludes"
+                                        rows="8"
+                                        placeholder="Lavado exterior&#10;Aspirado interior&#10;Limpieza de componentes"
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceCleaning">
+                                        Limpieza
+                                    </label>
+
+                                    <textarea
+                                        id="serviceCleaning"
+                                        rows="8"
+                                        placeholder="Lavado Luxury&#10;Limpieza de rines&#10;Lavado de motor"
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceProcesses">
+                                        Procesos
+                                    </label>
+
+                                    <textarea
+                                        id="serviceProcesses"
+                                        rows="8"
+                                        placeholder="Descontaminación química&#10;Corrección de pintura&#10;Abrillantado"
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="admin-editor-field">
+
+                                    <label for="serviceProtection">
+                                        Protección
+                                    </label>
+
+                                    <textarea
+                                        id="serviceProtection"
+                                        rows="8"
+                                        placeholder="Recubrimiento cerámico&#10;Sellador de vidrios&#10;Hidratación de plásticos"
+                                    ></textarea>
+
+                                </div>
+
+                                <div class="admin-editor-field admin-editor-field--full">
+
+                                    <label for="serviceOptions">
+                                        Opciones o variantes
+                                    </label>
+
+                                    <textarea
+                                        id="serviceOptions"
+                                        rows="6"
+                                        placeholder="Medio Frente&#10;Full Front&#10;Full PPF"
+                                    ></textarea>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-editor-card">
+
+                            <div class="admin-editor-card__heading">
+
+                                <div class="admin-editor-card__icon">
+                                    <i data-lucide="images"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        MULTIMEDIA
+                                    </span>
+
+                                    <h2>
+                                        Imágenes y resultados
+                                    </h2>
+
+                                    <p>
+                                        Administra la portada y galería visual del servicio.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-media">
+
+                                <div class="admin-editor-cover">
+
+                                    <div
+                                        class="admin-editor-cover__preview"
+                                        id="coverPreview"
+                                    >
+
+                                        <div
+                                            class="admin-editor-cover__empty"
+                                            id="coverPreviewEmpty"
+                                        >
+
+                                            <i data-lucide="image"></i>
+
+                                            <strong>
+                                                Portada del servicio
+                                            </strong>
+
+                                            <span>
+                                                Todavía no hay imagen
+                                            </span>
+
+                                        </div>
+
+                                        <img
+                                            src=""
+                                            alt="Vista previa"
+                                            id="coverPreviewImage"
+                                            hidden
+                                        >
+
+                                    </div>
+
+                                    <div class="admin-editor-cover__controls">
+
+                                        <div class="admin-editor-field">
+
+                                            <label for="serviceCoverUrl">
+                                                URL de portada
+                                            </label>
+
+                                            <input
+                                                type="url"
+                                                id="serviceCoverUrl"
+                                                placeholder="https://..."
+                                                autocomplete="off"
+                                            >
+
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            class="admin-media-upload"
+                                            id="uploadCoverButton"
+                                        >
+
+                                            <i data-lucide="cloud-upload"></i>
+
+                                            Subir portada
+
+                                        </button>
+
+                                        <small>
+                                            La carga directa de archivos se conectará posteriormente con Cloudinary.
+                                        </small>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-editor-field admin-editor-field--full">
+
+                                    <label for="serviceGalleryUrls">
+                                        Galería
+                                    </label>
+
+                                    <textarea
+                                        id="serviceGalleryUrls"
+                                        rows="6"
+                                        placeholder="Una URL de imagen por línea"
+                                    ></textarea>
+
+                                    <small>
+                                        Puedes agregar fotografías de proceso, resultados o antes y después.
+                                    </small>
+
+                                </div>
+
+                                <div class="admin-editor-gallery-preview">
+
+                                    <div class="admin-editor-gallery-preview__heading">
+
+                                        <strong>
+                                            Vista previa de galería
+                                        </strong>
+
+                                        <span id="galleryImageCount">
+                                            0 imágenes
+                                        </span>
+
+                                    </div>
+
+                                    <div
+                                        class="admin-editor-gallery-preview__grid"
+                                        id="galleryPreview"
+                                    >
+
+                                        <div class="admin-editor-gallery-preview__empty">
+
+                                            <i data-lucide="images"></i>
+
+                                            <span>
+                                                Agrega imágenes para visualizar la galería.
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                    <aside class="admin-editor__sidebar">
+
+                        <section class="admin-editor-card admin-editor-card--sticky">
+
+                            <div class="admin-editor-card__heading admin-editor-card__heading--compact">
+
+                                <div class="admin-editor-card__icon">
+                                    <i data-lucide="eye"></i>
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        PUBLICACIÓN
+                                    </span>
+
+                                    <h2>
+                                        Estado
+                                    </h2>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-settings">
+
+                                <div class="admin-editor-setting">
+
+                                    <div>
+
+                                        <strong>
+                                            Servicio activo
+                                        </strong>
+
+                                        <span>
+                                            Permite utilizarlo en el sistema.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-switch">
+
+                                        <input
+                                            type="checkbox"
+                                            id="serviceActive"
+                                            checked
+                                        >
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+                                <div class="admin-editor-setting">
+
+                                    <div>
+
+                                        <strong>
+                                            Destacado
+                                        </strong>
+
+                                        <span>
+                                            Puede mostrarse en la página principal.
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-switch">
+
+                                        <input
+                                            type="checkbox"
+                                            id="serviceFeatured"
+                                        >
+
+                                        <span></span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-publication-status">
+
+                                <span>
+                                    Estado actual
+                                </span>
+
+                                <div
+                                    class="admin-editor-publication-status__badge is-draft"
+                                    id="publicationStatusBadge"
+                                >
+
+                                    <span></span>
+
+                                    <strong id="publicationStatusText">
+                                        Borrador
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-preview-card">
+
+                                <div class="admin-editor-preview-card__media">
+
+                                    <img
+                                        src=""
+                                        alt=""
+                                        id="editorPreviewImage"
+                                        hidden
+                                    >
+
+                                    <div
+                                        class="admin-editor-preview-card__placeholder"
+                                        id="editorPreviewPlaceholder"
+                                    >
+
+                                        <i data-lucide="sparkles"></i>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="admin-editor-preview-card__content">
+
+                                    <span id="editorPreviewCategory">
+                                        Categoría
+                                    </span>
+
+                                    <h3 id="editorPreviewName">
+                                        Nuevo servicio
+                                    </h3>
+
+                                    <p id="editorPreviewDescription">
+                                        La descripción del servicio aparecerá aquí.
+                                    </p>
+
+                                    <div class="admin-editor-preview-card__bottom">
+
+                                        <div>
+
+                                            <small>
+                                                Desde
+                                            </small>
+
+                                            <strong id="editorPreviewPrice">
+                                                Cotizar
+                                            </strong>
+
+                                        </div>
+
+                                        <i data-lucide="arrow-up-right"></i>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-editor-sidebar-actions">
+
+                                <button
+                                    type="submit"
+                                    class="button button-primary"
+                                    id="saveServiceButton"
+                                >
+
+                                    <i data-lucide="save"></i>
+
+                                    Guardar cambios
+
+                                </button>
+
+                                <a
+                                    href="servicios.html"
+                                    class="button button-secondary"
+                                >
+                                    Cancelar
+                                </a>
+
+                            </div>
+
+                            <div
+                                class="admin-editor-danger-zone"
+                                id="editorDangerZone"
+                                hidden
+                            >
+
+                                <span>
+                                    ZONA DE PELIGRO
+                                </span>
+
+                                <button
+                                    type="button"
+                                    id="editorDeleteButton"
+                                >
+
+                                    <i data-lucide="trash-2"></i>
+
+                                    Eliminar servicio
+
+                                </button>
+
+                            </div>
+
+                        </section>
+
+                    </aside>
+
+                </form>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Editor de catálogo
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="editorDeleteModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="editorDeleteBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="editorDeleteClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-modal__danger-icon">
+
+                <i data-lucide="trash-2"></i>
+
+            </div>
+
+            <span class="admin-modal__eyebrow">
+                ELIMINAR SERVICIO
+            </span>
+
+            <h2>
+                ¿Eliminar permanentemente?
+            </h2>
+
+            <p>
+                El servicio
+                <strong id="editorDeleteName">
+                    seleccionado
+                </strong>
+                será eliminado de Firestore.
+            </p>
+
+            <div class="admin-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="editorCancelDelete"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-danger-button"
+                    id="editorConfirmDelete"
+                >
+
+                    <i data-lucide="trash-2"></i>
+
+                    Eliminar
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes permisos.
+            </h1>
+
+            <p>
+                Esta sección está disponible únicamente para administradores de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span id="adminToastText">
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="servicio-editor.js"
+    ></script>
+
+</body>
+
+</html>

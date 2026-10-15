@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Citas | Administración PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando agenda
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="admin-sidebar__profile">
+
+                    <div class="admin-sidebar__avatar">
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt=""
+                            id="adminAvatar"
+                            hidden
+                        >
+
+                        <span id="adminInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="admin-sidebar__profile-info">
+
+                        <span>
+                            Sesión administrativa
+                        </span>
+
+                        <strong id="adminName">
+                            Administrador
+                        </strong>
+
+                        <small id="adminEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                        <small
+                            id="sidebarAppointmentsBadge"
+                            hidden
+                        >
+                            0
+                        </small>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="recibos.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Recibos y pagos
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="financeButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a sistema de Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span>
+                            Operación PMC
+                        </span>
+
+                        <strong>
+                            Citas
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <div class="admin-header__date">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="adminCurrentDate">
+                            Hoy
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="admin-header__action"
+                        id="newAppointmentButton"
+                    >
+
+                        <i data-lucide="calendar-plus-2"></i>
+
+                        <span>
+                            Nueva cita
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            AGENDA
+
+                        </div>
+
+                        <h1>
+                            Citas
+                        </h1>
+
+                        <p>
+                            Consulta las reservas de PMC, revisa cliente,
+                            vehículo y servicio, confirma citas y da
+                            seguimiento a cada visita.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-page-heading__actions">
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="todayAppointmentsButton"
+                        >
+
+                            <i data-lucide="calendar-check-2"></i>
+
+                            Ver hoy
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="newAppointmentButtonHero"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Nueva cita
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-appointments-summary">
+
+                    <article class="admin-appointments-summary__card">
+
+                        <div class="admin-appointments-summary__icon">
+
+                            <i data-lucide="calendar-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Hoy
+                            </span>
+
+                            <strong id="appointmentsTodayCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Citas del día
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-appointments-summary__card">
+
+                        <div class="admin-appointments-summary__icon">
+
+                            <i data-lucide="clock-3"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Agendadas
+                            </span>
+
+                            <strong id="appointmentsScheduledCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Por confirmar
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-appointments-summary__card">
+
+                        <div class="admin-appointments-summary__icon">
+
+                            <i data-lucide="badge-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Confirmadas
+                            </span>
+
+                            <strong id="appointmentsConfirmedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Próximas visitas
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-appointments-summary__card">
+
+                        <div class="admin-appointments-summary__icon">
+
+                            <i data-lucide="car-front"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                En proceso
+                            </span>
+
+                            <strong id="appointmentsProgressCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Vehículos recibidos
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-appointments-summary__card">
+
+                        <div class="admin-appointments-summary__icon">
+
+                            <i data-lucide="ban"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Canceladas
+                            </span>
+
+                            <strong id="appointmentsCancelledCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Historial
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="admin-panel admin-appointments-panel">
+
+                    <div class="admin-appointments-toolbar">
+
+                        <div class="admin-appointments-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input
+                                type="search"
+                                id="appointmentSearch"
+                                placeholder="Buscar cliente, vehículo o servicio..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <div class="admin-appointments-filters">
+
+                            <label class="admin-appointments-select">
+
+                                <i data-lucide="activity"></i>
+
+                                <select id="appointmentStatusFilter">
+
+                                    <option value="todos">
+                                        Todos los estados
+                                    </option>
+
+                                    <option value="agendada">
+                                        Agendadas
+                                    </option>
+
+                                    <option value="confirmada">
+                                        Confirmadas
+                                    </option>
+
+                                    <option value="recibido">
+                                        Recibidas
+                                    </option>
+
+                                    <option value="en_proceso">
+                                        En proceso
+                                    </option>
+
+                                    <option value="terminado">
+                                        Terminadas
+                                    </option>
+
+                                    <option value="entregado">
+                                        Entregadas
+                                    </option>
+
+                                    <option value="cancelada">
+                                        Canceladas
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="admin-appointments-select">
+
+                                <i data-lucide="calendar-range"></i>
+
+                                <select id="appointmentDateFilter">
+
+                                    <option value="todas">
+                                        Todas las fechas
+                                    </option>
+
+                                    <option value="hoy">
+                                        Hoy
+                                    </option>
+
+                                    <option value="manana">
+                                        Mañana
+                                    </option>
+
+                                    <option value="proximos7">
+                                        Próximos 7 días
+                                    </option>
+
+                                    <option value="pasadas">
+                                        Fechas pasadas
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="admin-appointments-date">
+
+                                <i data-lucide="calendar"></i>
+
+                                <input
+                                    type="date"
+                                    id="appointmentSpecificDate"
+                                    aria-label="Filtrar por fecha específica"
+                                >
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-appointments-results">
+
+                        <div>
+
+                            <span>
+                                Mostrando
+                            </span>
+
+                            <strong id="appointmentsResultsCount">
+                                0 citas
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="resetAppointmentFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="admin-appointments-list"
+                        id="appointmentsList"
+                    >
+
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+
+                    </div>
+
+                    <div
+                        class="admin-empty"
+                        id="appointmentsEmpty"
+                        hidden
+                    >
+
+                        <div class="admin-empty__icon">
+
+                            <i data-lucide="calendar-x-2"></i>
+
+                        </div>
+
+                        <h3>
+                            No encontramos citas
+                        </h3>
+
+                        <p>
+                            No hay reservas que coincidan con los filtros seleccionados.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="appointmentsEmptyReset"
+                        >
+
+                            Limpiar filtros
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Administración de citas
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal admin-appointment-modal"
+        id="appointmentDetailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="appointmentDetailsBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-appointment-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="appointmentDetailsClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-appointment-modal__heading">
+
+                <div class="admin-appointment-modal__icon">
+
+                    <i data-lucide="calendar-days"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        DETALLE DE CITA
+                    </span>
+
+                    <h2 id="appointmentDetailsTitle">
+                        Cita PMC
+                    </h2>
+
+                    <p id="appointmentDetailsFolio">
+                        Identificador
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-appointment-modal__status">
+
+                <span>
+                    Estado actual
+                </span>
+
+                <strong
+                    class="admin-status"
+                    id="appointmentDetailsStatus"
+                >
+                    Agendada
+                </strong>
+
+            </div>
+
+            <div class="admin-appointment-modal__grid">
+
+                <section class="admin-appointment-detail-section">
+
+                    <span class="admin-appointment-detail-section__label">
+                        CLIENTE
+                    </span>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="user-round"></i>
+
+                        <div>
+
+                            <strong id="appointmentClientName">
+                                Cliente
+                            </strong>
+
+                            <span id="appointmentClientEmail">
+                                Sin correo
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="phone"></i>
+
+                        <div>
+
+                            <strong>
+                                Teléfono
+                            </strong>
+
+                            <span id="appointmentClientPhone">
+                                No disponible
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-appointment-detail-section">
+
+                    <span class="admin-appointment-detail-section__label">
+                        VEHÍCULO
+                    </span>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="car-front"></i>
+
+                        <div>
+
+                            <strong id="appointmentVehicleName">
+                                Vehículo
+                            </strong>
+
+                            <span id="appointmentVehicleType">
+                                Sin categoría
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="palette"></i>
+
+                        <div>
+
+                            <strong>
+                                Color
+                            </strong>
+
+                            <span id="appointmentVehicleColor">
+                                No especificado
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-appointment-detail-section">
+
+                    <span class="admin-appointment-detail-section__label">
+                        SERVICIO
+                    </span>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="sparkles"></i>
+
+                        <div>
+
+                            <strong id="appointmentServiceName">
+                                Servicio PMC
+                            </strong>
+
+                            <span id="appointmentServiceDuration">
+                                Sin duración
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="circle-dollar-sign"></i>
+
+                        <div>
+
+                            <strong>
+                                Precio estimado
+                            </strong>
+
+                            <span id="appointmentEstimatedPrice">
+                                Por confirmar
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-appointment-detail-section">
+
+                    <span class="admin-appointment-detail-section__label">
+                        FECHA Y HORA
+                    </span>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="calendar"></i>
+
+                        <div>
+
+                            <strong id="appointmentDate">
+                                Sin fecha
+                            </strong>
+
+                            <span id="appointmentTime">
+                                Sin horario
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-appointment-detail">
+
+                        <i data-lucide="clock-3"></i>
+
+                        <div>
+
+                            <strong>
+                                Duración reservada
+                            </strong>
+
+                            <span id="appointmentReservedDuration">
+                                Sin duración
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+            <section
+                class="admin-appointment-notes"
+                id="appointmentNotesSection"
+                hidden
+            >
+
+                <span>
+                    NOTAS
+                </span>
+
+                <p id="appointmentNotes">
+                    Sin notas.
+                </p>
+
+            </section>
+
+            <div class="admin-appointment-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="appointmentCloseButton"
+                >
+
+                    Cerrar
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-appointment-action admin-appointment-action--confirm"
+                    id="appointmentConfirmButton"
+                    hidden
+                >
+
+                    <i data-lucide="badge-check"></i>
+
+                    Confirmar cita
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-appointment-action"
+                    id="appointmentReceiveButton"
+                    hidden
+                >
+
+                    <i data-lucide="car-front"></i>
+
+                    Recibir vehículo
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-appointment-action"
+                    id="appointmentStartButton"
+                    hidden
+                >
+
+                    <i data-lucide="play"></i>
+
+                    Iniciar trabajo
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-appointment-action"
+                    id="appointmentFinishButton"
+                    hidden
+                >
+
+                    <i data-lucide="circle-check-big"></i>
+
+                    Marcar terminado
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-appointment-action admin-appointment-action--danger"
+                    id="appointmentCancelButton"
+                    hidden
+                >
+
+                    <i data-lucide="ban"></i>
+
+                    Cancelar cita
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="cancelAppointmentModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="cancelAppointmentBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="cancelAppointmentClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-modal__danger-icon">
+
+                <i data-lucide="calendar-x-2"></i>
+
+            </div>
+
+            <span class="admin-modal__eyebrow">
+                CANCELAR CITA
+            </span>
+
+            <h2>
+                ¿Cancelar esta cita?
+            </h2>
+
+            <p>
+                La cita permanecerá en el historial, pero liberaremos su horario para nuevas reservaciones.
+            </p>
+
+            <div class="admin-cancel-appointment-reason">
+
+                <label for="cancelAppointmentReason">
+                    Motivo de cancelación
+                </label>
+
+                <textarea
+                    id="cancelAppointmentReason"
+                    rows="4"
+                    maxlength="400"
+                    placeholder="Opcional"
+                ></textarea>
+
+            </div>
+
+            <div class="admin-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelAppointmentAbort"
+                >
+                    Volver
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-danger-button"
+                    id="cancelAppointmentConfirm"
+                >
+
+                    <i data-lucide="calendar-x"></i>
+
+                    Cancelar cita
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="newAppointmentModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="newAppointmentBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-new-appointment-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="newAppointmentClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-appointment-modal__heading">
+
+                <div class="admin-appointment-modal__icon">
+
+                    <i data-lucide="calendar-plus-2"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        NUEVA CITA
+                    </span>
+
+                    <h2>
+                        Crear cita manual
+                    </h2>
+
+                    <p>
+                        Reserva un espacio desde el panel administrativo.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form
+                id="newAppointmentForm"
+                class="admin-new-appointment-form"
+            >
+
+                <div class="admin-new-appointment-form__grid">
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentClient">
+                            Cliente
+                            <strong>*</strong>
+                        </label>
+
+                        <select
+                            id="newAppointmentClient"
+                            required
+                        >
+
+                            <option value="">
+                                Selecciona un cliente
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentService">
+                            Servicio
+                            <strong>*</strong>
+                        </label>
+
+                        <select
+                            id="newAppointmentService"
+                            required
+                        >
+
+                            <option value="">
+                                Selecciona un servicio
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentVehicleBrand">
+                            Marca
+                            <strong>*</strong>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="newAppointmentVehicleBrand"
+                            maxlength="60"
+                            placeholder="Ej. Chevrolet"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentVehicleModel">
+                            Modelo
+                            <strong>*</strong>
+                        </label>
+
+                        <input
+                            type="text"
+                            id="newAppointmentVehicleModel"
+                            maxlength="60"
+                            placeholder="Ej. Aveo"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentVehicleYear">
+                            Año
+                        </label>
+
+                        <input
+                            type="number"
+                            id="newAppointmentVehicleYear"
+                            min="1950"
+                            max="2100"
+                            step="1"
+                            placeholder="2024"
+                        >
+
+                    </div>
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentVehicleType">
+                            Tipo
+                        </label>
+
+                        <select id="newAppointmentVehicleType">
+
+                            <option value="">
+                                Selecciona
+                            </option>
+
+                            <option value="hatchback">
+                                Hatchback
+                            </option>
+
+                            <option value="sedan">
+                                Sedán
+                            </option>
+
+                            <option value="suv">
+                                SUV
+                            </option>
+
+                            <option value="pickup">
+                                Pick-up
+                            </option>
+
+                            <option value="camioneta">
+                                Camioneta
+                            </option>
+
+                            <option value="otro">
+                                Otro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentDate">
+                            Fecha
+                            <strong>*</strong>
+                        </label>
+
+                        <input
+                            type="date"
+                            id="newAppointmentDate"
+                            required
+                        >
+
+                    </div>
+
+                    <div class="admin-editor-field">
+
+                        <label for="newAppointmentTime">
+                            Hora
+                            <strong>*</strong>
+                        </label>
+
+                        <select
+                            id="newAppointmentTime"
+                            required
+                        >
+
+                            <option value="">
+                                Selecciona primero una fecha
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <div class="admin-editor-field admin-editor-field--full">
+
+                        <label for="newAppointmentNotes">
+                            Notas
+                        </label>
+
+                        <textarea
+                            id="newAppointmentNotes"
+                            rows="4"
+                            maxlength="600"
+                            placeholder="Información adicional de la cita"
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-modal__actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="newAppointmentCancel"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        id="newAppointmentSubmit"
+                    >
+
+                        <i data-lucide="calendar-check-2"></i>
+
+                        Crear cita
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes permisos.
+            </h1>
+
+            <p>
+                Esta sección está disponible únicamente para administradores de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span id="adminToastText">
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="citas.js"
+    ></script>
+
+</body>
+
+</html>

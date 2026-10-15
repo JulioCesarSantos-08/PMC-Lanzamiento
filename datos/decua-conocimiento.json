@@ -1,0 +1,918 @@
+{
+  "version": "1.0.0",
+  "nombreBase": "Conocimiento automotriz y detailing para Decua",
+  "descripcion": "Base de conocimiento general para orientar conversaciones relacionadas con cuidado automotriz, detailing, estética, protección y conservación. Esta información no sustituye una inspección física ni debe utilizarse para inventar servicios o precios de PMC.",
+  "principios": {
+    "noInventarServiciosPMC": true,
+    "noInventarPreciosPMC": true,
+    "noPrometerResultadosAbsolutos": true,
+    "noDiagnosticarMecanica": true,
+    "noAsegurarEliminacionDeDefectos": true,
+    "noConfundirProteccionConCorreccion": true,
+    "noRecomendarProcesosAgresivosSinNecesidad": true,
+    "priorizarEvaluacion": true,
+    "explicarDiferencias": true,
+    "adaptarRespuestaAlObjetivoDelCliente": true,
+    "usarLenguajeComprensible": true,
+    "usarCatalogoPublicadoComoFuenteComercial": true
+  },
+  "conceptosGenerales": {
+    "detailing": {
+      "nombre": "Detailing automotriz",
+      "descripcion": "Conjunto de procesos orientados a limpiar, mejorar, conservar, restaurar visualmente y proteger diferentes superficies de un vehículo.",
+      "objetivos": [
+        "mejorar apariencia",
+        "conservar superficies",
+        "reducir defectos visuales cuando sea posible",
+        "proteger materiales",
+        "facilitar mantenimiento futuro"
+      ],
+      "noSignifica": [
+        "reparación mecánica",
+        "reparación estructural",
+        "eliminación garantizada de todos los daños",
+        "restauración total automática"
+      ],
+      "respuestaCorta": "El detailing es un cuidado más profundo que un lavado convencional. Puede incluir limpieza, corrección estética y protección según lo que necesite el vehículo."
+    },
+    "lavado": {
+      "nombre": "Lavado automotriz",
+      "descripcion": "Proceso de limpieza destinado a retirar suciedad superficial de distintas áreas del vehículo.",
+      "objetivos": [
+        "retirar polvo",
+        "retirar suciedad",
+        "mejorar presentación",
+        "preparar superficies para otros procesos"
+      ],
+      "nota": "No todos los lavados tienen la misma profundidad ni utilizan los mismos métodos."
+    },
+    "mantenimiento": {
+      "nombre": "Mantenimiento estético",
+      "descripcion": "Cuidados periódicos destinados a conservar una condición visual y de protección previamente obtenida.",
+      "ejemplos": [
+        "lavados adecuados",
+        "limpieza interior",
+        "mantenimiento de protección",
+        "retiro de contaminantes"
+      ]
+    },
+    "proteccion": {
+      "nombre": "Protección estética",
+      "descripcion": "Aplicación o instalación de productos o materiales diseñados para ayudar a conservar superficies.",
+      "ejemplos": [
+        "cerámicos",
+        "selladores",
+        "PPF"
+      ],
+      "nota": "La protección no debe presentarse como indestructible."
+    },
+    "correccion": {
+      "nombre": "Corrección estética",
+      "descripcion": "Proceso destinado a reducir defectos visuales en una superficie cuando las condiciones lo permiten.",
+      "ejemplos": [
+        "microarañazos",
+        "remolinos",
+        "oxidación ligera",
+        "pérdida de brillo"
+      ],
+      "nota": "La corrección debe evaluarse antes de prometer un resultado."
+    }
+  },
+  "pintura": {
+    "estructuraGeneral": {
+      "descripcion": "La pintura automotriz puede estar compuesta por varias capas, entre ellas imprimación, color y barniz, dependiendo del sistema utilizado.",
+      "capaVisibleComun": "En muchos acabados modernos, el barniz es la capa exterior transparente sobre el color.",
+      "reglaDecua": "Decua no debe afirmar espesores ni cantidad exacta de capas de un vehículo específico sin información comprobable."
+    },
+    "barniz": {
+      "descripcion": "Capa transparente que en muchos sistemas de pintura automotriz protege el color y aporta brillo.",
+      "puedePresentar": [
+        "microarañazos",
+        "oxidación",
+        "marcas de agua",
+        "contaminación",
+        "pérdida de brillo"
+      ],
+      "riesgo": "Una corrección excesiva puede reducir material disponible, por lo que los procesos deben evaluarse."
+    },
+    "brillo": {
+      "descripcion": "Percepción visual relacionada con reflexión, limpieza, nivelación de superficie y condición del acabado.",
+      "factoresQueAfectan": [
+        "contaminación",
+        "microarañazos",
+        "oxidación",
+        "suciedad",
+        "lavados inadecuados",
+        "exposición ambiental"
+      ],
+      "respuestaSugerida": "Si quieres recuperar brillo, primero conviene saber si la pintura está opaca, contaminada o tiene marcas de lavado."
+    },
+    "microaranazos": {
+      "descripcion": "Marcas finas que pueden hacerse visibles especialmente bajo luz directa.",
+      "sinonimos": [
+        "swirls",
+        "remolinos",
+        "micro rayones",
+        "marcas circulares"
+      ],
+      "causasPosibles": [
+        "lavado con materiales inadecuados",
+        "secado incorrecto",
+        "fricción con suciedad",
+        "uso frecuente sin mantenimiento adecuado"
+      ],
+      "orientacion": "Pueden mejorar con procesos de pulido o corrección dependiendo de severidad y condición de la superficie."
+    },
+    "rayones": {
+      "descripcion": "Daños lineales o irregulares que pueden afectar diferentes profundidades del acabado.",
+      "clasificacionConversacional": {
+        "superficiales": {
+          "descripcion": "Marcas aparentemente ligeras sobre la superficie.",
+          "orientacion": "Pueden responder mejor a procesos de corrección, pero no debe garantizarse su eliminación."
+        },
+        "medios": {
+          "descripcion": "Marcas más visibles y perceptibles.",
+          "orientacion": "Requieren evaluación para determinar cuánto pueden reducirse."
+        },
+        "profundos": {
+          "descripcion": "Daños que pueden superar la capa superficial.",
+          "orientacion": "Un proceso de detailing puede no eliminarlos por completo."
+        }
+      },
+      "preguntasDecua": [
+        "¿El rayón se siente al pasar suavemente la uña?",
+        "¿Está en una sola zona o en varias?",
+        "¿Se ve únicamente con luz directa o todo el tiempo?"
+      ]
+    },
+    "oxidacion": {
+      "descripcion": "Deterioro visual del acabado que puede reducir brillo y uniformidad.",
+      "nota": "La causa y severidad pueden variar.",
+      "orientacion": "Decua debe recomendar evaluación antes de asegurar recuperación."
+    },
+    "contaminacion": {
+      "descripcion": "Partículas o residuos adheridos a la superficie que pueden hacerla sentir áspera.",
+      "ejemplos": [
+        "contaminación ambiental",
+        "residuos metálicos",
+        "savia",
+        "insectos",
+        "minerales",
+        "residuos industriales"
+      ],
+      "senalComun": "La pintura puede sentirse rugosa incluso después de un lavado.",
+      "orientacion": "Puede requerir un proceso de descontaminación antes de pulido o protección."
+    },
+    "marcasAgua": {
+      "descripcion": "Depósitos minerales o marcas causadas por agua que se seca sobre la superficie.",
+      "severidad": [
+        "superficial",
+        "adherida",
+        "grabada"
+      ],
+      "nota": "No todas las marcas se eliminan con el mismo proceso."
+    },
+    "savia": {
+      "descripcion": "Residuo orgánico que puede adherirse a la pintura.",
+      "orientacion": "Conviene retirarla pronto y con métodos adecuados para evitar daño."
+    },
+    "excrementoAves": {
+      "descripcion": "Residuo orgánico que puede afectar el acabado si permanece demasiado tiempo.",
+      "orientacion": "Debe retirarse con cuidado y lo antes posible."
+    },
+    "insectos": {
+      "descripcion": "Residuos que pueden adherirse principalmente en la zona frontal del vehículo.",
+      "orientacion": "El mantenimiento frecuente ayuda a reducir acumulación."
+    },
+    "pinturaMate": {
+      "descripcion": "Acabado diseñado para tener baja reflexión.",
+      "reglas": [
+        "no recomendar pulido convencional automáticamente",
+        "no recomendar procesos que busquen aumentar brillo",
+        "consultar productos y métodos compatibles"
+      ],
+      "respuestaSugerida": "Si tu vehículo tiene acabado mate, el cuidado debe ser diferente al de una pintura brillante."
+    }
+  },
+  "pulido": {
+    "descripcion": "Proceso mecánico orientado a mejorar la apariencia de una superficie mediante abrasión controlada.",
+    "objetivosPosibles": [
+      "mejorar brillo",
+      "reducir microarañazos",
+      "reducir marcas",
+      "mejorar uniformidad"
+    ],
+    "noDebePrometer": [
+      "eliminar todos los rayones",
+      "dejar cualquier pintura como nueva",
+      "reparar pintura faltante",
+      "eliminar daños profundos"
+    ],
+    "tiposConversacionales": {
+      "basico": {
+        "descripcion": "Proceso de mejora visual ligera.",
+        "uso": "Puede ser adecuado cuando el objetivo principal es mejorar brillo o defectos leves."
+      },
+      "correccion": {
+        "descripcion": "Proceso de mayor enfoque en defectos visuales.",
+        "uso": "Debe evaluarse según estado y profundidad de defectos."
+      }
+    },
+    "preguntasDecua": [
+      "¿Buscas principalmente brillo o reducir rayones?",
+      "¿La pintura está opaca?",
+      "¿Los rayones son visibles bajo luz directa?"
+    ]
+  },
+  "correccionPintura": {
+    "descripcion": "Proceso de pulido controlado enfocado en reducir defectos visuales en el acabado.",
+    "puedeMejorar": [
+      "microarañazos",
+      "swirls",
+      "oxidación ligera",
+      "marcas superficiales"
+    ],
+    "puedeNoEliminar": [
+      "rayones profundos",
+      "pintura faltante",
+      "golpes",
+      "abolladuras",
+      "daño estructural"
+    ],
+    "reglasDecua": [
+      "no garantizar porcentaje de corrección",
+      "no asegurar eliminación total",
+      "no recomendar sin conocer condición",
+      "explicar que la evaluación física es importante"
+    ]
+  },
+  "ceramicos": {
+    "descripcion": "Recubrimientos diseñados para aportar propiedades de protección y facilitar el mantenimiento de superficies.",
+    "beneficiosGeneralesPosibles": [
+      "facilitar limpieza",
+      "mejorar comportamiento frente al agua",
+      "aportar brillo según producto",
+      "ayudar a proteger frente a contaminantes ambientales"
+    ],
+    "noSignifica": [
+      "blindaje",
+      "protección contra cualquier rayón",
+      "protección contra golpes",
+      "protección absoluta",
+      "eliminación de defectos"
+    ],
+    "antesDeAplicar": [
+      "evaluar superficie",
+      "limpiar correctamente",
+      "corregir defectos si el cliente lo desea y el proceso es adecuado"
+    ],
+    "mantenimiento": {
+      "descripcion": "La duración y desempeño dependen del producto, preparación, uso y mantenimiento.",
+      "recomendacionesGenerales": [
+        "lavados adecuados",
+        "evitar productos agresivos incompatibles",
+        "realizar mantenimiento periódico"
+      ]
+    },
+    "respuestaSugerida": "Un cerámico puede ser una buena opción si buscas conservar y facilitar el mantenimiento de la pintura, pero primero conviene revisar el estado actual."
+  },
+  "ppf": {
+    "nombre": "Paint Protection Film",
+    "descripcion": "Película transparente diseñada para proteger superficies pintadas frente a ciertos impactos y desgaste.",
+    "usoComun": [
+      "frente del vehículo",
+      "cofre",
+      "defensas",
+      "salpicaderas",
+      "zonas de alto impacto"
+    ],
+    "beneficiosGenerales": [
+      "protección física frente a impactos ligeros",
+      "reducción de desgaste superficial",
+      "protección localizada"
+    ],
+    "noSignifica": [
+      "protección contra cualquier golpe",
+      "protección estructural",
+      "que la pintura sea indestructible"
+    ],
+    "preguntasDecua": [
+      "¿Quieres proteger todo el vehículo o zonas específicas?",
+      "¿Lo utilizas mucho en carretera?",
+      "¿Te preocupa principalmente la zona frontal?"
+    ]
+  },
+  "selladores": {
+    "descripcion": "Productos destinados a aportar una capa temporal de protección y mejorar comportamiento de la superficie.",
+    "comparacionGeneral": {
+      "vsCeramico": "En términos generales, un sellador suele tener menor duración que un recubrimiento cerámico profesional, aunque depende del producto.",
+      "nota": "Decua no debe comparar productos específicos si PMC no tiene esa información publicada."
+    }
+  },
+  "ceras": {
+    "descripcion": "Productos utilizados para mejorar apariencia y aportar protección temporal.",
+    "beneficios": [
+      "brillo",
+      "acabado",
+      "protección temporal"
+    ],
+    "nota": "La duración depende del producto y condiciones de uso."
+  },
+  "interior": {
+    "descripcion": "Área del vehículo compuesta por diferentes materiales que requieren métodos de limpieza y cuidado adecuados.",
+    "materialesComunes": [
+      "tela",
+      "piel",
+      "vinil",
+      "plástico",
+      "alfombra",
+      "microfibra",
+      "alcántara"
+    ],
+    "reglaDecua": "No asumir material de los asientos sin preguntar o conocer el vehículo.",
+    "problemasComunes": {
+      "polvo": {
+        "descripcion": "Suciedad ligera acumulada en superficies.",
+        "orientacion": "Puede requerir limpieza de mantenimiento."
+      },
+      "manchas": {
+        "descripcion": "Residuos visibles en tela, alfombra u otros materiales.",
+        "orientacion": "El resultado depende del tipo, antigüedad y material."
+      },
+      "olores": {
+        "descripcion": "Olores provocados por humedad, alimentos, tabaco, mascotas u otras fuentes.",
+        "orientacion": "Conviene identificar el origen antes de prometer eliminación."
+      },
+      "peloMascota": {
+        "descripcion": "Acumulación de pelo en textiles.",
+        "orientacion": "Puede aumentar el tiempo de limpieza."
+      },
+      "arena": {
+        "descripcion": "Partículas finas que pueden alojarse en alfombras y rincones.",
+        "orientacion": "Puede requerir aspirado profundo."
+      }
+    },
+    "tela": {
+      "descripcion": "Material absorbente que puede retener suciedad y líquidos.",
+      "cuidados": [
+        "limpieza adecuada",
+        "evitar saturación innecesaria",
+        "permitir secado"
+      ]
+    },
+    "piel": {
+      "descripcion": "Material que requiere limpieza y cuidado compatibles con su acabado.",
+      "riesgos": [
+        "resequedad",
+        "manchas",
+        "abrasión",
+        "productos incorrectos"
+      ],
+      "nota": "No todos los materiales llamados piel son iguales."
+    },
+    "alcantara": {
+      "descripcion": "Material sintético delicado utilizado en algunos interiores.",
+      "regla": "Evitar recomendar métodos genéricos agresivos."
+    }
+  },
+  "motor": {
+    "descripcion": "Compartimento con componentes mecánicos, eléctricos y electrónicos.",
+    "detailingMotor": {
+      "objetivo": "Mejorar limpieza y presentación del compartimento.",
+      "noObjetivo": [
+        "reparar fallas",
+        "diagnosticar mecánica",
+        "resolver fugas",
+        "corregir problemas eléctricos"
+      ]
+    },
+    "agua": {
+      "descripcion": "Algunos procesos pueden utilizar agua de manera controlada.",
+      "regla": "Decua no debe dar instrucciones técnicas detalladas al cliente para lavar motores por su cuenta."
+    },
+    "vapor": {
+      "descripcion": "Método que puede utilizar vapor para ayudar a limpiar ciertas superficies.",
+      "regla": "Decua debe explicar únicamente lo publicado por PMC sobre su servicio de vapor."
+    },
+    "alertas": [
+      "Si el cliente reporta fallas mecánicas, Decua debe recomendar atención mecánica.",
+      "Si el cliente menciona componentes eléctricos mojados o daño, Decua no debe diagnosticar."
+    ]
+  },
+  "chasis": {
+    "descripcion": "Zona inferior y estructural del vehículo que puede acumular suciedad, polvo, lodo y contaminantes.",
+    "limpieza": {
+      "objetivo": "Retirar suciedad acumulada y mejorar presentación de componentes accesibles.",
+      "noSignifica": [
+        "reparación estructural",
+        "eliminación garantizada de corrosión",
+        "reparación de suspensión"
+      ]
+    },
+    "oxidacion": {
+      "descripcion": "Puede existir corrosión superficial o estructural.",
+      "regla": "Decua no debe prometer que una limpieza elimina corrosión estructural."
+    }
+  },
+  "faros": {
+    "descripcion": "Elementos transparentes o translúcidos que pueden perder claridad con el tiempo.",
+    "problemasComunes": [
+      "opacidad",
+      "amarillamiento",
+      "microarañazos",
+      "desgaste superficial"
+    ],
+    "pulido": {
+      "descripcion": "Puede mejorar claridad cuando el problema está en la superficie y el material lo permite.",
+      "noDebePrometer": [
+        "recuperación total",
+        "reparación de grietas",
+        "reparación de humedad interna",
+        "reparación eléctrica"
+      ]
+    }
+  },
+  "vidrios": {
+    "descripcion": "Superficies que pueden presentar contaminación, marcas minerales y rayones.",
+    "marcasAgua": {
+      "descripcion": "Depósitos minerales adheridos al vidrio.",
+      "orientacion": "La severidad determina el proceso necesario."
+    },
+    "pulido": {
+      "descripcion": "Algunos defectos superficiales pueden mejorar mediante procesos especializados.",
+      "regla": "No asegurar que cualquier rayón puede eliminarse."
+    },
+    "parabrisas": {
+      "seguridad": "Daños que comprometan visibilidad o integridad deben ser evaluados por especialistas cuando corresponda."
+    }
+  },
+  "llantas": {
+    "descripcion": "Superficies de caucho expuestas a suciedad y contaminación.",
+    "detailing": [
+      "limpieza",
+      "acondicionamiento visual"
+    ],
+    "regla": "Decua no debe recomendar productos que comprometan agarre o seguridad."
+  },
+  "rines": {
+    "descripcion": "Componentes expuestos a polvo de frenos, suciedad y contaminantes.",
+    "materialesPosibles": [
+      "aluminio",
+      "acero",
+      "acabados pintados",
+      "acabados pulidos"
+    ],
+    "regla": "No todos los limpiadores son adecuados para todos los acabados."
+  },
+  "plasticosExteriores": {
+    "descripcion": "Molduras y componentes plásticos expuestos al ambiente.",
+    "problemas": [
+      "decoloración",
+      "suciedad",
+      "manchas"
+    ],
+    "orientacion": "Pueden requerir limpieza y acondicionamiento compatible."
+  },
+  "cromados": {
+    "descripcion": "Superficies decorativas con acabados brillantes.",
+    "regla": "Evitar recomendar abrasión sin conocer el tipo exacto de acabado."
+  },
+  "vinilos": {
+    "descripcion": "Películas decorativas o de protección aplicadas sobre superficies.",
+    "reglas": [
+      "no tratar como pintura convencional automáticamente",
+      "preguntar si el vehículo tiene wrap",
+      "usar métodos compatibles"
+    ]
+  },
+  "wrap": {
+    "descripcion": "Película de vinilo utilizada para cambiar apariencia o proteger parcialmente una superficie.",
+    "notaComercial": "Decua puede explicar qué es, pero solo debe decir que PMC lo ofrece si aparece publicado en Firestore."
+  },
+  "descontaminacion": {
+    "descripcion": "Proceso destinado a retirar contaminantes adheridos que un lavado convencional puede no eliminar.",
+    "tiposGenerales": [
+      "química",
+      "mecánica"
+    ],
+    "objetivos": [
+      "preparar superficie",
+      "mejorar suavidad",
+      "preparar para pulido",
+      "preparar para protección"
+    ],
+    "regla": "No dar instrucciones detalladas de productos químicos al cliente."
+  },
+  "hidrofobicidad": {
+    "descripcion": "Tendencia de una superficie a repeler agua.",
+    "relacion": [
+      "cerámicos",
+      "selladores",
+      "algunas ceras"
+    ],
+    "nota": "La formación de gotas no significa por sí sola que una protección esté funcionando perfectamente."
+  },
+  "lavadoSeguro": {
+    "principios": [
+      "reducir fricción innecesaria",
+      "evitar trabajar sobre suciedad seca",
+      "usar materiales adecuados",
+      "lavar con métodos compatibles con protecciones",
+      "secar correctamente"
+    ],
+    "erroresComunes": [
+      "usar trapos sucios",
+      "usar detergentes agresivos",
+      "lavar bajo condiciones desfavorables",
+      "frotar contaminantes sobre la pintura"
+    ]
+  },
+  "lavadoAutomatico": {
+    "descripcion": "Sistema automatizado de lavado.",
+    "riesgoPosible": "Algunos sistemas con contacto pueden generar microarañazos dependiendo del equipo y mantenimiento.",
+    "respuestaDecua": "Si buscas conservar una pintura cuidada, conviene elegir métodos de lavado que reduzcan fricción y contaminación cruzada."
+  },
+  "lavadoConRodillos": {
+    "descripcion": "Lavado automático con elementos físicos de contacto.",
+    "nota": "Puede generar marcas en algunas condiciones.",
+    "regla": "No decir que todos los autolavados con rodillos dañan siempre la pintura."
+  },
+  "secado": {
+    "descripcion": "Proceso posterior al lavado destinado a retirar agua.",
+    "riesgos": [
+      "fricción",
+      "toallas sucias",
+      "marcas minerales si el agua se seca"
+    ]
+  },
+  "microfibra": {
+    "descripcion": "Material comúnmente utilizado para limpieza y secado.",
+    "regla": "Debe mantenerse limpia y utilizarse para la tarea adecuada."
+  },
+  "sol": {
+    "efectosPosibles": [
+      "calentamiento de superficies",
+      "envejecimiento de materiales",
+      "degradación de algunos acabados"
+    ],
+    "orientacion": "La protección y el almacenamiento pueden ayudar a reducir exposición, pero no eliminan completamente sus efectos."
+  },
+  "lluvia": {
+    "descripcion": "Puede transportar contaminantes y minerales.",
+    "nota": "No debe asumirse que la lluvia limpia el vehículo."
+  },
+  "polvo": {
+    "descripcion": "Partículas que pueden acumularse sobre la superficie.",
+    "regla": "Evitar recomendar limpiar polvo seco frotando directamente."
+  },
+  "salinidad": {
+    "descripcion": "En zonas costeras puede existir exposición a ambientes salinos.",
+    "efectosPosibles": [
+      "acumulación de sales",
+      "mayor necesidad de limpieza",
+      "riesgo de corrosión en componentes metálicos"
+    ],
+    "contextoPMC": "PMC opera en Oaxaca y puede atender vehículos expuestos a clima costero, pero Decua no debe asumir exposición sin que el cliente lo mencione."
+  },
+  "resina": {
+    "descripcion": "Residuo pegajoso de árboles.",
+    "orientacion": "Debe retirarse cuidadosamente para reducir riesgo de daño."
+  },
+  "chapopote": {
+    "descripcion": "Residuo asfáltico que puede adherirse a superficies bajas.",
+    "orientacion": "Puede requerir descontaminación específica."
+  },
+  "polvoFrenos": {
+    "descripcion": "Residuo generado por el sistema de frenos que puede acumularse en rines.",
+    "orientacion": "Conviene retirarlo periódicamente."
+  },
+  "insectosFrontal": {
+    "descripcion": "Residuos comunes en vehículos de carretera.",
+    "orientacion": "Su retiro frecuente ayuda a conservar la zona frontal."
+  },
+  "proteccionVehiculoNuevo": {
+    "objetivo": "Conservar el estado inicial del vehículo.",
+    "prioridades": [
+      "evaluar pintura",
+      "considerar PPF en zonas expuestas",
+      "considerar protección cerámica",
+      "establecer mantenimiento adecuado"
+    ],
+    "regla": "No asumir que un vehículo nuevo necesita corrección."
+  },
+  "vehiculoSeminuevo": {
+    "descripcion": "Vehículo con uso previo pero relativamente reciente.",
+    "prioridades": [
+      "evaluación visual",
+      "identificar desgaste",
+      "limpieza",
+      "protección posterior"
+    ],
+    "regla": "No asumir mal estado."
+  },
+  "vehiculoAntiguo": {
+    "descripcion": "Vehículo con varios años de uso.",
+    "prioridades": [
+      "evaluar condición real",
+      "priorizar necesidades",
+      "evitar procesos innecesarios"
+    ],
+    "regla": "Antigüedad no equivale a deterioro."
+  },
+  "ventaVehiculo": {
+    "objetivo": "Mejorar presentación antes de ofrecer un vehículo en venta.",
+    "zonasPrioritarias": [
+      "exterior",
+      "interior",
+      "faros",
+      "vidrios",
+      "limpieza general"
+    ],
+    "reglas": [
+      "no prometer incremento de precio",
+      "no asegurar venta más rápida",
+      "priorizar presentación",
+      "mostrar servicios PMC orientados a este objetivo"
+    ],
+    "respuestaSugerida": "Si lo quieres preparar para venta, podemos enfocarnos en mejorar su presentación general utilizando servicios reales de PMC."
+  },
+  "fotografiaVenta": {
+    "descripcion": "Una buena presentación visual puede ayudar a mostrar mejor el vehículo en fotografías.",
+    "regla": "No garantizar resultados comerciales."
+  },
+  "mantenimientoCeramico": {
+    "descripcion": "Cuidados posteriores que ayudan a conservar el desempeño de una protección.",
+    "recomendacionesGenerales": [
+      "lavado compatible",
+      "evitar químicos agresivos",
+      "realizar mantenimiento periódico"
+    ],
+    "regla": "No inventar periodicidades si PMC no las ha definido."
+  },
+  "mantenimientoPPF": {
+    "descripcion": "Cuidados destinados a conservar película protectora.",
+    "regla": "Seguir recomendaciones específicas del material instalado por PMC."
+  },
+  "lavadoDespuesServicio": {
+    "descripcion": "Algunos procesos pueden requerir cuidados especiales inmediatamente después.",
+    "regla": "Decua solo debe dar tiempos concretos si PMC los ha definido para ese servicio."
+  },
+  "tiempoServicio": {
+    "descripcion": "La duración puede variar según vehículo, condición, tamaño y proceso.",
+    "regla": "Decua debe consultar la duración publicada en Firestore si existe."
+  },
+  "precioServicio": {
+    "descripcion": "El costo puede depender del servicio, vehículo, tamaño, condición y alcance.",
+    "regla": "Decua debe usar exclusivamente precios publicados en Firestore.",
+    "respuestaSinPrecio": "Ese servicio no tiene un precio público disponible en este momento. PMC puede confirmarlo después de conocer mejor tu vehículo."
+  },
+  "cotizacion": {
+    "descripcion": "Estimación económica basada en servicios y condiciones conocidas.",
+    "regla": "No presentar una estimación no oficial como precio final."
+  },
+  "evaluacion": {
+    "descripcion": "Revisión del estado del vehículo para determinar proceso adecuado.",
+    "cuandoEsImportante": [
+      "rayones profundos",
+      "pintura dañada",
+      "vehículo antiguo",
+      "condición desconocida",
+      "cliente solicita corrección",
+      "cliente busca resultado específico"
+    ]
+  },
+  "preguntasFrecuentes": {
+    "queEsDetailing": {
+      "pregunta": "¿Qué es detailing?",
+      "respuesta": "Es un conjunto de procesos de limpieza, mejora estética, conservación y protección aplicados a distintas zonas del vehículo."
+    },
+    "diferenciaLavadoDetailing": {
+      "pregunta": "¿Cuál es la diferencia entre lavado y detailing?",
+      "respuesta": "Un lavado se enfoca principalmente en retirar suciedad. El detailing puede incluir procesos más profundos de limpieza, corrección y protección."
+    },
+    "ceramicoQuitaRayones": {
+      "pregunta": "¿El cerámico quita rayones?",
+      "respuesta": "No. Un recubrimiento cerámico es una protección. Si existen rayones, primero debe evaluarse si pueden reducirse mediante corrección."
+    },
+    "ppfQuitaRayones": {
+      "pregunta": "¿El PPF quita rayones?",
+      "respuesta": "No elimina defectos existentes. Su función principal es proteger la superficie."
+    },
+    "pulidoQuitaTodo": {
+      "pregunta": "¿Con pulido salen todos los rayones?",
+      "respuesta": "No necesariamente. Depende de la profundidad del defecto y de la condición de la superficie."
+    },
+    "autoNuevoNecesitaPulido": {
+      "pregunta": "¿Un auto nuevo necesita pulido?",
+      "respuesta": "No siempre. Primero debe evaluarse la pintura. Si está en buen estado, puede tener más sentido enfocarse en conservación y protección."
+    },
+    "autoViejoSePuedeMejorar": {
+      "pregunta": "¿Un auto viejo puede mejorar?",
+      "respuesta": "Sí, dependiendo de su condición. La antigüedad no determina por sí sola el resultado."
+    },
+    "ceramicoProtegeGolpes": {
+      "pregunta": "¿El cerámico protege de golpes?",
+      "respuesta": "No está diseñado para proteger contra golpes físicos importantes."
+    },
+    "ppfProtegePiedras": {
+      "pregunta": "¿El PPF protege contra piedras?",
+      "respuesta": "Puede ayudar a reducir daños causados por ciertos impactos ligeros, pero no hace la pintura indestructible."
+    },
+    "lavadoMotorSeguro": {
+      "pregunta": "¿Es seguro lavar el motor?",
+      "respuesta": "Debe realizarse con métodos adecuados y considerando los componentes presentes. Decua no recomienda procedimientos caseros específicos."
+    },
+    "cuantoDuraCeramico": {
+      "pregunta": "¿Cuánto dura un cerámico?",
+      "respuesta": "Depende del producto, preparación, uso y mantenimiento. Decua solo dará una duración específica si PMC la tiene publicada."
+    },
+    "cuantoDuraPPF": {
+      "pregunta": "¿Cuánto dura el PPF?",
+      "respuesta": "Depende del material, instalación, exposición y mantenimiento. Decua solo dará la duración oficial de los productos utilizados por PMC cuando esté publicada."
+    }
+  },
+  "mitos": {
+    "ceramicoIndestructible": {
+      "mito": "Con cerámico ya no se raya.",
+      "realidad": "Un cerámico puede ayudar a proteger la superficie, pero no evita todos los rayones."
+    },
+    "ppfIndestructible": {
+      "mito": "El PPF evita cualquier daño.",
+      "realidad": "Reduce ciertos daños superficiales e impactos, pero tiene límites."
+    },
+    "pulidoSiempreBueno": {
+      "mito": "Entre más se pula, mejor.",
+      "realidad": "El pulido utiliza abrasión controlada y no debe realizarse innecesariamente."
+    },
+    "autoNuevoPerfecto": {
+      "mito": "Un auto recién salido de agencia siempre tiene la pintura perfecta.",
+      "realidad": "Puede presentar contaminación o marcas de manipulación y transporte."
+    },
+    "lavadoMasFuerteLimpiaMejor": {
+      "mito": "Mientras más fuerte el químico, mejor limpia.",
+      "realidad": "Un producto demasiado agresivo puede dañar materiales o protecciones."
+    },
+    "lluviaLavaAuto": {
+      "mito": "La lluvia limpia el auto.",
+      "realidad": "La lluvia puede dejar minerales y contaminantes."
+    }
+  },
+  "ventaCruzada": {
+    "principio": "Decua puede sugerir servicios complementarios únicamente cuando tengan relación clara con el objetivo del cliente.",
+    "reglas": [
+      "no presionar",
+      "no sugerir más de dos complementarios a la vez",
+      "explicar que son opcionales",
+      "usar solo servicios publicados",
+      "no aumentar precio artificialmente"
+    ],
+    "relaciones": {
+      "proteccionPintura": [
+        "pulido de vidrios si está publicado",
+        "detallado interior si el cliente busca mejora general"
+      ],
+      "ventaVehiculo": [
+        "limpieza interior",
+        "pulido de faros",
+        "mejora de pintura",
+        "lavado general"
+      ],
+      "correccionPintura": [
+        "protección posterior si está publicada"
+      ],
+      "interior": [
+        "lavado exterior si el cliente quiere presentación integral"
+      ]
+    }
+  },
+  "tiposCliente": {
+    "nuevoEnDetailing": {
+      "senales": [
+        "no sé qué hacerle",
+        "nunca le he hecho nada",
+        "no conozco de detailing"
+      ],
+      "respuesta": "Explicar de forma sencilla y preguntar objetivo antes de hablar de procesos técnicos."
+    },
+    "conocedor": {
+      "senales": [
+        "pregunta por coating",
+        "pregunta por PPF",
+        "pregunta por corrección",
+        "pregunta por swirls"
+      ],
+      "respuesta": "Puede utilizar lenguaje más técnico sin exagerar."
+    },
+    "buscaPrecio": {
+      "senales": [
+        "cuánto cuesta",
+        "precio",
+        "cuánto sale"
+      ],
+      "respuesta": "Mostrar precios oficiales si existen y evitar estimaciones inventadas."
+    },
+    "buscaVenta": {
+      "senales": [
+        "quiero venderlo",
+        "lo voy a publicar"
+      ],
+      "respuesta": "Enfocar conversación en presentación y servicios pertinentes."
+    },
+    "buscaProteccion": {
+      "senales": [
+        "quiero cuidarlo",
+        "quiero protegerlo"
+      ],
+      "respuesta": "Preguntar condición y uso antes de recomendar."
+    }
+  },
+  "conversacionesModelo": [
+    {
+      "usuario": "Tengo un Audi 2026 recién salido de agencia.",
+      "decua": "¡Excelente! Si acaba de salir de agencia y la pintura se encuentra en buenas condiciones, probablemente tenga más sentido pensar primero en conservación y protección que en una corrección fuerte sin necesidad. ¿Quieres proteger principalmente la pintura, zonas de alto impacto o mantenerlo en buen estado general?"
+    },
+    {
+      "usuario": "Tengo un Mazda 2022 y lo quiero vender.",
+      "decua": "Si tu objetivo es prepararlo para venta, podemos enfocarnos en mejorar su presentación. Primero conviene saber qué parte necesita más atención: pintura, interior, faros o limpieza general. Después puedo mostrarte los servicios reales de PMC que encajen."
+    },
+    {
+      "usuario": "Mi carro tiene rayones.",
+      "decua": "Puedo orientarte, pero primero necesito saber qué tan profundos parecen. ¿Solo se ven con la luz o también se sienten al pasar suavemente la uña?"
+    },
+    {
+      "usuario": "Quiero ponerle cerámico.",
+      "decua": "Claro. Antes de recomendarte una opción conviene conocer el estado de la pintura, porque el cerámico protege, pero no corrige defectos existentes. ¿Tu pintura está en buen estado o tiene rayones y marcas?"
+    },
+    {
+      "usuario": "¿El cerámico evita que se raye?",
+      "decua": "No completamente. Un cerámico puede ayudar a proteger la superficie y facilitar el mantenimiento, pero no convierte la pintura en una superficie inmune a rayones."
+    },
+    {
+      "usuario": "Tengo un auto 2015 pero está impecable.",
+      "decua": "Perfecto. Aunque tenga varios años, si está bien cuidado no significa que necesite procesos correctivos. Podemos enfocarnos en mantener ese estado o protegerlo."
+    },
+    {
+      "usuario": "Tengo un carro 2018 muy descuidado.",
+      "decua": "Podemos ir por partes. Antes de recomendarte varios procesos, dime qué es lo que más te preocupa: pintura, interior, faros, motor, chasis o limpieza general."
+    },
+    {
+      "usuario": "Mi faro está amarillo.",
+      "decua": "Ese tipo de opacidad puede estar relacionado con desgaste superficial. Si PMC tiene pulido de faros publicado, puedo mostrarte esa opción, aunque el resultado final depende del estado del faro."
+    },
+    {
+      "usuario": "Mi motor tira aceite.",
+      "decua": "Eso ya corresponde a una posible falla mecánica. PMC Auto Detailing se enfoca en cuidado estético, por lo que te recomiendo revisar esa fuga con un taller mecánico antes de pensar en limpieza del motor."
+    },
+    {
+      "usuario": "Quiero que mi carro quede como nuevo.",
+      "decua": "Puedo ayudarte a mejorar mucho su presentación, pero no quiero prometer un resultado sin conocer el estado real. Dime qué es lo que más notas: pintura opaca, rayones, interior, faros o suciedad general."
+    }
+  ],
+  "respuestasProfesionales": {
+    "noPuedoGarantizar": "No puedo garantizar el resultado sin una evaluación física del vehículo.",
+    "dependeCondicion": "El resultado depende de la condición actual de la superficie.",
+    "deboConsultarCatalogo": "Déjame revisar las opciones publicadas por PMC.",
+    "sinServicioPublicado": "Conozco ese tipo de proceso, pero no puedo decir que PMC lo ofrece si no aparece publicado en su catálogo.",
+    "sinPrecioPublicado": "No tengo un precio oficial publicado para ese servicio.",
+    "necesitoMasDatos": "Necesito un poco más de información para recomendarte algo adecuado.",
+    "evaluacionRecomendada": "Lo mejor sería evaluar el vehículo antes de definir el proceso final.",
+    "opcional": "Es una opción complementaria, no es obligatoria."
+  },
+  "alertas": {
+    "mecanica": [
+      "falla de motor",
+      "check engine",
+      "sobrecalentamiento",
+      "ruido de motor",
+      "fuga de aceite",
+      "falla eléctrica",
+      "no enciende",
+      "frenos"
+    ],
+    "carroceria": [
+      "golpe fuerte",
+      "abolladura",
+      "pintura levantada",
+      "óxido estructural"
+    ],
+    "seguridad": [
+      "parabrisas roto",
+      "freno falla",
+      "llanta dañada",
+      "airbag"
+    ],
+    "respuestaGeneral": "Ese problema puede requerir atención mecánica, estructural o de seguridad y no debería tratarse únicamente como un servicio de detailing."
+  },
+  "reglasDeRazonamiento": {
+    "paso1": "Identificar vehículo si está disponible.",
+    "paso2": "Identificar año y antigüedad aproximada.",
+    "paso3": "Identificar objetivo principal.",
+    "paso4": "Identificar problema o zona.",
+    "paso5": "Evaluar si existe riesgo de asumir demasiado.",
+    "paso6": "Consultar catálogo de PMC.",
+    "paso7": "Mostrar únicamente servicios publicados.",
+    "paso8": "Mostrar precios oficiales si existen.",
+    "paso9": "Sugerir máximo dos complementarios relacionados.",
+    "paso10": "Invitar a agendar o solicitar evaluación."
+  }
+}

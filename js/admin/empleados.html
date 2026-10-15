@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Empleados | Administración PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando equipo
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="admin-sidebar__profile">
+
+                    <div class="admin-sidebar__avatar">
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt=""
+                            id="adminAvatar"
+                            hidden
+                        >
+
+                        <span id="adminInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="admin-sidebar__profile-info">
+
+                        <span>
+                            Sesión administrativa
+                        </span>
+
+                        <strong id="adminName">
+                            Administrador
+                        </strong>
+
+                        <small id="adminEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="recibos.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Recibos y pagos
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="financeButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a sistema de Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span>
+                            Personas
+                        </span>
+
+                        <strong>
+                            Empleados
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <div class="admin-header__date">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="adminCurrentDate">
+                            Hoy
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="admin-header__action"
+                        id="newEmployeeButton"
+                    >
+
+                        <i data-lucide="user-plus"></i>
+
+                        <span>
+                            Nuevo empleado
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            EQUIPO PMC
+
+                        </div>
+
+                        <h1>
+                            Empleados
+                        </h1>
+
+                        <p>
+                            Administra al personal de PMC, controla el acceso
+                            operativo y define qué funciones puede utilizar cada integrante.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-page-heading__actions">
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="newEmployeeButtonHero"
+                        >
+
+                            <i data-lucide="user-plus"></i>
+
+                            Nuevo empleado
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-employees-summary">
+
+                    <article class="admin-employees-summary__card">
+
+                        <div class="admin-employees-summary__icon">
+
+                            <i data-lucide="users-round"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Equipo
+                            </span>
+
+                            <strong id="employeesTotalCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Usuarios internos
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-employees-summary__card">
+
+                        <div class="admin-employees-summary__icon">
+
+                            <i data-lucide="user-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Activos
+                            </span>
+
+                            <strong id="employeesActiveCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Con acceso habilitado
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-employees-summary__card">
+
+                        <div class="admin-employees-summary__icon">
+
+                            <i data-lucide="shield-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Administradores
+                            </span>
+
+                            <strong id="employeesAdminCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Acceso administrativo
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-employees-summary__card">
+
+                        <div class="admin-employees-summary__icon">
+
+                            <i data-lucide="wrench"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Operación
+                            </span>
+
+                            <strong id="employeesOperationCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Personal operativo
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="admin-panel admin-employees-panel">
+
+                    <div class="admin-employees-toolbar">
+
+                        <div class="admin-employees-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input
+                                type="search"
+                                id="employeeSearch"
+                                placeholder="Buscar por nombre o correo..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <div class="admin-employees-filters">
+
+                            <label class="admin-employees-select">
+
+                                <i data-lucide="shield"></i>
+
+                                <select id="employeeRoleFilter">
+
+                                    <option value="todos">
+                                        Todos los roles
+                                    </option>
+
+                                    <option value="admin">
+                                        Administradores
+                                    </option>
+
+                                    <option value="empleado">
+                                        Empleados
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="admin-employees-select">
+
+                                <i data-lucide="activity"></i>
+
+                                <select id="employeeStatusFilter">
+
+                                    <option value="todos">
+                                        Todos
+                                    </option>
+
+                                    <option value="activos">
+                                        Activos
+                                    </option>
+
+                                    <option value="inactivos">
+                                        Inactivos
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-employees-results">
+
+                        <div>
+
+                            <span>
+                                Mostrando
+                            </span>
+
+                            <strong id="employeesResultsCount">
+                                0 empleados
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="resetEmployeeFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="admin-employees-list"
+                        id="employeesList"
+                    >
+
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+
+                    </div>
+
+                    <div
+                        class="admin-empty"
+                        id="employeesEmpty"
+                        hidden
+                    >
+
+                        <div class="admin-empty__icon">
+
+                            <i data-lucide="user-round-x"></i>
+
+                        </div>
+
+                        <h3>
+                            No encontramos empleados
+                        </h3>
+
+                        <p>
+                            No hay integrantes del equipo que coincidan con los filtros.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="employeesEmptyReset"
+                        >
+
+                            Limpiar filtros
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Gestión de personal
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal admin-employee-modal"
+        id="employeeDetailsModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="employeeDetailsBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-employee-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="employeeDetailsClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-employee-modal__profile">
+
+                <div
+                    class="admin-employee-modal__avatar"
+                    id="employeeDetailsAvatar"
+                >
+                    P
+                </div>
+
+                <div>
+
+                    <span>
+                        PERSONAL PMC
+                    </span>
+
+                    <h2 id="employeeDetailsName">
+                        Empleado
+                    </h2>
+
+                    <p id="employeeDetailsEmail">
+                        Sin correo
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-employee-modal__status">
+
+                <div>
+
+                    <span>
+                        Estado de acceso
+                    </span>
+
+                    <strong
+                        class="admin-employee-status"
+                        id="employeeDetailsStatus"
+                    >
+                        Activo
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Rol
+                    </span>
+
+                    <strong
+                        class="admin-employee-role"
+                        id="employeeDetailsRole"
+                    >
+                        Empleado
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <section class="admin-employee-section">
+
+                <div class="admin-employee-section__heading">
+
+                    <div>
+
+                        <span>
+                            PERMISOS
+                        </span>
+
+                        <h3>
+                            Acceso al sistema
+                        </h3>
+
+                    </div>
+
+                    <p>
+                        Define qué módulos puede utilizar este usuario.
+                    </p>
+
+                </div>
+
+                <div class="admin-employee-permissions">
+
+                    <label class="admin-employee-permission">
+
+                        <div>
+
+                            <div class="admin-employee-permission__icon">
+
+                                <i data-lucide="shield-check"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Administración
+                                </strong>
+
+                                <span>
+                                    Acceso completo al panel administrativo.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="employeePermissionAdmin"
+                        >
+
+                        <span class="admin-switch"></span>
+
+                    </label>
+
+                    <label class="admin-employee-permission">
+
+                        <div>
+
+                            <div class="admin-employee-permission__icon">
+
+                                <i data-lucide="wrench"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Operación
+                                </strong>
+
+                                <span>
+                                    Citas, recepción y órdenes de trabajo.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="employeePermissionOperation"
+                        >
+
+                        <span class="admin-switch"></span>
+
+                    </label>
+
+                    <label class="admin-employee-permission">
+
+                        <div>
+
+                            <div class="admin-employee-permission__icon">
+
+                                <i data-lucide="landmark"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Finanzas
+                                </strong>
+
+                                <span>
+                                    Permite entrar al sistema financiero de PMC.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <input
+                            type="checkbox"
+                            id="employeePermissionFinance"
+                        >
+
+                        <span class="admin-switch"></span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+            <section class="admin-employee-section">
+
+                <div class="admin-employee-section__heading">
+
+                    <div>
+
+                        <span>
+                            CUENTA
+                        </span>
+
+                        <h3>
+                            Configuración del empleado
+                        </h3>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-employee-account-grid">
+
+                    <label class="admin-editor-field">
+
+                        <span>
+                            Nombre
+                        </span>
+
+                        <input
+                            type="text"
+                            id="employeeEditName"
+                            maxlength="120"
+                            autocomplete="off"
+                        >
+
+                    </label>
+
+                    <label class="admin-editor-field">
+
+                        <span>
+                            Rol
+                        </span>
+
+                        <select id="employeeEditRole">
+
+                            <option value="empleado">
+                                Empleado
+                            </option>
+
+                            <option value="admin">
+                                Administrador
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+                <label class="admin-employee-access-toggle">
+
+                    <div>
+
+                        <strong>
+                            Cuenta activa
+                        </strong>
+
+                        <span>
+                            Si se desactiva, este usuario dejará de tener acceso al sistema.
+                        </span>
+
+                    </div>
+
+                    <input
+                        type="checkbox"
+                        id="employeeActive"
+                    >
+
+                    <span class="admin-switch"></span>
+
+                </label>
+
+            </section>
+
+            <div class="admin-employee-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="employeeDetailsCancel"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="employeeDetailsSave"
+                >
+
+                    <i data-lucide="save"></i>
+
+                    Guardar cambios
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal admin-new-employee-modal"
+        id="newEmployeeModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="newEmployeeBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-new-employee-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="newEmployeeClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-employee-modal__profile">
+
+                <div class="admin-employee-modal__avatar">
+
+                    <i data-lucide="user-plus"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        NUEVO INTEGRANTE
+                    </span>
+
+                    <h2>
+                        Agregar empleado
+                    </h2>
+
+                    <p>
+                        Configura los datos y permisos iniciales.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form
+                id="newEmployeeForm"
+                class="admin-new-employee-form"
+            >
+
+                <div class="admin-new-employee-form__grid">
+
+                    <label class="admin-editor-field">
+
+                        <span>
+                            Nombre
+                            <strong>*</strong>
+                        </span>
+
+                        <input
+                            type="text"
+                            id="newEmployeeName"
+                            maxlength="120"
+                            placeholder="Nombre completo"
+                            required
+                        >
+
+                    </label>
+
+                    <label class="admin-editor-field">
+
+                        <span>
+                            Correo
+                            <strong>*</strong>
+                        </span>
+
+                        <input
+                            type="email"
+                            id="newEmployeeEmail"
+                            maxlength="160"
+                            placeholder="correo@ejemplo.com"
+                            required
+                        >
+
+                    </label>
+
+                    <label class="admin-editor-field">
+
+                        <span>
+                            Rol
+                            <strong>*</strong>
+                        </span>
+
+                        <select
+                            id="newEmployeeRole"
+                            required
+                        >
+
+                            <option value="empleado">
+                                Empleado
+                            </option>
+
+                            <option value="admin">
+                                Administrador
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                    <label class="admin-editor-field">
+
+                        <span>
+                            Estado
+                        </span>
+
+                        <select id="newEmployeeStatus">
+
+                            <option value="activo">
+                                Activo
+                            </option>
+
+                            <option value="inactivo">
+                                Inactivo
+                            </option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+                <section class="admin-new-employee-permissions">
+
+                    <span>
+                        PERMISOS INICIALES
+                    </span>
+
+                    <div>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="newEmployeePermissionAdmin"
+                            >
+
+                            <div>
+
+                                <i data-lucide="shield-check"></i>
+
+                                <span>
+                                    Administración
+                                </span>
+
+                            </div>
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="newEmployeePermissionOperation"
+                                checked
+                            >
+
+                            <div>
+
+                                <i data-lucide="wrench"></i>
+
+                                <span>
+                                    Operación
+                                </span>
+
+                            </div>
+
+                        </label>
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                id="newEmployeePermissionFinance"
+                            >
+
+                            <div>
+
+                                <i data-lucide="landmark"></i>
+
+                                <span>
+                                    Finanzas
+                                </span>
+
+                            </div>
+
+                        </label>
+
+                    </div>
+
+                </section>
+
+                <div class="admin-new-employee-note">
+
+                    <i data-lucide="info"></i>
+
+                    <p>
+                        En esta etapa el registro administrativo prepara el perfil
+                        del empleado. La creación segura de credenciales de acceso
+                        se conectará mediante el proceso de autenticación del sistema.
+                    </p>
+
+                </div>
+
+                <div class="admin-modal__actions">
+
+                    <button
+                        type="button"
+                        class="button button-secondary"
+                        id="newEmployeeCancel"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="button button-primary"
+                        id="newEmployeeSubmit"
+                    >
+
+                        <i data-lucide="user-plus"></i>
+
+                        Agregar empleado
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes permisos.
+            </h1>
+
+            <p>
+                Esta sección está disponible únicamente para administradores de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span>
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="empleados.js"
+    ></script>
+
+</body>
+
+</html>

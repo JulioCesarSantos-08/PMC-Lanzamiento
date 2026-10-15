@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Servicios | Administración PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando servicios
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                        aria-label="Ir al dashboard"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="admin-sidebar__profile">
+
+                    <div class="admin-sidebar__avatar">
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt=""
+                            id="adminAvatar"
+                            hidden
+                        >
+
+                        <span id="adminInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="admin-sidebar__profile-info">
+
+                        <span>
+                            Sesión administrativa
+                        </span>
+
+                        <strong id="adminName">
+                            Administrador
+                        </strong>
+
+                        <small id="adminEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="recibos.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Recibos y pagos
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="financeButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a sistema de Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span>
+                            Catálogo PMC
+                        </span>
+
+                        <strong>
+                            Servicios
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <a
+                        href="../../servicios.html"
+                        class="admin-header__action"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="eye"></i>
+
+                        <span>
+                            Ver catálogo
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicio-editor.html"
+                        class="admin-header__action"
+                    >
+
+                        <i data-lucide="plus"></i>
+
+                        <span>
+                            Nuevo servicio
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            CATÁLOGO
+
+                        </div>
+
+                        <h1>
+                            Servicios
+                        </h1>
+
+                        <p>
+                            Administra los servicios, precios, categorías,
+                            duración, visibilidad y contenido que aparece
+                            en la página pública de PMC.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-page-heading__actions">
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="importCatalogButton"
+                        >
+
+                            <i data-lucide="database-zap"></i>
+
+                            Cargar catálogo base
+
+                        </button>
+
+                        <a
+                            href="servicio-editor.html"
+                            class="button button-primary"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Crear servicio
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-service-summary">
+
+                    <article class="admin-service-summary__card">
+
+                        <div class="admin-service-summary__icon">
+
+                            <i data-lucide="layers-3"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total
+                            </span>
+
+                            <strong id="servicesTotalCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-service-summary__card">
+
+                        <div class="admin-service-summary__icon">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Publicados
+                            </span>
+
+                            <strong id="servicesPublishedCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-service-summary__card">
+
+                        <div class="admin-service-summary__icon">
+
+                            <i data-lucide="file-pen-line"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Borradores
+                            </span>
+
+                            <strong id="servicesDraftCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-service-summary__card">
+
+                        <div class="admin-service-summary__icon">
+
+                            <i data-lucide="eye-off"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Desactivados
+                            </span>
+
+                            <strong id="servicesInactiveCount">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="admin-panel admin-services-panel">
+
+                    <div class="admin-services-toolbar">
+
+                        <div class="admin-services-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input
+                                type="search"
+                                id="serviceSearch"
+                                placeholder="Buscar servicio..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <div class="admin-services-filters">
+
+                            <label class="admin-services-select">
+
+                                <i data-lucide="filter"></i>
+
+                                <select id="serviceStatusFilter">
+
+                                    <option value="todos">
+                                        Todos los estados
+                                    </option>
+
+                                    <option value="publicado">
+                                        Publicados
+                                    </option>
+
+                                    <option value="borrador">
+                                        Borradores
+                                    </option>
+
+                                    <option value="inactivo">
+                                        Desactivados
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="admin-services-select">
+
+                                <i data-lucide="tags"></i>
+
+                                <select id="serviceCategoryFilter">
+
+                                    <option value="todas">
+                                        Todas las categorías
+                                    </option>
+
+                                    <option value="lavado">
+                                        Lavado
+                                    </option>
+
+                                    <option value="pintura">
+                                        Pintura
+                                    </option>
+
+                                    <option value="proteccion">
+                                        Protección
+                                    </option>
+
+                                    <option value="ceramicos">
+                                        Cerámicos
+                                    </option>
+
+                                    <option value="interior">
+                                        Interior
+                                    </option>
+
+                                    <option value="motor-chasis">
+                                        Motor y chasis
+                                    </option>
+
+                                    <option value="ppf">
+                                        PPF
+                                    </option>
+
+                                    <option value="motos">
+                                        Motos
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                            <label class="admin-services-select">
+
+                                <i data-lucide="arrow-up-down"></i>
+
+                                <select id="serviceSort">
+
+                                    <option value="orden">
+                                        Orden del catálogo
+                                    </option>
+
+                                    <option value="nombre-asc">
+                                        Nombre A-Z
+                                    </option>
+
+                                    <option value="nombre-desc">
+                                        Nombre Z-A
+                                    </option>
+
+                                    <option value="precio-asc">
+                                        Menor precio
+                                    </option>
+
+                                    <option value="precio-desc">
+                                        Mayor precio
+                                    </option>
+
+                                </select>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-services-results">
+
+                        <div class="admin-services-results__info">
+
+                            <span>
+                                Mostrando
+                            </span>
+
+                            <strong id="servicesResultsCount">
+                                0 servicios
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="admin-services-reset"
+                            id="resetServiceFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="admin-services-list"
+                        id="servicesList"
+                    >
+
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+
+                    </div>
+
+                    <div
+                        class="admin-empty"
+                        id="servicesEmpty"
+                        hidden
+                    >
+
+                        <div class="admin-empty__icon">
+
+                            <i data-lucide="sparkles"></i>
+
+                        </div>
+
+                        <h3>
+                            No encontramos servicios
+                        </h3>
+
+                        <p>
+                            No hay servicios que coincidan con los filtros seleccionados.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="button button-secondary"
+                            id="emptyResetServiceFilters"
+                        >
+
+                            Limpiar filtros
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Administración de servicios
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="importCatalogModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="importCatalogBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="importCatalogClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-editor-card__icon">
+
+                <i data-lucide="database-zap"></i>
+
+            </div>
+
+            <span class="admin-modal__eyebrow admin-modal__eyebrow--blue">
+                CATÁLOGO INICIAL
+            </span>
+
+            <h2>
+                ¿Cargar los servicios base?
+            </h2>
+
+            <p>
+                Se crearán los 14 servicios actuales del catálogo PMC como
+                borradores. No serán visibles en la página pública hasta que
+                los revises y publiques. Los servicios que ya existan no
+                serán reemplazados.
+            </p>
+
+            <div class="admin-import-info">
+
+                <div>
+
+                    <i data-lucide="file-pen-line"></i>
+
+                    <span>
+                        Se crearán como borradores
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i data-lucide="shield-check"></i>
+
+                    <span>
+                        No sobrescribe servicios existentes
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <i data-lucide="eye-off"></i>
+
+                    <span>
+                        No aparecen todavía en el catálogo público
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="admin-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelImportCatalog"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    class="button button-primary"
+                    id="confirmImportCatalog"
+                >
+
+                    <i data-lucide="database-zap"></i>
+
+                    Cargar catálogo
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="deleteServiceModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="deleteServiceBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="deleteServiceClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-modal__danger-icon">
+
+                <i data-lucide="trash-2"></i>
+
+            </div>
+
+            <span class="admin-modal__eyebrow">
+                ELIMINAR SERVICIO
+            </span>
+
+            <h2>
+                ¿Eliminar este servicio?
+            </h2>
+
+            <p>
+                Estás a punto de eliminar
+                <strong id="deleteServiceName">
+                    este servicio
+                </strong>.
+                Esta acción no se puede deshacer.
+            </p>
+
+            <div class="admin-modal__actions">
+
+                <button
+                    type="button"
+                    class="button button-secondary"
+                    id="cancelDeleteService"
+                >
+                    Cancelar
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-danger-button"
+                    id="confirmDeleteService"
+                >
+
+                    <i data-lucide="trash-2"></i>
+
+                    Eliminar servicio
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes permisos.
+            </h1>
+
+            <p>
+                Esta sección está disponible únicamente para administradores de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span id="adminToastText">
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="servicios.js"
+    ></script>
+
+    <script
+        type="module"
+        src="catalogo-inicial.js"
+    ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Explora los servicios profesionales de PMC Auto Detailing en Río Grande, Oaxaca."
+    >
+
+    <meta
+        name="theme-color"
+        content="#05070a"
+    >
+
+    <title>Servicios | PMC Auto Detailing</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/servicios.css"
+    >
+</head>
+
+<body>
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+        aria-hidden="true"
+    >
+        <div class="page-loader__content">
+
+            <img
+                src="imagenes/logo.png"
+                alt=""
+                class="page-loader__logo"
+            >
+
+            <div class="page-loader__line">
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+
+    <header
+        class="site-header is-scrolled"
+        id="siteHeader"
+    >
+        <div class="site-header__inner container">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="PMC Auto Detailing - Inicio"
+            >
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="brand__logo"
+                >
+            </a>
+
+            <nav
+                class="desktop-nav"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="index.html"
+                    class="desktop-nav__link"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="servicios.html"
+                    class="desktop-nav__link is-active"
+                >
+                    Servicios
+                </a>
+
+                <a
+                    href="index.html#asistente"
+                    class="desktop-nav__link"
+                >
+                    Asistente PMC
+                </a>
+
+                <a
+                    href="index.html#resultados"
+                    class="desktop-nav__link"
+                >
+                    Resultados
+                </a>
+
+                <a
+                    href="index.html#contacto"
+                    class="desktop-nav__link"
+                >
+                    Contacto
+                </a>
+
+            </nav>
+
+            <div class="site-header__actions">
+
+                <a
+                    href="agenda.html"
+                    class="button button--small button--primary desktop-agenda"
+                >
+                    Agendar
+                </a>
+
+                <a
+                    href="login.html"
+                    class="account-button"
+                    aria-label="Mi cuenta"
+                    title="Mi cuenta"
+                >
+                    <i data-lucide="user-round"></i>
+                </a>
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-hidden="true"
+    >
+        <div class="mobile-menu__backdrop"></div>
+
+        <div class="mobile-menu__panel">
+
+            <div class="mobile-menu__top">
+
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="mobile-menu__logo"
+                >
+
+                <button
+                    type="button"
+                    class="mobile-menu__close"
+                    id="menuClose"
+                    aria-label="Cerrar menú"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+            <nav class="mobile-menu__nav">
+
+                <a href="index.html">
+                    <span>01</span>
+                    Inicio
+                </a>
+
+                <a href="servicios.html">
+                    <span>02</span>
+                    Servicios
+                </a>
+
+                <a href="index.html#asistente">
+                    <span>03</span>
+                    Asistente PMC
+                </a>
+
+                <a href="index.html#resultados">
+                    <span>04</span>
+                    Resultados
+                </a>
+
+                <a href="index.html#contacto">
+                    <span>05</span>
+                    Contacto
+                </a>
+
+            </nav>
+
+            <div class="mobile-menu__actions">
+
+                <a
+                    href="agenda.html"
+                    class="button button--primary button--full"
+                >
+                    Agendar servicio
+                </a>
+
+                <a
+                    href="login.html"
+                    class="button button--ghost button--full"
+                >
+                    Mi cuenta
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <main>
+
+        <section class="services-hero">
+
+            <div class="services-hero__glow"></div>
+
+            <div class="container services-hero__content">
+
+                <div class="services-hero__eyebrow">
+                    <span></span>
+                    Servicios PMC
+                </div>
+
+                <h1>
+                    Encuentra el cuidado
+                    <span>ideal para tu vehículo.</span>
+                </h1>
+
+                <p>
+                    Explora nuestras soluciones profesionales
+                    de limpieza, corrección, protección y
+                    estética automotriz.
+                </p>
+
+                <div class="services-hero__actions">
+
+                    <a
+                        href="#catalogo"
+                        class="button button--primary"
+                    >
+                        Explorar catálogo
+
+                        <i data-lucide="arrow-down"></i>
+                    </a>
+
+                    <a
+                        href="imagenes/CatalogoPMC.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button--glass"
+                    >
+                        Ver catálogo PDF
+
+                        <i data-lucide="file-text"></i>
+                    </a>
+
+                    <a
+                        href="index.html#asistente"
+                        class="button button--glass"
+                    >
+                        No sé qué elegir
+
+                        <i data-lucide="message-circle-more"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section
+            class="services-catalog section"
+            id="catalogo"
+        >
+
+            <div class="container">
+
+                <div class="services-toolbar">
+
+                    <div class="services-toolbar__heading">
+
+                        <span class="section-heading__eyebrow">
+                            Catálogo PMC
+                        </span>
+
+                        <h2>
+                            Nuestros servicios
+                        </h2>
+
+                        <p>
+                            Filtra según lo que quieras mejorar,
+                            recuperar o proteger en tu vehículo.
+                        </p>
+
+                    </div>
+
+                    <div class="services-search">
+
+                        <i data-lucide="search"></i>
+
+                        <input
+                            type="search"
+                            id="serviceSearch"
+                            placeholder="Buscar servicio..."
+                            autocomplete="off"
+                            aria-label="Buscar servicio"
+                        >
+
+                        <button
+                            type="button"
+                            id="clearSearch"
+                            class="services-search__clear"
+                            aria-label="Limpiar búsqueda"
+                            hidden
+                        >
+                            <i data-lucide="x"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="services-filters"
+                    id="serviceFilters"
+                >
+
+                    <button
+                        type="button"
+                        class="service-filter is-active"
+                        data-category="todos"
+                    >
+                        Todos
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-filter"
+                        data-category="lavado"
+                    >
+                        Lavado
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-filter"
+                        data-category="pintura"
+                    >
+                        Pintura
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-filter"
+                        data-category="proteccion"
+                    >
+                        Protección
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-filter"
+                        data-category="ceramicos"
+                    >
+                        Cerámicos
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-filter"
+                        data-category="interior"
+                    >
+                        Interior
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-filter"
+                        data-category="motor-chasis"
+                    >
+                        Motor y chasis
+                    </button>
+
+                    <button
+                        type="button"
+                        class="service-filter"
+                        data-category="ppf"
+                    >
+                        PPF
+                    </button>
+
+                </div>
+
+                <div class="services-meta">
+
+                    <span id="servicesCount">
+                        Cargando servicios...
+                    </span>
+
+                    <button
+                        type="button"
+                        id="resetFilters"
+                        class="services-meta__reset"
+                        hidden
+                    >
+                        Restablecer filtros
+                    </button>
+
+                </div>
+
+                <div
+                    class="services-list"
+                    id="servicesList"
+                >
+
+                    <div class="service-skeleton"></div>
+                    <div class="service-skeleton"></div>
+                    <div class="service-skeleton"></div>
+                    <div class="service-skeleton"></div>
+                    <div class="service-skeleton"></div>
+                    <div class="service-skeleton"></div>
+
+                </div>
+
+                <div
+                    class="services-empty"
+                    id="servicesEmpty"
+                    hidden
+                >
+
+                    <div class="services-empty__icon">
+                        <i data-lucide="search-x"></i>
+                    </div>
+
+                    <h3>
+                        No encontramos servicios
+                    </h3>
+
+                    <p>
+                        Intenta con otra búsqueda o selecciona
+                        una categoría diferente.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="button button--ghost"
+                        id="emptyReset"
+                    >
+                        Mostrar todos
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="services-help section">
+
+            <div class="container">
+
+                <div class="services-help__box">
+
+                    <div class="services-help__icon">
+                        <i data-lucide="book-open-text"></i>
+                    </div>
+
+                    <div class="services-help__content">
+
+                        <span class="section-heading__eyebrow">
+                            Catálogo de servicios
+                        </span>
+
+                        <h2>
+                            Consulta nuestro catálogo completo
+                        </h2>
+
+                        <p>
+                            Conoce con mayor detalle nuestros servicios,
+                            procesos, protecciones y precios directamente
+                            desde el catálogo oficial de PMC Auto Detailing.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="imagenes/CatalogoPMC.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button--primary"
+                    >
+                        Abrir catálogo PDF
+
+                        <i data-lucide="external-link"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="services-help section">
+
+            <div class="container">
+
+                <div class="services-help__box">
+
+                    <div class="services-help__icon">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+
+                    <div class="services-help__content">
+
+                        <span class="section-heading__eyebrow">
+                            Asistente PMC
+                        </span>
+
+                        <h2>
+                            ¿No estás seguro de cuál elegir?
+                        </h2>
+
+                        <p>
+                            Dinos qué vehículo tienes, qué
+                            quieres mejorar y qué resultado
+                            estás buscando.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="index.html#asistente"
+                        class="button button--primary"
+                    >
+                        Ayúdame a elegir
+
+                        <i data-lucide="arrow-up-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <button
+        type="button"
+        class="floating-assistant"
+        id="floatingAssistant"
+        aria-label="Abrir Asistente PMC"
+    >
+        <span class="floating-assistant__status"></span>
+
+        <i data-lucide="message-circle-more"></i>
+
+        <span class="floating-assistant__text">
+            ¿Necesitas ayuda?
+        </span>
+    </button>
+
+    <footer
+        class="site-footer"
+        id="contacto"
+    >
+        <div class="container">
+
+            <div class="site-footer__top">
+
+                <div class="site-footer__brand">
+
+                    <img
+                        src="imagenes/logo.png"
+                        alt="PMC Auto Detailing"
+                    >
+
+                    <p>
+                        Cuidado, protección y estética
+                        automotriz.
+                    </p>
+
+                </div>
+
+                <div class="site-footer__columns">
+
+                    <div class="footer-column">
+
+                        <h3>Explora</h3>
+
+                        <a href="servicios.html">
+                            Servicios
+                        </a>
+
+                        <a
+                            href="imagenes/CatalogoPMC.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Catálogo PDF
+                        </a>
+
+                        <a href="agenda.html">
+                            Agenda
+                        </a>
+
+                        <a href="index.html#asistente">
+                            Asistente PMC
+                        </a>
+
+                        <a href="index.html#resultados">
+                            Resultados
+                        </a>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>PMC</h3>
+
+                        <span>
+                            Río Grande, Oaxaca
+                        </span>
+
+                        <a
+                            href="mailto:PMC.Auto.Detailing@outlook.com"
+                        >
+                            PMC.Auto.Detailing@outlook.com
+                        </a>
+
+                        <a
+                            href="tel:+529542038099"
+                        >
+                            +52 954 203 8099
+                        </a>
+
+                    </div>
+
+                    <div class="footer-column">
+
+                        <h3>Síguenos</h3>
+
+                        <a
+                            href="https://www.instagram.com/pmcautodetailing/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Instagram
+                        </a>
+
+                        <span>
+                            PMC Auto Detailing
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="site-footer__bottom">
+
+                <span>
+                    © <span id="currentYear"></span>
+                    PMC Auto Detailing.
+                </span>
+
+                <span>
+                    Río Grande · Oaxaca
+                </span>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+    ></script>
+
+    <script
+        type="module"
+        src="js/servicios.js"
+    ></script>
+
+</body>
+</html>

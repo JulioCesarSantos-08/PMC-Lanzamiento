@@ -1,0 +1,1228 @@
+ <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Órdenes de trabajo | Operación PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../css/empleado.css"
+    >
+</head>
+
+<body class="employee-body">
+
+    <div
+        class="employee-loader"
+        id="pageLoader"
+    >
+
+        <div class="employee-loader__glow"></div>
+
+        <img
+            src="../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+        >
+
+        <div class="employee-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando órdenes PMC
+        </p>
+
+    </div>
+
+    <div
+        class="employee-shell"
+        id="employeeShell"
+        hidden
+    >
+
+        <aside
+            class="employee-sidebar"
+            id="employeeSidebar"
+        >
+
+            <div
+                class="employee-sidebar__backdrop"
+                id="employeeSidebarBackdrop"
+            ></div>
+
+            <div class="employee-sidebar__panel">
+
+                <div class="employee-sidebar__top">
+
+                    <a
+                        href="empleados.html"
+                        class="employee-brand"
+                    >
+
+                        <img
+                            src="../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Operación
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="employee-sidebar__close"
+                        id="employeeSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="employee-profile">
+
+                    <div class="employee-profile__avatar">
+
+                        <img
+                            src="../imagenes/logo.png"
+                            alt=""
+                            id="employeeAvatar"
+                            hidden
+                        >
+
+                        <span id="employeeInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="employee-profile__info">
+
+                        <span>
+                            Sesión operativa
+                        </span>
+
+                        <strong id="employeeName">
+                            Empleado
+                        </strong>
+
+                        <small id="employeeEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="employee-nav">
+
+                    <span class="employee-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="empleados.html"
+                        class="employee-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Inicio
+                        </span>
+
+                    </a>
+
+                    <span class="employee-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="employee-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                        <strong
+                            class="employee-nav__badge"
+                            id="employeeAppointmentsBadge"
+                            hidden
+                        >
+                            0
+                        </strong>
+
+                    </a>
+
+                    <a
+                        href="orden.html"
+                        class="employee-nav__item is-active"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                        <strong
+                            class="employee-nav__badge"
+                            id="employeeOrdersBadge"
+                            hidden
+                        >
+                            0
+                        </strong>
+
+                    </a>
+
+                </nav>
+
+                <div class="employee-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="employee-sidebar__finance"
+                        id="employeeFinanceButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../index.html"
+                        class="employee-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="employee-sidebar__logout"
+                        id="employeeLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="employee-main">
+
+            <header class="employee-header">
+
+                <div class="employee-header__left">
+
+                    <button
+                        type="button"
+                        class="employee-menu-button"
+                        id="employeeMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="employee-header__title">
+
+                        <span>
+                            Operación PMC
+                        </span>
+
+                        <strong>
+                            Órdenes de trabajo
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="employee-header__right">
+
+                    <div class="employee-header__date">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="employeeCurrentDate">
+                            Hoy
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="citas.html"
+                        class="employee-header__action"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Ver citas
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </header>
+
+            <main class="employee-content">
+
+                <section class="employee-page-heading">
+
+                    <div>
+
+                        <div class="employee-eyebrow">
+
+                            <span></span>
+
+                            TRABAJO PMC
+
+                        </div>
+
+                        <h1>
+                            Órdenes
+                        </h1>
+
+                        <p>
+                            Da seguimiento a los vehículos recibidos, inicia los trabajos, marca servicios terminados y prepara las entregas.
+                        </p>
+
+                    </div>
+
+                    <div class="employee-page-heading__actions">
+
+                        <a
+                            href="citas.html?estado=confirmada"
+                            class="employee-page-heading__button"
+                        >
+
+                            <i data-lucide="car-front"></i>
+
+                            Recibir vehículo
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+                <section class="employee-stats employee-orders-stats">
+
+                    <article class="employee-stat-card">
+
+                        <div class="employee-stat-card__icon">
+
+                            <i data-lucide="clipboard-list"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Activas
+                            </span>
+
+                            <strong id="employeeOrdersActiveCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Trabajos abiertos
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="employee-stat-card">
+
+                        <div class="employee-stat-card__icon">
+
+                            <i data-lucide="car-front"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Recibidos
+                            </span>
+
+                            <strong id="employeeOrdersReceivedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Esperando inicio
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="employee-stat-card">
+
+                        <div class="employee-stat-card__icon">
+
+                            <i data-lucide="wrench"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                En proceso
+                            </span>
+
+                            <strong id="employeeOrdersProgressCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Trabajando actualmente
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="employee-stat-card">
+
+                        <div class="employee-stat-card__icon">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Terminados
+                            </span>
+
+                            <strong id="employeeOrdersFinishedCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Pendientes de entrega
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="employee-stat-card">
+
+                        <div class="employee-stat-card__icon">
+
+                            <i data-lucide="key-round"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Entregados
+                            </span>
+
+                            <strong id="employeeOrdersDeliveredCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Historial completado
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="employee-panel employee-orders-panel">
+
+                    <div class="employee-list-toolbar">
+
+                        <div class="employee-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input
+                                type="search"
+                                id="employeeOrderSearch"
+                                placeholder="Buscar cliente, vehículo, servicio o folio..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <label class="employee-filter">
+
+                            <select id="employeeOrderStatusFilter">
+
+                                <option value="todos">
+                                    Todos los estados
+                                </option>
+
+                                <option value="recibido">
+                                    Recibidos
+                                </option>
+
+                                <option value="en_proceso">
+                                    En proceso
+                                </option>
+
+                                <option value="terminado">
+                                    Terminados
+                                </option>
+
+                                <option value="entregado">
+                                    Entregados
+                                </option>
+
+                                <option value="cancelado">
+                                    Cancelados
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                        <label class="employee-filter">
+
+                            <select id="employeeOrderSort">
+
+                                <option value="recientes">
+                                    Más recientes
+                                </option>
+
+                                <option value="antiguos">
+                                    Más antiguos
+                                </option>
+
+                                <option value="estado">
+                                    Por estado
+                                </option>
+
+                                <option value="cliente">
+                                    Por cliente
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                    </div>
+
+                    <div class="employee-orders-results">
+
+                        <div>
+
+                            <span>
+                                Mostrando
+                            </span>
+
+                            <strong id="employeeOrdersResultsCount">
+                                0 órdenes
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="employeeResetOrderFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="employee-orders-work-list"
+                        id="employeeOrdersWorkList"
+                    >
+
+                        <div class="employee-skeleton"></div>
+                        <div class="employee-skeleton"></div>
+                        <div class="employee-skeleton"></div>
+
+                    </div>
+
+                    <div
+                        class="employee-empty"
+                        id="employeeOrdersWorkEmpty"
+                        hidden
+                    >
+
+                        <div class="employee-empty__icon">
+
+                            <i data-lucide="clipboard-x"></i>
+
+                        </div>
+
+                        <h3>
+                            No encontramos órdenes
+                        </h3>
+
+                        <p>
+                            No hay trabajos que coincidan con los filtros seleccionados.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="employee-page-heading__button"
+                            id="employeeOrdersEmptyReset"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="employee-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Órdenes de trabajo
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="employee-modal"
+        id="employeeOrderModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="employee-modal__backdrop"
+            id="employeeOrderBackdrop"
+        ></div>
+
+        <div
+            class="employee-modal__card employee-order-modal__card"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="employee-modal__close"
+                id="employeeOrderClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="employee-order-modal__heading">
+
+                <div class="employee-order-modal__icon">
+
+                    <i data-lucide="clipboard-list"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        ORDEN DE TRABAJO
+                    </span>
+
+                    <h2 id="employeeOrderTitle">
+                        Servicio PMC
+                    </h2>
+
+                    <p id="employeeOrderFolio">
+                        Orden
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="employee-order-status-panel">
+
+                <div>
+
+                    <span>
+                        Estado del trabajo
+                    </span>
+
+                    <strong
+                        class="employee-status"
+                        id="employeeOrderStatus"
+                    >
+                        Recibido
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Pago
+                    </span>
+
+                    <strong
+                        class="employee-payment-status"
+                        id="employeeOrderPaymentStatus"
+                    >
+                        Pendiente
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <section class="employee-order-progress-section">
+
+                <div class="employee-order-progress__heading">
+
+                    <div>
+
+                        <span>
+                            PROGRESO
+                        </span>
+
+                        <h3>
+                            Seguimiento del vehículo
+                        </h3>
+
+                    </div>
+
+                    <strong id="employeeOrderProgressPercent">
+                        25%
+                    </strong>
+
+                </div>
+
+                <div class="employee-order-progress-track">
+
+                    <span id="employeeOrderProgressBar"></span>
+
+                </div>
+
+                <div class="employee-order-progress-steps">
+
+                    <div
+                        class="employee-order-step"
+                        data-order-step="recibido"
+                    >
+
+                        <div>
+
+                            <i data-lucide="car-front"></i>
+
+                        </div>
+
+                        <span>
+                            Recibido
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="employee-order-step"
+                        data-order-step="en_proceso"
+                    >
+
+                        <div>
+
+                            <i data-lucide="wrench"></i>
+
+                        </div>
+
+                        <span>
+                            En proceso
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="employee-order-step"
+                        data-order-step="terminado"
+                    >
+
+                        <div>
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+                        <span>
+                            Terminado
+                        </span>
+
+                    </div>
+
+                    <div
+                        class="employee-order-step"
+                        data-order-step="entregado"
+                    >
+
+                        <div>
+
+                            <i data-lucide="key-round"></i>
+
+                        </div>
+
+                        <span>
+                            Entregado
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <div class="employee-order-modal__grid">
+
+                <section class="employee-order-detail">
+
+                    <div class="employee-order-detail__title">
+
+                        <i data-lucide="user-round"></i>
+
+                        <span>
+                            Cliente
+                        </span>
+
+                    </div>
+
+                    <strong id="employeeOrderClientName">
+                        Cliente PMC
+                    </strong>
+
+                    <span id="employeeOrderClientEmail">
+                        Sin correo
+                    </span>
+
+                    <span id="employeeOrderClientPhone">
+                        Sin teléfono
+                    </span>
+
+                </section>
+
+                <section class="employee-order-detail">
+
+                    <div class="employee-order-detail__title">
+
+                        <i data-lucide="car-front"></i>
+
+                        <span>
+                            Vehículo
+                        </span>
+
+                    </div>
+
+                    <strong id="employeeOrderVehicleName">
+                        Vehículo
+                    </strong>
+
+                    <span id="employeeOrderVehicleType">
+                        Sin categoría
+                    </span>
+
+                    <span id="employeeOrderVehicleColor">
+                        Sin color
+                    </span>
+
+                </section>
+
+                <section class="employee-order-detail">
+
+                    <div class="employee-order-detail__title">
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicio
+                        </span>
+
+                    </div>
+
+                    <strong id="employeeOrderServiceName">
+                        Servicio PMC
+                    </strong>
+
+                    <span id="employeeOrderDuration">
+                        Sin duración
+                    </span>
+
+                    <span id="employeeOrderEstimatedPrice">
+                        Precio por confirmar
+                    </span>
+
+                </section>
+
+                <section class="employee-order-detail">
+
+                    <div class="employee-order-detail__title">
+
+                        <i data-lucide="calendar-clock"></i>
+
+                        <span>
+                            Recepción
+                        </span>
+
+                    </div>
+
+                    <strong id="employeeOrderReceivedDate">
+                        Sin fecha
+                    </strong>
+
+                    <span id="employeeOrderAppointmentTime">
+                        Sin horario
+                    </span>
+
+                    <span id="employeeOrderReceivedBy">
+                        Personal PMC
+                    </span>
+
+                </section>
+
+            </div>
+
+            <section class="employee-order-operation-section">
+
+                <div class="employee-order-operation__heading">
+
+                    <div>
+
+                        <span>
+                            OPERACIÓN
+                        </span>
+
+                        <h3>
+                            Notas del trabajo
+                        </h3>
+
+                    </div>
+
+                    <small>
+                        Solo uso interno
+                    </small>
+
+                </div>
+
+                <textarea
+                    id="employeeOrderNotes"
+                    maxlength="1500"
+                    placeholder="Agrega observaciones del vehículo, indicaciones del cliente o detalles del trabajo..."
+                ></textarea>
+
+                <div class="employee-order-operation__save">
+
+                    <span id="employeeOrderNotesState">
+                        Sin cambios
+                    </span>
+
+                    <button
+                        type="button"
+                        class="employee-action-button employee-action-button--secondary"
+                        id="employeeOrderSaveNotes"
+                    >
+
+                        <i data-lucide="save"></i>
+
+                        Guardar notas
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <section class="employee-order-appointment-link">
+
+                <div>
+
+                    <i data-lucide="calendar-days"></i>
+
+                    <div>
+
+                        <span>
+                            CITA DE ORIGEN
+                        </span>
+
+                        <strong id="employeeOrderAppointmentReference">
+                            Sin referencia
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <a
+                    href="citas.html"
+                    id="employeeOrderAppointmentButton"
+                >
+
+                    Ver cita
+
+                    <i data-lucide="arrow-up-right"></i>
+
+                </a>
+
+            </section>
+
+            <section class="employee-order-payment-info">
+
+                <div class="employee-order-payment-info__icon">
+
+                    <i data-lucide="wallet-cards"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        PAGO Y FINANZAS
+                    </span>
+
+                    <strong>
+                        La orden no registra ingresos automáticamente
+                    </strong>
+
+                    <p>
+                        El ingreso se generará únicamente cuando exista un pago confirmado en el flujo de recibo.
+                    </p>
+
+                </div>
+
+            </section>
+
+            <div class="employee-order-modal__actions">
+
+                <button
+                    type="button"
+                    class="employee-action-button employee-action-button--secondary"
+                    id="employeeOrderCloseButton"
+                >
+                    Cerrar
+                </button>
+
+                <button
+                    type="button"
+                    class="employee-action-button employee-action-button--start"
+                    id="employeeOrderStartButton"
+                    hidden
+                >
+
+                    <i data-lucide="play"></i>
+
+                    Iniciar trabajo
+
+                </button>
+
+                <button
+                    type="button"
+                    class="employee-action-button employee-action-button--finish"
+                    id="employeeOrderFinishButton"
+                    hidden
+                >
+
+                    <i data-lucide="circle-check-big"></i>
+
+                    Marcar terminado
+
+                </button>
+
+                <button
+                    type="button"
+                    class="employee-action-button employee-action-button--deliver"
+                    id="employeeOrderDeliverButton"
+                    hidden
+                >
+
+                    <i data-lucide="key-round"></i>
+
+                    Entregar vehículo
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="employee-access-denied"
+        id="employeeAccessDenied"
+        hidden
+    >
+
+        <div class="employee-access-denied__card">
+
+            <div class="employee-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes acceso operativo
+            </h1>
+
+            <p>
+                Tu cuenta no tiene permisos para utilizar las órdenes de trabajo de PMC.
+            </p>
+
+            <a
+                href="../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="employee-toast"
+        id="employeeToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span>
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="../js/empleado-orden.js"
+    ></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1727 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Recibos y pagos | PMC Auto Detailing
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando recibos PMC
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                    </button>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="recibos.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Recibos y pagos
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Catálogo
+                    </span>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="adminFinanceButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span>
+                            PMC Auto Detailing
+                        </span>
+
+                        <strong>
+                            Recibos y pagos
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <div class="admin-header__date">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="adminCurrentDate">
+                            Hoy
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="admin-header__action"
+                        id="adminNewReceiptButton"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Nuevo recibo
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            CONTROL ECONÓMICO
+
+                        </div>
+
+                        <h1>
+                            Recibos y pagos
+                        </h1>
+
+                        <p>
+                            Genera recibos desde las órdenes de trabajo, confirma los pagos y entrega al cliente un comprobante profesional de PMC Auto Detailing.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-page-heading__actions">
+
+                        <button
+                            type="button"
+                            class="admin-page-heading__button"
+                            id="adminCreateReceiptButton"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Crear recibo
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <section class="admin-stats admin-receipts-stats">
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-card__icon">
+
+                            <i data-lucide="receipt-text"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Recibos
+                            </span>
+
+                            <strong id="adminReceiptsTotalCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Total registrados
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-card__icon">
+
+                            <i data-lucide="clock-3"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Pendientes
+                            </span>
+
+                            <strong id="adminReceiptsPendingCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Sin pago confirmado
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-card__icon">
+
+                            <i data-lucide="circle-check-big"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Pagados
+                            </span>
+
+                            <strong id="adminReceiptsPaidCount">
+                                0
+                            </strong>
+
+                            <small>
+                                Pagos confirmados
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                    <article class="admin-stat-card">
+
+                        <div class="admin-stat-card__icon">
+
+                            <i data-lucide="wallet-cards"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Ingresos de hoy
+                            </span>
+
+                            <strong id="adminReceiptsTodayIncome">
+                                $0
+                            </strong>
+
+                            <small>
+                                Pagos confirmados hoy
+                            </small>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="admin-panel admin-receipts-panel">
+
+                    <div class="admin-list-toolbar">
+
+                        <div class="admin-search">
+
+                            <i data-lucide="search"></i>
+
+                            <input
+                                type="search"
+                                id="adminReceiptSearch"
+                                placeholder="Buscar cliente, vehículo, servicio, orden o recibo..."
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+                        <label class="admin-filter">
+
+                            <select id="adminReceiptStatusFilter">
+
+                                <option value="todos">
+                                    Todos los estados
+                                </option>
+
+                                <option value="pendiente">
+                                    Pendientes
+                                </option>
+
+                                <option value="pagado">
+                                    Pagados
+                                </option>
+
+                                <option value="cancelado">
+                                    Cancelados
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                        <label class="admin-filter">
+
+                            <select id="adminReceiptPaymentFilter">
+
+                                <option value="todos">
+                                    Todos los métodos
+                                </option>
+
+                                <option value="efectivo">
+                                    Efectivo
+                                </option>
+
+                                <option value="transferencia">
+                                    Transferencia
+                                </option>
+
+                                <option value="tarjeta">
+                                    Tarjeta
+                                </option>
+
+                                <option value="otro">
+                                    Otro
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                        <label class="admin-filter">
+
+                            <select id="adminReceiptSort">
+
+                                <option value="recientes">
+                                    Más recientes
+                                </option>
+
+                                <option value="antiguos">
+                                    Más antiguos
+                                </option>
+
+                                <option value="monto_mayor">
+                                    Mayor importe
+                                </option>
+
+                                <option value="monto_menor">
+                                    Menor importe
+                                </option>
+
+                            </select>
+
+                        </label>
+
+                    </div>
+
+                    <div class="admin-receipts-results">
+
+                        <div>
+
+                            <span>
+                                Mostrando
+                            </span>
+
+                            <strong id="adminReceiptsResultsCount">
+                                0 recibos
+                            </strong>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            id="adminResetReceiptFilters"
+                        >
+
+                            <i data-lucide="rotate-ccw"></i>
+
+                            Limpiar filtros
+
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="admin-receipts-list"
+                        id="adminReceiptsList"
+                    >
+
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+                        <div class="admin-skeleton"></div>
+
+                    </div>
+
+                    <div
+                        class="admin-empty"
+                        id="adminReceiptsEmpty"
+                        hidden
+                    >
+
+                        <div class="admin-empty__icon">
+
+                            <i data-lucide="receipt"></i>
+
+                        </div>
+
+                        <h3>
+                            No encontramos recibos
+                        </h3>
+
+                        <p>
+                            Los recibos aparecerán aquí cuando se generen desde una orden de trabajo.
+                        </p>
+
+                        <button
+                            type="button"
+                            class="admin-page-heading__button"
+                            id="adminReceiptsEmptyCreate"
+                        >
+
+                            <i data-lucide="plus"></i>
+
+                            Crear recibo
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Recibos y pagos
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="adminReceiptCreateModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="adminReceiptCreateBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-receipt-create-modal"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="adminReceiptCreateClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-receipt-modal__heading">
+
+                <div class="admin-receipt-modal__icon">
+
+                    <i data-lucide="receipt-text"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        NUEVO RECIBO
+                    </span>
+
+                    <h2>
+                        Generar recibo
+                    </h2>
+
+                    <p>
+                        Selecciona una orden de trabajo para preparar el cobro.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form
+                class="admin-receipt-form"
+                id="adminReceiptForm"
+            >
+
+                <div class="admin-form-field admin-form-field--full">
+
+                    <label for="adminReceiptOrder">
+                        Orden de trabajo
+                    </label>
+
+                    <select
+                        id="adminReceiptOrder"
+                        required
+                    >
+
+                        <option value="">
+                            Selecciona una orden
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div
+                    class="admin-receipt-order-preview"
+                    id="adminReceiptOrderPreview"
+                    hidden
+                >
+
+                    <div>
+
+                        <span>
+                            CLIENTE
+                        </span>
+
+                        <strong id="adminReceiptPreviewClient">
+                            Cliente PMC
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            VEHÍCULO
+                        </span>
+
+                        <strong id="adminReceiptPreviewVehicle">
+                            Vehículo
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            SERVICIO
+                        </span>
+
+                        <strong id="adminReceiptPreviewService">
+                            Servicio PMC
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            ORDEN
+                        </span>
+
+                        <strong id="adminReceiptPreviewOrder">
+                            Orden
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-receipt-form__grid">
+
+                    <div class="admin-form-field">
+
+                        <label for="adminReceiptAmount">
+                            Importe final
+                        </label>
+
+                        <div class="admin-money-input">
+
+                            <span>
+                                $
+                            </span>
+
+                            <input
+                                type="number"
+                                id="adminReceiptAmount"
+                                min="0"
+                                step="0.01"
+                                placeholder="0.00"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="admin-form-field">
+
+                        <label for="adminReceiptPaymentMethod">
+                            Método de pago
+                        </label>
+
+                        <select id="adminReceiptPaymentMethod">
+
+                            <option value="">
+                                Por definir
+                            </option>
+
+                            <option value="efectivo">
+                                Efectivo
+                            </option>
+
+                            <option value="transferencia">
+                                Transferencia
+                            </option>
+
+                            <option value="tarjeta">
+                                Tarjeta
+                            </option>
+
+                            <option value="otro">
+                                Otro
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-form-field admin-form-field--full">
+
+                    <label for="adminReceiptConcept">
+                        Concepto
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminReceiptConcept"
+                        maxlength="180"
+                        placeholder="Servicio realizado"
+                        required
+                    >
+
+                </div>
+
+                <div class="admin-form-field admin-form-field--full">
+
+                    <label for="adminReceiptNotes">
+                        Notas
+                    </label>
+
+                    <textarea
+                        id="adminReceiptNotes"
+                        maxlength="1000"
+                        placeholder="Información adicional del recibo..."
+                    ></textarea>
+
+                </div>
+
+                <div class="admin-receipt-warning">
+
+                    <i data-lucide="info"></i>
+
+                    <div>
+
+                        <strong>
+                            Crear el recibo no genera un ingreso
+                        </strong>
+
+                        <p>
+                            El movimiento en Finanzas se registrará únicamente cuando el pago sea confirmado.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-receipt-form__actions">
+
+                    <button
+                        type="button"
+                        class="admin-action-button admin-action-button--secondary"
+                        id="adminReceiptCreateCancel"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="admin-action-button admin-action-button--primary"
+                        id="adminReceiptSubmit"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        Crear recibo
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="adminReceiptDetailModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="adminReceiptDetailBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-receipt-detail-modal"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="adminReceiptDetailClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-receipt-modal__heading">
+
+                <div class="admin-receipt-modal__icon">
+
+                    <i data-lucide="database"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        VISTA ADMINISTRATIVA
+                    </span>
+
+                    <h2 id="adminReceiptDetailTitle">
+                        Recibo
+                    </h2>
+
+                    <p id="adminReceiptDetailFolio">
+                        Folio
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-receipt-status-panel">
+
+                <div>
+
+                    <span>
+                        Estado
+                    </span>
+
+                    <strong
+                        class="admin-receipt-status"
+                        id="adminReceiptDetailStatus"
+                    >
+                        Pendiente
+                    </strong>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        Importe
+                    </span>
+
+                    <strong id="adminReceiptDetailAmount">
+                        $0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <div class="admin-receipt-detail-grid">
+
+                <section class="admin-receipt-detail">
+
+                    <div class="admin-receipt-detail__title">
+
+                        <i data-lucide="user-round"></i>
+
+                        <span>
+                            Cliente
+                        </span>
+
+                    </div>
+
+                    <strong id="adminReceiptDetailClient">
+                        Cliente PMC
+                    </strong>
+
+                    <span id="adminReceiptDetailClientEmail">
+                        Sin correo
+                    </span>
+
+                    <span id="adminReceiptDetailClientPhone">
+                        Sin teléfono
+                    </span>
+
+                </section>
+
+                <section class="admin-receipt-detail">
+
+                    <div class="admin-receipt-detail__title">
+
+                        <i data-lucide="car-front"></i>
+
+                        <span>
+                            Vehículo
+                        </span>
+
+                    </div>
+
+                    <strong id="adminReceiptDetailVehicle">
+                        Vehículo
+                    </strong>
+
+                    <span id="adminReceiptDetailVehicleType">
+                        Sin categoría
+                    </span>
+
+                    <span id="adminReceiptDetailVehicleColor">
+                        Sin color
+                    </span>
+
+                </section>
+
+                <section class="admin-receipt-detail">
+
+                    <div class="admin-receipt-detail__title">
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicio
+                        </span>
+
+                    </div>
+
+                    <strong id="adminReceiptDetailService">
+                        Servicio PMC
+                    </strong>
+
+                    <span id="adminReceiptDetailConcept">
+                        Servicio realizado
+                    </span>
+
+                </section>
+
+                <section class="admin-receipt-detail">
+
+                    <div class="admin-receipt-detail__title">
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Orden
+                        </span>
+
+                    </div>
+
+                    <strong id="adminReceiptDetailOrder">
+                        Orden
+                    </strong>
+
+                    <span id="adminReceiptDetailCreated">
+                        Sin fecha
+                    </span>
+
+                </section>
+
+            </div>
+
+            <section
+                class="admin-receipt-payment-box"
+                id="adminReceiptPaymentBox"
+            >
+
+                <div class="admin-receipt-payment-box__heading">
+
+                    <div>
+
+                        <span>
+                            PAGO
+                        </span>
+
+                        <h3 id="adminReceiptPaymentTitle">
+                            Pago pendiente
+                        </h3>
+
+                    </div>
+
+                    <i data-lucide="wallet-cards"></i>
+
+                </div>
+
+                <div class="admin-receipt-payment-grid">
+
+                    <div>
+
+                        <span>
+                            Método
+                        </span>
+
+                        <strong id="adminReceiptDetailPaymentMethod">
+                            Por definir
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Fecha de pago
+                        </span>
+
+                        <strong id="adminReceiptDetailPaidDate">
+                            Pendiente
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Confirmado por
+                        </span>
+
+                        <strong id="adminReceiptDetailPaidBy">
+                            Pendiente
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Finanzas
+                        </span>
+
+                        <strong id="adminReceiptDetailFinanceState">
+                            Sin registrar
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <section
+                class="admin-receipt-notes"
+                id="adminReceiptDetailNotesSection"
+                hidden
+            >
+
+                <div>
+
+                    <i data-lucide="notebook-text"></i>
+
+                    <span>
+                        NOTAS
+                    </span>
+
+                </div>
+
+                <p id="adminReceiptDetailNotes">
+                    Sin notas.
+                </p>
+
+            </section>
+
+            <div class="admin-receipt-detail__actions">
+
+                <button
+                    type="button"
+                    class="admin-action-button admin-action-button--secondary"
+                    id="adminReceiptDetailCloseButton"
+                >
+                    Cerrar
+                </button>
+
+                <a
+                    href="ordenes.html"
+                    class="admin-action-button admin-action-button--secondary"
+                    id="adminReceiptOrderButton"
+                >
+
+                    <i data-lucide="clipboard-list"></i>
+
+                    Ver orden
+
+                </a>
+
+                <button
+                    type="button"
+                    class="admin-action-button admin-action-button--primary"
+                    id="adminReceiptCustomerButton"
+                    hidden
+                >
+
+                    <i data-lucide="image"></i>
+
+                    Recibo para cliente
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-action-button admin-action-button--confirm"
+                    id="adminReceiptConfirmPaymentButton"
+                    hidden
+                >
+
+                    <i data-lucide="circle-dollar-sign"></i>
+
+                    Confirmar pago
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="adminCustomerReceiptModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="adminCustomerReceiptBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-customer-receipt-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="adminCustomerReceiptTitle"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="adminCustomerReceiptClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-receipt-modal__heading">
+
+                <div class="admin-receipt-modal__icon">
+
+                    <i data-lucide="image"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        COMPROBANTE PARA CLIENTE
+                    </span>
+
+                    <h2 id="adminCustomerReceiptTitle">
+                        Recibo PMC Auto Detailing
+                    </h2>
+
+                    <p>
+                        Vista previa de la imagen que podrás descargar o compartir con el cliente.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="admin-customer-receipt-preview">
+
+                <div
+                    class="admin-customer-receipt-preview__loading"
+                    id="adminCustomerReceiptLoading"
+                >
+
+                    <i data-lucide="loader-circle"></i>
+
+                    <span>
+                        Preparando recibo profesional...
+                    </span>
+
+                </div>
+
+                <img
+                    id="adminCustomerReceiptImage"
+                    alt="Recibo de PMC Auto Detailing"
+                    hidden
+                >
+
+            </div>
+
+            <div class="admin-customer-receipt-info">
+
+                <i data-lucide="badge-check"></i>
+
+                <p>
+                    Este comprobante incluye la identidad de PMC Auto Detailing, los datos del servicio, el importe, el estado del pago y la fecha y hora en que se genera para entregarlo al cliente.
+                </p>
+
+            </div>
+
+            <div class="admin-receipt-detail__actions admin-customer-receipt-actions">
+
+                <button
+                    type="button"
+                    class="admin-action-button admin-action-button--secondary"
+                    id="adminCustomerReceiptCloseButton"
+                >
+                    Cerrar
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-action-button admin-action-button--secondary"
+                    id="adminCustomerReceiptDownload"
+                    disabled
+                >
+
+                    <i data-lucide="download"></i>
+
+                    Descargar imagen
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-action-button admin-action-button--secondary"
+                    id="adminCustomerReceiptPrint"
+                    disabled
+                >
+
+                    <i data-lucide="printer"></i>
+
+                    Imprimir / PDF
+
+                </button>
+
+                <button
+                    type="button"
+                    class="admin-action-button admin-action-button--confirm"
+                    id="adminCustomerReceiptWhatsApp"
+                    disabled
+                >
+
+                    <i data-lucide="message-circle"></i>
+
+                    Enviar por WhatsApp
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-modal"
+        id="adminPaymentModal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="admin-modal__backdrop"
+            id="adminPaymentBackdrop"
+        ></div>
+
+        <div
+            class="admin-modal__card admin-payment-modal"
+            role="dialog"
+            aria-modal="true"
+        >
+
+            <button
+                type="button"
+                class="admin-modal__close"
+                id="adminPaymentClose"
+                aria-label="Cerrar"
+            >
+
+                <i data-lucide="x"></i>
+
+            </button>
+
+            <div class="admin-receipt-modal__heading">
+
+                <div class="admin-receipt-modal__icon">
+
+                    <i data-lucide="circle-dollar-sign"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        CONFIRMAR PAGO
+                    </span>
+
+                    <h2>
+                        Registrar pago recibido
+                    </h2>
+
+                    <p id="adminPaymentReceiptReference">
+                        Recibo PMC
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form id="adminPaymentForm">
+
+                <div class="admin-payment-summary">
+
+                    <span>
+                        IMPORTE A CONFIRMAR
+                    </span>
+
+                    <strong id="adminPaymentAmount">
+                        $0.00
+                    </strong>
+
+                </div>
+
+                <div class="admin-form-field admin-form-field--full">
+
+                    <label for="adminPaymentMethod">
+                        Método de pago
+                    </label>
+
+                    <select
+                        id="adminPaymentMethod"
+                        required
+                    >
+
+                        <option value="">
+                            Selecciona un método
+                        </option>
+
+                        <option value="efectivo">
+                            Efectivo
+                        </option>
+
+                        <option value="transferencia">
+                            Transferencia
+                        </option>
+
+                        <option value="tarjeta">
+                            Tarjeta
+                        </option>
+
+                        <option value="otro">
+                            Otro
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div
+                    class="admin-form-field admin-form-field--full"
+                    id="adminPaymentReferenceField"
+                    hidden
+                >
+
+                    <label for="adminPaymentReference">
+                        Referencia
+                    </label>
+
+                    <input
+                        type="text"
+                        id="adminPaymentReference"
+                        maxlength="120"
+                        placeholder="Número de operación o referencia"
+                    >
+
+                </div>
+
+                <div class="admin-form-field admin-form-field--full">
+
+                    <label for="adminPaymentNotes">
+                        Nota del pago
+                    </label>
+
+                    <textarea
+                        id="adminPaymentNotes"
+                        maxlength="500"
+                        placeholder="Información adicional del pago..."
+                    ></textarea>
+
+                </div>
+
+                <div class="admin-payment-confirmation-warning">
+
+                    <i data-lucide="triangle-alert"></i>
+
+                    <div>
+
+                        <strong>
+                            Esta acción sí genera un ingreso
+                        </strong>
+
+                        <p>
+                            Al confirmar el pago se registrará el ingreso correspondiente en el sistema de Finanzas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-receipt-form__actions">
+
+                    <button
+                        type="button"
+                        class="admin-action-button admin-action-button--secondary"
+                        id="adminPaymentCancel"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="admin-action-button admin-action-button--confirm"
+                        id="adminPaymentSubmit"
+                    >
+
+                        <i data-lucide="circle-dollar-sign"></i>
+
+                        Confirmar pago
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes acceso administrativo
+            </h1>
+
+            <p>
+                Tu cuenta no tiene permisos para gestionar recibos y pagos de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span>
+            Operación realizada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="recibos.js"
+    ></script>
+
+</body>
+
+</html>

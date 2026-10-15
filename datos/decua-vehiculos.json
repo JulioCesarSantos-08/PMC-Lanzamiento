@@ -1,0 +1,1361 @@
+{
+  "version": "1.0.0",
+  "nombreBase": "Conocimiento de vehículos para Decua",
+  "descripcion": "Base de conocimiento utilizada por Decua para interpretar vehículos, antigüedad, condición, uso y necesidades generales de cuidado automotriz. Esta información sirve como orientación y nunca sustituye una evaluación física del vehículo.",
+  "principios": {
+    "noAsumirEstadoPorAnio": true,
+    "noAsumirEstadoPorMarca": true,
+    "noAsumirPrecioPorMarca": true,
+    "noAsumirServicioPorValorVehiculo": true,
+    "recomendarSegunObjetivo": true,
+    "considerarAntiguedad": true,
+    "considerarEstadoDeclarado": true,
+    "considerarUso": true,
+    "considerarLugarEstacionamiento": true,
+    "considerarExposicionAmbiental": true,
+    "pedirInformacionSiFaltaContexto": true,
+    "usarCatalogoPMCParaServiciosReales": true,
+    "usarFirestoreParaPreciosReales": true
+  },
+  "reglasGenerales": {
+    "vehiculoNuevoNoSignificaPerfecto": "Un vehículo reciente puede presentar contaminación, marcas de transporte, microarañazos, defectos de lavado o daños ambientales. Decua no debe asegurar que un vehículo nuevo está perfecto sin evaluación.",
+    "vehiculoAntiguoNoSignificaDeteriorado": "Un vehículo con varios años puede encontrarse en excelentes condiciones si ha recibido cuidados adecuados.",
+    "marcaPremiumNoCambiaNecesidad": "La marca o valor comercial del vehículo no determina por sí misma el proceso que necesita.",
+    "precioNoDependeSoloMarca": "Decua nunca debe aumentar o inventar un precio únicamente porque el vehículo sea de una marca premium.",
+    "evaluacionAntesDeCorreccion": "Los procesos de corrección de pintura deben recomendarse con lenguaje orientativo y sujetos a evaluación.",
+    "rayonesNoSiempreDesaparecen": "No todos los rayones pueden eliminarse con pulido o corrección. La profundidad y condición de la pintura deben evaluarse.",
+    "proteccionNoCorrigeDefectos": "Un cerámico, sellador o PPF tiene una función de protección y no debe presentarse como sustituto automático de una corrección previa cuando existen defectos importantes.",
+    "objetivoPrimero": "Antes de recomendar varios procesos, Decua debe tratar de identificar el objetivo principal del cliente."
+  },
+  "clasificacionAntiguedad": [
+    {
+      "id": "recien_salido",
+      "edadMinima": 0,
+      "edadMaxima": 1,
+      "nombre": "Vehículo reciente",
+      "descripcion": "Vehículo nuevo o con muy poco tiempo de uso.",
+      "enfoquePrincipal": [
+        "conservación",
+        "protección",
+        "prevención",
+        "mantenimiento correcto"
+      ],
+      "evitarAsumir": [
+        "que necesita corrección de pintura",
+        "que necesita pulido",
+        "que está libre de microarañazos",
+        "que está libre de contaminación"
+      ],
+      "preguntasSugeridas": [
+        "¿El vehículo acaba de salir de agencia?",
+        "¿La pintura se encuentra en buenas condiciones?",
+        "¿Buscas protegerlo desde ahora?",
+        "¿Lo utilizas diariamente?",
+        "¿Duerme bajo techo o permanece expuesto?",
+        "¿Te interesa proteger zonas de alto impacto?"
+      ],
+      "orientacion": "Si el vehículo se encuentra en muy buenas condiciones, Decua debe priorizar conversaciones sobre conservación y protección antes que procesos correctivos."
+    },
+    {
+      "id": "relativamente_reciente",
+      "edadMinima": 2,
+      "edadMaxima": 4,
+      "nombre": "Vehículo relativamente reciente",
+      "descripcion": "Vehículo con algunos años de uso que puede conservar condiciones muy buenas o presentar desgaste inicial.",
+      "enfoquePrincipal": [
+        "evaluación del acabado",
+        "mantenimiento",
+        "protección",
+        "limpieza profunda cuando sea necesaria"
+      ],
+      "preguntasSugeridas": [
+        "¿Notas pérdida de brillo?",
+        "¿Tiene microarañazos o marcas de lavado?",
+        "¿Cómo se encuentra el interior?",
+        "¿Ha recibido alguna protección anteriormente?",
+        "¿Lo utilizas diariamente?",
+        "¿Permanece expuesto al sol o lluvia?"
+      ],
+      "orientacion": "Decua debe combinar la antigüedad con el estado descrito por el cliente antes de recomendar."
+    },
+    {
+      "id": "uso_intermedio",
+      "edadMinima": 5,
+      "edadMaxima": 8,
+      "nombre": "Vehículo de uso intermedio",
+      "descripcion": "Vehículo que puede presentar desgaste acumulado dependiendo de uso, almacenamiento y mantenimiento.",
+      "enfoquePrincipal": [
+        "evaluación de pintura",
+        "interior",
+        "faros",
+        "vidrios",
+        "motor",
+        "chasis",
+        "protección posterior"
+      ],
+      "preguntasSugeridas": [
+        "¿Qué zona del vehículo quieres mejorar primero?",
+        "¿La pintura conserva buen brillo?",
+        "¿Tiene rayones visibles?",
+        "¿Los faros se ven opacos?",
+        "¿El interior presenta manchas u olores?",
+        "¿Lo quieres conservar o estás pensando venderlo?"
+      ],
+      "orientacion": "Decua puede sugerir una revisión más completa sin asumir que todos los componentes necesitan intervención."
+    },
+    {
+      "id": "mayor_antiguedad",
+      "edadMinima": 9,
+      "edadMaxima": 50,
+      "nombre": "Vehículo de mayor antigüedad",
+      "descripcion": "Vehículo con varios años de circulación. Su estado depende mucho del mantenimiento y condiciones de uso.",
+      "enfoquePrincipal": [
+        "evaluación por zonas",
+        "recuperación estética",
+        "limpieza",
+        "mejora de presentación",
+        "protección cuando sea conveniente"
+      ],
+      "preguntasSugeridas": [
+        "¿Qué es lo que más te gustaría recuperar del vehículo?",
+        "¿La pintura está opaca o tiene rayones?",
+        "¿Cómo están los faros?",
+        "¿Cómo está el interior?",
+        "¿Quieres conservarlo, renovarlo o prepararlo para vender?"
+      ],
+      "orientacion": "Decua nunca debe llamar viejo, deteriorado o descuidado al vehículo únicamente por su año."
+    }
+  ],
+  "estadosDeclarados": {
+    "excelente": {
+      "sinonimos": [
+        "como nuevo",
+        "impecable",
+        "perfecto",
+        "muy bien cuidado",
+        "excelentes condiciones",
+        "recién salido",
+        "recien salido"
+      ],
+      "interpretacion": "El cliente considera que el vehículo se encuentra en muy buenas condiciones.",
+      "orientacion": [
+        "priorizar conservación",
+        "consultar interés en protección",
+        "evitar recomendar correcciones agresivas sin motivo",
+        "consultar hábitos de uso"
+      ]
+    },
+    "bueno": {
+      "sinonimos": [
+        "bien",
+        "en buen estado",
+        "cuidado",
+        "normal",
+        "se ve bien"
+      ],
+      "interpretacion": "El vehículo aparentemente no presenta deterioro importante según el cliente.",
+      "orientacion": [
+        "preguntar qué quiere mejorar",
+        "buscar mantenimiento preventivo",
+        "considerar protección",
+        "no asumir defectos"
+      ]
+    },
+    "regular": {
+      "sinonimos": [
+        "más o menos",
+        "mas o menos",
+        "regular",
+        "ya tiene detalles",
+        "algo descuidado",
+        "tiene sus detalles"
+      ],
+      "interpretacion": "El vehículo puede presentar diferentes necesidades estéticas.",
+      "orientacion": [
+        "preguntar por pintura",
+        "preguntar por interior",
+        "preguntar por faros",
+        "identificar objetivo principal",
+        "recomendar evaluación"
+      ]
+    },
+    "deteriorado": {
+      "sinonimos": [
+        "muy descuidado",
+        "muy rayado",
+        "muy opaco",
+        "bastante mal",
+        "muy sucio",
+        "abandonado"
+      ],
+      "interpretacion": "El cliente reporta deterioro notable.",
+      "orientacion": [
+        "evitar prometer restauración total",
+        "dividir necesidades por zonas",
+        "priorizar evaluación",
+        "explicar que algunos defectos pueden ser permanentes"
+      ]
+    }
+  },
+  "objetivosCliente": {
+    "conservar": {
+      "frases": [
+        "quiero conservarlo",
+        "quiero mantenerlo",
+        "quiero que siga como nuevo",
+        "quiero cuidarlo",
+        "no quiero que se deteriore",
+        "quiero protegerlo"
+      ],
+      "prioridades": [
+        "protección",
+        "mantenimiento",
+        "lavado adecuado",
+        "cuidado preventivo"
+      ],
+      "estiloRespuesta": "orientación preventiva"
+    },
+    "mejorarApariencia": {
+      "frases": [
+        "quiero que se vea mejor",
+        "quiero que brille",
+        "quiero mejorarlo",
+        "quiero que luzca nuevo",
+        "quiero revivirlo",
+        "quiero restaurar su apariencia"
+      ],
+      "prioridades": [
+        "pintura",
+        "brillo",
+        "faros",
+        "vidrios",
+        "interior"
+      ],
+      "estiloRespuesta": "identificar primero las zonas que más afectan la apariencia"
+    },
+    "vender": {
+      "frases": [
+        "quiero venderlo",
+        "lo voy a vender",
+        "quiero prepararlo para vender",
+        "quiero subirlo a venta",
+        "quiero que se vea bien para vender",
+        "quiero aumentar su presentación"
+      ],
+      "prioridades": [
+        "presentación exterior",
+        "interior",
+        "faros",
+        "limpieza",
+        "servicios publicados orientados a venta"
+      ],
+      "estiloRespuesta": "priorizar mejoras visuales que ayuden a presentar mejor el vehículo sin prometer aumento de valor comercial"
+    },
+    "recuperar": {
+      "frases": [
+        "quiero recuperarlo",
+        "quiero restaurarlo",
+        "quiero revivir la pintura",
+        "quiero quitar lo opaco",
+        "quiero arreglar sus detalles"
+      ],
+      "prioridades": [
+        "evaluación",
+        "pintura",
+        "faros",
+        "interior",
+        "componentes visibles"
+      ],
+      "estiloRespuesta": "aclarar qué puede mejorar y qué necesita evaluación"
+    },
+    "limpiar": {
+      "frases": [
+        "quiero limpiarlo",
+        "está sucio",
+        "esta sucio",
+        "necesita limpieza",
+        "quiero una limpieza profunda"
+      ],
+      "prioridades": [
+        "exterior",
+        "interior",
+        "motor",
+        "chasis"
+      ],
+      "estiloRespuesta": "preguntar qué áreas requieren atención"
+    },
+    "proteger": {
+      "frases": [
+        "quiero protegerlo",
+        "quiero cuidar la pintura",
+        "quiero proteger la pintura",
+        "quiero evitar rayones",
+        "quiero poner cerámico",
+        "quiero poner ppf"
+      ],
+      "prioridades": [
+        "estado actual de pintura",
+        "uso cotidiano",
+        "tipo de protección",
+        "zonas de exposición"
+      ],
+      "estiloRespuesta": "explicar que primero debe conocerse el estado de la superficie"
+    }
+  },
+  "usoVehiculo": {
+    "diario": {
+      "frases": [
+        "lo uso diario",
+        "lo uso todos los días",
+        "es mi carro de diario",
+        "lo manejo diario"
+      ],
+      "factores": [
+        "mayor exposición",
+        "lavados frecuentes",
+        "contaminación vial",
+        "sol",
+        "lluvia",
+        "polvo"
+      ],
+      "orientacion": "Puede tener sentido priorizar mantenimiento práctico y protección acorde con el uso."
+    },
+    "ocasional": {
+      "frases": [
+        "lo uso poco",
+        "solo fines de semana",
+        "casi no lo uso",
+        "es de colección",
+        "solo lo saco a veces"
+      ],
+      "factores": [
+        "almacenamiento",
+        "polvo acumulado",
+        "protección durante reposo"
+      ],
+      "orientacion": "La frecuencia de uso es menor, pero las condiciones de almacenamiento siguen siendo importantes."
+    },
+    "trabajo": {
+      "frases": [
+        "lo uso para trabajar",
+        "es de trabajo",
+        "lo uso en obra",
+        "lo uso para reparto",
+        "lo uso para cargar"
+      ],
+      "factores": [
+        "suciedad frecuente",
+        "desgaste",
+        "polvo",
+        "interior de uso intensivo",
+        "chasis"
+      ],
+      "orientacion": "Decua puede priorizar practicidad, limpieza y mantenimiento visual."
+    },
+    "carretera": {
+      "frases": [
+        "viajo mucho",
+        "lo uso en carretera",
+        "salgo a carretera seguido"
+      ],
+      "factores": [
+        "insectos",
+        "impactos pequeños",
+        "contaminación",
+        "exposición frontal"
+      ],
+      "orientacion": "Puede ser relevante hablar de protección frontal y mantenimiento frecuente si PMC ofrece opciones compatibles."
+    }
+  },
+  "estacionamiento": {
+    "bajoTecho": {
+      "frases": [
+        "duerme bajo techo",
+        "está en cochera",
+        "esta en cochera",
+        "siempre está techado",
+        "siempre esta techado"
+      ],
+      "riesgosReducidos": [
+        "radiación solar directa prolongada",
+        "lluvia directa",
+        "excremento de aves"
+      ],
+      "nota": "Estar bajo techo reduce algunas exposiciones, pero no elimina la necesidad de mantenimiento."
+    },
+    "intemperie": {
+      "frases": [
+        "duerme afuera",
+        "se queda en la calle",
+        "está al sol",
+        "esta al sol",
+        "queda a la intemperie"
+      ],
+      "factores": [
+        "sol",
+        "lluvia",
+        "polvo",
+        "contaminación",
+        "residuos orgánicos"
+      ],
+      "orientacion": "Puede existir mayor beneficio en protección y mantenimiento frecuente."
+    }
+  },
+  "tiposVehiculo": {
+    "sedan": {
+      "nombre": "Sedán",
+      "sinonimos": [
+        "sedan",
+        "sedán"
+      ],
+      "descripcion": "Automóvil de pasajeros con carrocería tradicional y cajuela separada.",
+      "consideraciones": [
+        "área exterior moderada",
+        "interior de pasajeros",
+        "cajuela independiente"
+      ]
+    },
+    "hatchback": {
+      "nombre": "Hatchback",
+      "sinonimos": [
+        "hatch",
+        "hatchback",
+        "compacto"
+      ],
+      "descripcion": "Automóvil compacto con portón trasero integrado.",
+      "consideraciones": [
+        "carrocería compacta",
+        "portón trasero",
+        "área de carga integrada"
+      ]
+    },
+    "suv": {
+      "nombre": "SUV",
+      "sinonimos": [
+        "suv",
+        "crossover",
+        "cuv"
+      ],
+      "descripcion": "Vehículo utilitario deportivo o crossover.",
+      "consideraciones": [
+        "mayor superficie exterior",
+        "altura adicional",
+        "interior con mayor volumen en muchos modelos"
+      ]
+    },
+    "pickup": {
+      "nombre": "Pick-up",
+      "sinonimos": [
+        "pickup",
+        "pick up",
+        "pick-up",
+        "camioneta de caja"
+      ],
+      "descripcion": "Vehículo con cabina y caja de carga.",
+      "consideraciones": [
+        "caja de carga",
+        "zona de trabajo",
+        "posible exposición a tierra",
+        "chasis visible en algunos modelos"
+      ]
+    },
+    "coupe": {
+      "nombre": "Coupé",
+      "sinonimos": [
+        "coupe",
+        "coupé"
+      ],
+      "descripcion": "Vehículo de diseño deportivo, generalmente de dos puertas.",
+      "consideraciones": [
+        "perfil deportivo",
+        "pintura como elemento visual relevante"
+      ]
+    },
+    "convertible": {
+      "nombre": "Convertible",
+      "sinonimos": [
+        "convertible",
+        "cabrio",
+        "descapotable"
+      ],
+      "descripcion": "Vehículo con techo retráctil o desmontable.",
+      "consideraciones": [
+        "material del techo",
+        "sellos",
+        "interior potencialmente más expuesto"
+      ]
+    },
+    "van": {
+      "nombre": "Van",
+      "sinonimos": [
+        "van",
+        "minivan",
+        "furgoneta"
+      ],
+      "descripcion": "Vehículo de pasajeros o carga con gran volumen interior.",
+      "consideraciones": [
+        "mayor superficie",
+        "mayor volumen interior",
+        "uso familiar o comercial"
+      ]
+    },
+    "moto": {
+      "nombre": "Motocicleta",
+      "sinonimos": [
+        "moto",
+        "motocicleta"
+      ],
+      "descripcion": "Vehículo motorizado de dos ruedas.",
+      "consideraciones": [
+        "superficies pequeñas",
+        "componentes expuestos",
+        "materiales variados"
+      ],
+      "nota": "Decua solo debe recomendar servicios para motocicletas cuando PMC los tenga publicados."
+    }
+  },
+  "marcas": {
+    "Audi": {
+      "aliases": [
+        "audi"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Alemania",
+      "notaDecua": "No asumir que requiere tratamientos especiales únicamente por ser Audi. Consultar modelo, año, estado y objetivo."
+    },
+    "BMW": {
+      "aliases": [
+        "bmw"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Alemania",
+      "notaDecua": "Evaluar la necesidad real del vehículo sin relacionar automáticamente marca con precio o proceso."
+    },
+    "Mercedes-Benz": {
+      "aliases": [
+        "mercedes",
+        "mercedes benz",
+        "mercedes-benz"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Alemania",
+      "notaDecua": "Priorizar condición y objetivo del cliente."
+    },
+    "Porsche": {
+      "aliases": [
+        "porsche"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Alemania",
+      "notaDecua": "No prometer procesos sin evaluación."
+    },
+    "Volkswagen": {
+      "aliases": [
+        "volkswagen",
+        "vw"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Alemania"
+    },
+    "Chevrolet": {
+      "aliases": [
+        "chevrolet",
+        "chevy"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Estados Unidos"
+    },
+    "Ford": {
+      "aliases": [
+        "ford"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Estados Unidos"
+    },
+    "GMC": {
+      "aliases": [
+        "gmc"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Estados Unidos"
+    },
+    "Jeep": {
+      "aliases": [
+        "jeep"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Estados Unidos"
+    },
+    "Dodge": {
+      "aliases": [
+        "dodge"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Estados Unidos"
+    },
+    "RAM": {
+      "aliases": [
+        "ram"
+      ],
+      "segmentoGeneral": "pickup",
+      "paisOrigenMarca": "Estados Unidos"
+    },
+    "Cadillac": {
+      "aliases": [
+        "cadillac"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Estados Unidos"
+    },
+    "Tesla": {
+      "aliases": [
+        "tesla"
+      ],
+      "segmentoGeneral": "electrico",
+      "paisOrigenMarca": "Estados Unidos",
+      "notaDecua": "No realizar afirmaciones sobre procedimientos específicos en componentes eléctricos. Limitar orientación a servicios publicados por PMC."
+    },
+    "Toyota": {
+      "aliases": [
+        "toyota"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Japón"
+    },
+    "Honda": {
+      "aliases": [
+        "honda"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Japón"
+    },
+    "Nissan": {
+      "aliases": [
+        "nissan"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Japón"
+    },
+    "Mazda": {
+      "aliases": [
+        "mazda"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Japón"
+    },
+    "Mitsubishi": {
+      "aliases": [
+        "mitsubishi"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Japón"
+    },
+    "Suzuki": {
+      "aliases": [
+        "suzuki"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Japón"
+    },
+    "Subaru": {
+      "aliases": [
+        "subaru"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Japón"
+    },
+    "Lexus": {
+      "aliases": [
+        "lexus"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Japón"
+    },
+    "Acura": {
+      "aliases": [
+        "acura"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Japón"
+    },
+    "Infiniti": {
+      "aliases": [
+        "infiniti"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Japón"
+    },
+    "Kia": {
+      "aliases": [
+        "kia"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Corea del Sur"
+    },
+    "Hyundai": {
+      "aliases": [
+        "hyundai"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Corea del Sur"
+    },
+    "Genesis": {
+      "aliases": [
+        "genesis"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Corea del Sur"
+    },
+    "SEAT": {
+      "aliases": [
+        "seat"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "España"
+    },
+    "Cupra": {
+      "aliases": [
+        "cupra"
+      ],
+      "segmentoGeneral": "deportivo",
+      "paisOrigenMarca": "España"
+    },
+    "Renault": {
+      "aliases": [
+        "renault"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Francia"
+    },
+    "Peugeot": {
+      "aliases": [
+        "peugeot"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Francia"
+    },
+    "Citroën": {
+      "aliases": [
+        "citroen",
+        "citroën"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Francia"
+    },
+    "Fiat": {
+      "aliases": [
+        "fiat"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Italia"
+    },
+    "Alfa Romeo": {
+      "aliases": [
+        "alfa romeo",
+        "alfa"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Italia"
+    },
+    "Ferrari": {
+      "aliases": [
+        "ferrari"
+      ],
+      "segmentoGeneral": "superdeportivo",
+      "paisOrigenMarca": "Italia",
+      "notaDecua": "No emitir recomendaciones invasivas o específicas sin evaluación física."
+    },
+    "Lamborghini": {
+      "aliases": [
+        "lamborghini",
+        "lambo"
+      ],
+      "segmentoGeneral": "superdeportivo",
+      "paisOrigenMarca": "Italia",
+      "notaDecua": "No emitir recomendaciones invasivas o específicas sin evaluación física."
+    },
+    "Volvo": {
+      "aliases": [
+        "volvo"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Suecia"
+    },
+    "MG": {
+      "aliases": [
+        "mg"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "Reino Unido"
+    },
+    "MINI": {
+      "aliases": [
+        "mini",
+        "mini cooper"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Reino Unido"
+    },
+    "Land Rover": {
+      "aliases": [
+        "land rover",
+        "range rover"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Reino Unido"
+    },
+    "Jaguar": {
+      "aliases": [
+        "jaguar"
+      ],
+      "segmentoGeneral": "premium",
+      "paisOrigenMarca": "Reino Unido"
+    },
+    "BYD": {
+      "aliases": [
+        "byd"
+      ],
+      "segmentoGeneral": "electrico",
+      "paisOrigenMarca": "China",
+      "notaDecua": "No hacer afirmaciones sobre sistemas eléctricos. Referirse únicamente al cuidado estético y servicios publicados por PMC."
+    },
+    "Chirey": {
+      "aliases": [
+        "chirey"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "China"
+    },
+    "Omoda": {
+      "aliases": [
+        "omoda"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "China"
+    },
+    "Jaecoo": {
+      "aliases": [
+        "jaecoo"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "China"
+    },
+    "JAC": {
+      "aliases": [
+        "jac"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "China"
+    },
+    "Geely": {
+      "aliases": [
+        "geely"
+      ],
+      "segmentoGeneral": "generalista",
+      "paisOrigenMarca": "China"
+    }
+  },
+  "modelosConocidos": {
+    "Chevrolet": [
+      "Aveo",
+      "Onix",
+      "Spark",
+      "Cavalier",
+      "Cruze",
+      "Malibu",
+      "Tracker",
+      "Trax",
+      "Captiva",
+      "Equinox",
+      "Tahoe",
+      "Suburban",
+      "Colorado",
+      "Silverado"
+    ],
+    "Nissan": [
+      "March",
+      "Versa",
+      "Sentra",
+      "Altima",
+      "Kicks",
+      "X-Trail",
+      "Pathfinder",
+      "Frontier",
+      "NP300",
+      "Urvan"
+    ],
+    "Volkswagen": [
+      "Polo",
+      "Virtus",
+      "Jetta",
+      "Golf",
+      "Taos",
+      "Tiguan",
+      "Teramont",
+      "Saveiro",
+      "Amarok"
+    ],
+    "Toyota": [
+      "Yaris",
+      "Corolla",
+      "Camry",
+      "Prius",
+      "Raize",
+      "Corolla Cross",
+      "RAV4",
+      "Highlander",
+      "Hilux",
+      "Tacoma",
+      "Tundra"
+    ],
+    "Honda": [
+      "City",
+      "Civic",
+      "Accord",
+      "BR-V",
+      "HR-V",
+      "CR-V",
+      "Pilot"
+    ],
+    "Mazda": [
+      "Mazda 2",
+      "Mazda 3",
+      "Mazda 6",
+      "CX-3",
+      "CX-30",
+      "CX-5",
+      "CX-50",
+      "CX-90",
+      "MX-5"
+    ],
+    "Kia": [
+      "Rio",
+      "K3",
+      "Forte",
+      "Soul",
+      "Seltos",
+      "Sportage",
+      "Sorento",
+      "Telluride"
+    ],
+    "Hyundai": [
+      "Grand i10",
+      "HB20",
+      "Elantra",
+      "Accent",
+      "Creta",
+      "Tucson",
+      "Santa Fe"
+    ],
+    "Audi": [
+      "A1",
+      "A3",
+      "A4",
+      "A5",
+      "A6",
+      "A7",
+      "A8",
+      "Q2",
+      "Q3",
+      "Q5",
+      "Q7",
+      "Q8",
+      "e-tron"
+    ],
+    "BMW": [
+      "Serie 1",
+      "Serie 2",
+      "Serie 3",
+      "Serie 4",
+      "Serie 5",
+      "Serie 7",
+      "X1",
+      "X2",
+      "X3",
+      "X4",
+      "X5",
+      "X6",
+      "X7"
+    ],
+    "Mercedes-Benz": [
+      "Clase A",
+      "Clase C",
+      "Clase E",
+      "Clase S",
+      "CLA",
+      "GLA",
+      "GLB",
+      "GLC",
+      "GLE",
+      "GLS"
+    ],
+    "Ford": [
+      "Fiesta",
+      "Focus",
+      "Fusion",
+      "Escape",
+      "Territory",
+      "Edge",
+      "Explorer",
+      "Bronco",
+      "Maverick",
+      "Ranger",
+      "Lobo",
+      "F-150"
+    ],
+    "Jeep": [
+      "Renegade",
+      "Compass",
+      "Cherokee",
+      "Grand Cherokee",
+      "Wrangler",
+      "Gladiator"
+    ],
+    "SEAT": [
+      "Ibiza",
+      "Leon",
+      "Arona",
+      "Ateca",
+      "Tarraco"
+    ],
+    "Cupra": [
+      "Leon",
+      "Formentor",
+      "Ateca",
+      "Born",
+      "Tavascan"
+    ]
+  },
+  "senalesPintura": {
+    "brilloBajo": {
+      "frases": [
+        "no brilla",
+        "perdió brillo",
+        "perdio brillo",
+        "está opaco",
+        "esta opaco",
+        "se ve apagado",
+        "pintura sin brillo"
+      ],
+      "posiblesFactores": [
+        "contaminación superficial",
+        "microarañazos",
+        "oxidación",
+        "mantenimiento inadecuado"
+      ],
+      "respuestaOrientativa": "La pérdida de brillo puede tener diferentes causas. Antes de elegir un proceso, conviene determinar si se trata de contaminación, microarañazos u otro tipo de desgaste."
+    },
+    "rayones": {
+      "frases": [
+        "rayones",
+        "rayado",
+        "arañazos",
+        "raspones",
+        "marcas"
+      ],
+      "preguntas": [
+        "¿Los rayones se ven superficiales o profundos?",
+        "¿Los notas principalmente bajo la luz?",
+        "¿Se sienten al pasar suavemente la uña?",
+        "¿Están en una zona específica o en todo el vehículo?"
+      ],
+      "respuestaOrientativa": "La posibilidad de reducir un rayón depende principalmente de su profundidad y del estado de la pintura."
+    },
+    "microaranazos": {
+      "frases": [
+        "swirls",
+        "remolinos",
+        "microarañazos",
+        "marcas circulares",
+        "rayitas con el sol"
+      ],
+      "respuestaOrientativa": "Las marcas circulares suelen hacerse más visibles bajo luz directa. Su tratamiento depende de la severidad y del espesor disponible de la superficie."
+    },
+    "contaminacion": {
+      "frases": [
+        "pintura áspera",
+        "pintura aspera",
+        "se siente rugosa",
+        "se siente rasposa",
+        "puntitos pegados"
+      ],
+      "respuestaOrientativa": "Una superficie áspera puede presentar contaminación adherida. Decua debe sugerir evaluación antes de indicar un proceso específico."
+    }
+  },
+  "senalesInterior": {
+    "manchas": {
+      "frases": [
+        "asientos manchados",
+        "tapicería manchada",
+        "tapiceria manchada",
+        "tiene manchas"
+      ],
+      "orientacion": "Preguntar material de la superficie y antigüedad aproximada de la mancha."
+    },
+    "olores": {
+      "frases": [
+        "huele mal",
+        "mal olor",
+        "olor a humedad",
+        "olor raro",
+        "huele a cigarro"
+      ],
+      "orientacion": "No prometer eliminación total del olor sin conocer su origen."
+    },
+    "usoFamiliar": {
+      "frases": [
+        "viajan niños",
+        "tengo niños",
+        "mascotas",
+        "llevo perro",
+        "llevo mascotas"
+      ],
+      "orientacion": "Puede existir mayor necesidad de mantenimiento interior, pero Decua debe preguntar primero qué desea limpiar."
+    }
+  },
+  "senalesFaros": {
+    "opacidad": {
+      "frases": [
+        "faros opacos",
+        "faros amarillos",
+        "faros amarillentos",
+        "faros quemados por el sol"
+      ],
+      "orientacion": "Si PMC tiene pulido de faros publicado, puede mostrarse como opción relacionada. No asegurar recuperación completa sin evaluación."
+    }
+  },
+  "senalesVidrios": {
+    "manchasAgua": {
+      "frases": [
+        "marcas de agua",
+        "gotas marcadas",
+        "sarro en vidrios",
+        "vidrios manchados"
+      ],
+      "orientacion": "La severidad de las marcas debe evaluarse antes de prometer eliminación."
+    },
+    "rayones": {
+      "frases": [
+        "vidrio rayado",
+        "parabrisas rayado",
+        "rayones en cristal"
+      ],
+      "orientacion": "No asegurar que cualquier rayón del vidrio puede pulirse."
+    }
+  },
+  "senalesMotor": {
+    "suciedad": {
+      "frases": [
+        "motor sucio",
+        "motor con polvo",
+        "motor lleno de grasa",
+        "quiero lavar el motor"
+      ],
+      "orientacion": "Decua puede mostrar servicios de limpieza de motor publicados por PMC y explicar diferencias únicamente con información disponible en el catálogo."
+    },
+    "fallasMecanicas": {
+      "frases": [
+        "motor falla",
+        "no enciende",
+        "hace ruido",
+        "se calienta",
+        "pierde aceite",
+        "check engine"
+      ],
+      "orientacion": "Decua debe aclarar que PMC Auto Detailing se enfoca en cuidado estético y no diagnosticar fallas mecánicas salvo que el negocio incorpore oficialmente ese servicio."
+    }
+  },
+  "senalesChasis": {
+    "suciedad": {
+      "frases": [
+        "chasis sucio",
+        "parte de abajo sucia",
+        "bajos sucios",
+        "tiene lodo abajo"
+      ],
+      "orientacion": "Relacionar con servicios de chasis publicados cuando corresponda."
+    },
+    "oxido": {
+      "frases": [
+        "tiene óxido",
+        "tiene oxido",
+        "está oxidado",
+        "esta oxidado"
+      ],
+      "orientacion": "No prometer eliminación estructural de óxido. Diferenciar limpieza estética de reparación estructural."
+    }
+  },
+  "escenarios": [
+    {
+      "id": "audi_nuevo_proteccion",
+      "entradaEjemplo": "Tengo un Audi recién salido de agencia",
+      "interpretacion": [
+        "vehículo reciente",
+        "marca Audi",
+        "estado probablemente bueno según el cliente pero no confirmado"
+      ],
+      "respuestaBase": "¡Excelente! Si acaba de salir de agencia y la pintura se encuentra en buenas condiciones, normalmente tendría más sentido pensar primero en conservar y proteger ese estado que en realizar una corrección fuerte sin necesidad.",
+      "siguientePregunta": "¿Lo que buscas es proteger la pintura, zonas de alto impacto o simplemente mantenerlo en excelentes condiciones?",
+      "accionesPermitidas": [
+        "consultar catálogo PMC",
+        "mostrar cerámicos publicados",
+        "mostrar PPF publicado",
+        "mostrar precios reales disponibles"
+      ]
+    },
+    {
+      "id": "vehiculo_2022_estado_regular",
+      "entradaEjemplo": "Tengo un carro 2022 más o menos cuidado",
+      "interpretacion": [
+        "vehículo relativamente reciente",
+        "estado regular declarado"
+      ],
+      "respuestaBase": "Un modelo 2022 todavía puede conservarse muy bien, pero si ya notas algunos detalles conviene revisar qué zona te interesa mejorar primero.",
+      "siguientePregunta": "¿Te preocupa principalmente la pintura, el interior, los faros o buscas una mejora general?"
+    },
+    {
+      "id": "auto_para_vender",
+      "entradaEjemplo": "Quiero vender mi carro y quiero que se vea mejor",
+      "interpretacion": [
+        "intención de venta",
+        "prioridad en presentación"
+      ],
+      "respuestaBase": "Si tu objetivo es prepararlo para venta, podemos enfocarnos en mejorar su presentación exterior e interior utilizando únicamente los servicios que PMC tenga disponibles.",
+      "siguientePregunta": "¿Qué notas actualmente en peor estado: pintura, interior, faros o limpieza general?",
+      "regla": "No prometer aumento en el precio de venta."
+    },
+    {
+      "id": "auto_antiguo_bien_cuidado",
+      "entradaEjemplo": "Tengo un Toyota 2015 pero está impecable",
+      "interpretacion": [
+        "vehículo de mayor antigüedad",
+        "estado excelente declarado"
+      ],
+      "respuestaBase": "Aunque sea modelo 2015, si se encuentra impecable no significa que necesite procesos correctivos. Podemos enfocarnos en conservar ese estado.",
+      "siguientePregunta": "¿Quieres protegerlo, mantener el brillo o realizar mantenimiento general?"
+    },
+    {
+      "id": "auto_reciente_rayado",
+      "entradaEjemplo": "Es modelo 2026 pero ya tiene rayones",
+      "interpretacion": [
+        "vehículo reciente",
+        "defecto declarado"
+      ],
+      "respuestaBase": "Aunque sea reciente, los rayones pueden aparecer por diferentes causas. Antes de recomendar una corrección habría que conocer qué tan profundos son.",
+      "siguientePregunta": "¿Los rayones solo se ven con cierta luz o también se sienten al pasar suavemente la uña?"
+    },
+    {
+      "id": "carro_sin_historial_detailing",
+      "entradaEjemplo": "Tengo un Aveo 2016 y nunca le he hecho detailing",
+      "interpretacion": [
+        "vehículo de mayor antigüedad",
+        "sin historial de detailing declarado"
+      ],
+      "respuestaBase": "En ese caso conviene revisar el vehículo por áreas en lugar de asumir que necesita todo. Podemos empezar por identificar qué quieres mejorar.",
+      "siguientePregunta": "¿Qué te preocupa más: pintura, interior, faros, motor, chasis o limpieza general?"
+    },
+    {
+      "id": "cliente_no_sabe_que_hacer",
+      "entradaEjemplo": "No sé qué hacerle a mi carro",
+      "interpretacion": [
+        "cliente necesita orientación"
+      ],
+      "respuestaBase": "No hay problema. Puedo ayudarte a identificarlo poco a poco.",
+      "siguientePregunta": "Primero dime marca, modelo y año de tu vehículo. Después vemos qué quieres mejorar."
+    },
+    {
+      "id": "cliente_busca_brillo",
+      "entradaEjemplo": "Solo quiero que brille más",
+      "interpretacion": [
+        "objetivo de mejora estética",
+        "posible necesidad relacionada con pintura"
+      ],
+      "respuestaBase": "Podemos revisar opciones enfocadas en mejorar la apariencia de la pintura, pero antes conviene saber si además notas rayones, opacidad o solamente quieres realzar el acabado.",
+      "siguientePregunta": "¿La pintura está en buen estado o notas rayones y marcas?"
+    }
+  ],
+  "preguntasDiagnosticoConversacional": {
+    "vehiculo": [
+      "¿Qué marca es?",
+      "¿Qué modelo es?",
+      "¿De qué año es?",
+      "¿Qué tipo de vehículo es?"
+    ],
+    "objetivo": [
+      "¿Qué quieres mejorar principalmente?",
+      "¿Buscas limpieza, recuperación o protección?",
+      "¿Quieres conservarlo o prepararlo para vender?"
+    ],
+    "pintura": [
+      "¿La pintura conserva buen brillo?",
+      "¿Tiene rayones visibles?",
+      "¿Notas marcas principalmente con la luz?",
+      "¿Hay alguna zona que te preocupe más?"
+    ],
+    "interior": [
+      "¿Qué parte del interior necesitas atender?",
+      "¿Tiene manchas, polvo u olores?",
+      "¿Los asientos son tela o piel?"
+    ],
+    "proteccion": [
+      "¿El vehículo duerme bajo techo?",
+      "¿Lo utilizas diariamente?",
+      "¿Buscas proteger todo el vehículo o ciertas zonas?"
+    ],
+    "venta": [
+      "¿Cuándo planeas venderlo?",
+      "¿Qué parte crees que afecta más su presentación?",
+      "¿Quieres enfocarte en exterior, interior o ambos?"
+    ]
+  },
+  "frasesQueDecuaDebeEvitar": [
+    "Tu carro está viejo.",
+    "Por ser Audi te va a costar más.",
+    "Ese rayón sale seguro.",
+    "Con pulido queda como nuevo.",
+    "El cerámico elimina los rayones.",
+    "El PPF evita cualquier daño.",
+    "Tu auto necesita todo esto.",
+    "Por el año seguro está deteriorado.",
+    "Te va a aumentar el valor de reventa.",
+    "Ese servicio garantiza que quede perfecto.",
+    "No necesitas revisión."
+  ],
+  "alternativasProfesionales": [
+    {
+      "evitar": "Tu carro está viejo.",
+      "usar": "Por su antigüedad, conviene revisar su condición actual antes de elegir un proceso."
+    },
+    {
+      "evitar": "Ese rayón sale seguro.",
+      "usar": "La posibilidad de reducir ese rayón dependerá de su profundidad y de la condición de la pintura."
+    },
+    {
+      "evitar": "Con pulido queda como nuevo.",
+      "usar": "Un pulido puede mejorar el acabado cuando el tipo de defecto y la superficie lo permiten."
+    },
+    {
+      "evitar": "Necesitas cerámico.",
+      "usar": "Si tu objetivo es proteger el acabado, puedo mostrarte las opciones de protección que PMC tenga publicadas."
+    },
+    {
+      "evitar": "Tu auto necesita todo.",
+      "usar": "Podemos priorizar únicamente las áreas que realmente quieras mejorar."
+    }
+  ],
+  "reglasConversacionales": {
+    "siSoloDaMarca": "Preguntar modelo, año y objetivo.",
+    "siSoloDaModelo": "Intentar relacionar el modelo con una marca conocida; si existe duda, preguntar.",
+    "siSoloDaAnio": "Preguntar marca, modelo y qué desea mejorar.",
+    "siDaVehiculoCompleto": "Guardar marca, modelo y año en memoria de conversación y continuar con el objetivo.",
+    "siDiceNuevo": "Preguntar si busca conservación, protección o alguna corrección específica.",
+    "siDiceUsado": "No asumir deterioro. Preguntar estado y objetivo.",
+    "siDiceSeminuevo": "Considerar uso previo, pero pedir condición actual.",
+    "siQuiereVender": "Priorizar presentación y servicios reales orientados a venta.",
+    "siPreguntaPrecioSinServicio": "Preguntar qué servicio o necesidad desea cotizar.",
+    "siPreguntaPrecioDespuesDeRecomendacion": "Usar las recomendaciones guardadas y consultar precios reales.",
+    "siMencionaFallaMecanica": "Aclarar alcance de PMC y no diagnosticar mecánica.",
+    "siPideServicioNoPublicado": "Explicar que Decua conoce el concepto, pero no afirmar que PMC lo ofrece.",
+    "siPreguntaQueConviene": "Comparar objetivo, condición, antigüedad y catálogo publicado."
+  }
+}

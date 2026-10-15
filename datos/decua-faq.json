@@ -1,0 +1,731 @@
+{
+  "version": "1.0.0",
+  "nombreBase": "Preguntas frecuentes y respuestas para Decua",
+  "descripcion": "Base amplia de preguntas frecuentes, variaciones de lenguaje y respuestas orientativas para Decua. Las respuestas comerciales específicas deben respetar Firestore y la información oficial de PMC.",
+  "reglas": {
+    "usarFirestoreParaPrecios": true,
+    "usarFirestoreParaServiciosActivos": true,
+    "noInventarDisponibilidad": true,
+    "noInventarGarantias": true,
+    "noInventarPromociones": true,
+    "noInventarHorarios": true,
+    "usarConocimientoGeneralComoApoyo": true,
+    "responderConLenguajeNatural": true,
+    "pedirContextoCuandoSeaNecesario": true
+  },
+  "categorias": {
+    "identidadDecua": [
+      {
+        "id": "quien_es_decua",
+        "preguntas": [
+          "¿Quién eres?",
+          "quien eres",
+          "¿Qué eres?",
+          "qué eres",
+          "¿Qué es Decua?",
+          "que es decua",
+          "¿Quién es Decua?",
+          "quien es decua"
+        ],
+        "respuesta": "Soy Decua, Dedicado Al Cuidado Automotriz, el asistente digital de PMC Auto Detailing. Puedo ayudarte con servicios, cuidado automotriz, precios publicados, citas e información del negocio."
+      },
+      {
+        "id": "significado_decua",
+        "preguntas": [
+          "¿Qué significa Decua?",
+          "que significa decua",
+          "¿Por qué se llama Decua?",
+          "por que se llama decua"
+        ],
+        "respuesta": "Decua significa Dedicado Al Cuidado Automotriz."
+      },
+      {
+        "id": "que_puede_hacer_decua",
+        "preguntas": [
+          "¿Qué puedes hacer?",
+          "qué sabes hacer",
+          "en que me puedes ayudar",
+          "¿En qué me ayudas?",
+          "que puedes decirme"
+        ],
+        "respuesta": "Puedo orientarte sobre el cuidado de tu vehículo, ayudarte a comparar servicios de PMC, mostrar precios publicados, resolver dudas sobre detailing, ubicar el negocio y dirigirte a la agenda."
+      }
+    ],
+    "negocioPMC": [
+      {
+        "id": "que_es_pmc",
+        "preguntas": [
+          "¿Qué es PMC?",
+          "que es pmc",
+          "¿Qué hacen en PMC?",
+          "que hacen",
+          "¿A qué se dedican?",
+          "a que se dedican"
+        ],
+        "respuesta": "PMC Auto Detailing es un negocio enfocado en cuidado, protección y estética automotriz en Río Grande, Oaxaca."
+      },
+      {
+        "id": "propietario",
+        "preguntas": [
+          "¿Quién es el dueño?",
+          "quien es el dueño",
+          "¿Quién es el propietario?",
+          "de quien es pmc",
+          "¿Quién está detrás de PMC?",
+          "quien fundo pmc"
+        ],
+        "respuesta": "El propietario de PMC Auto Detailing es Pedro Manuel Cruz."
+      },
+      {
+        "id": "inauguracion",
+        "preguntas": [
+          "¿Cuándo inauguraron?",
+          "cuando abrio pmc",
+          "¿Cuándo abrió PMC?",
+          "desde cuando existe",
+          "cuando comenzaron"
+        ],
+        "respuesta": "PMC Auto Detailing abrió físicamente sus puertas el 15 de octubre de 2026. La idea y el proyecto comenzaron a desarrollarse desde antes."
+      },
+      {
+        "id": "ubicacion",
+        "preguntas": [
+          "¿Dónde están?",
+          "donde estan",
+          "¿Dónde se ubican?",
+          "ubicacion",
+          "dirección",
+          "direccion",
+          "como llego"
+        ],
+        "respuesta": "PMC Auto Detailing se encuentra en Río Grande, Oaxaca. También puedo darte el enlace oficial de Google Maps."
+      },
+      {
+        "id": "telefono",
+        "preguntas": [
+          "¿Cuál es su teléfono?",
+          "telefono",
+          "whatsapp",
+          "numero",
+          "como los contacto"
+        ],
+        "respuesta": "Puedes comunicarte con PMC Auto Detailing al +52 954 203 8099."
+      },
+      {
+        "id": "correo",
+        "preguntas": [
+          "¿Cuál es su correo?",
+          "correo",
+          "email",
+          "correo electronico"
+        ],
+        "respuesta": "El correo de PMC Auto Detailing es PMC.Auto.Detailing@outlook.com."
+      },
+      {
+        "id": "instagram",
+        "preguntas": [
+          "¿Cuál es su Instagram?",
+          "instagram",
+          "redes sociales",
+          "como aparecen en instagram"
+        ],
+        "respuesta": "Puedes encontrar a PMC Auto Detailing en Instagram como @pmcautodetailing."
+      }
+    ],
+    "agenda": [
+      {
+        "id": "como_agendar",
+        "preguntas": [
+          "¿Cómo agendo?",
+          "como saco cita",
+          "quiero una cita",
+          "quiero reservar",
+          "quiero agendar"
+        ],
+        "respuesta": "Puedes agendar desde la página de agenda de PMC. Necesitas iniciar sesión para confirmar la cita."
+      },
+      {
+        "id": "agendar_sin_cuenta",
+        "preguntas": [
+          "¿Puedo agendar sin cuenta?",
+          "puedo sacar cita sin registrarme",
+          "sin iniciar sesion puedo agendar"
+        ],
+        "respuesta": "Puedes explorar el sitio y hablar conmigo sin iniciar sesión, pero necesitas una cuenta para confirmar una cita."
+      },
+      {
+        "id": "horarios_disponibles",
+        "preguntas": [
+          "¿Qué horarios tienen?",
+          "que horarios hay",
+          "hay disponibilidad",
+          "a que hora puedo ir"
+        ],
+        "respuesta": "Los horarios disponibles cambian conforme se registran citas. Lo mejor es revisar directamente la agenda de PMC."
+      },
+      {
+        "id": "cambiar_cita",
+        "preguntas": [
+          "quiero cambiar mi cita",
+          "puedo reprogramar",
+          "quiero cambiar la hora"
+        ],
+        "respuesta": "La política específica de reprogramación debe ser confirmada por PMC. Si ya tienes una cita, puedes revisar tu cuenta o comunicarte directamente con el negocio."
+      },
+      {
+        "id": "cancelar_cita",
+        "preguntas": [
+          "quiero cancelar",
+          "puedo cancelar mi cita",
+          "como cancelo"
+        ],
+        "respuesta": "La política específica de cancelación debe ser confirmada por PMC. Puedes comunicarte directamente con el negocio para revisar tu caso."
+      }
+    ],
+    "precios": [
+      {
+        "id": "pregunta_precio_general",
+        "preguntas": [
+          "¿Cuánto cuesta?",
+          "precio",
+          "cuanto sale",
+          "cuanto cobran",
+          "costos"
+        ],
+        "respuesta": "Puedo mostrarte los precios publicados por PMC. Dime qué servicio te interesa o qué quieres mejorar en tu vehículo."
+      },
+      {
+        "id": "precio_depende_auto",
+        "preguntas": [
+          "¿Por qué cambia el precio?",
+          "por que cuesta diferente",
+          "por que depende del carro"
+        ],
+        "respuesta": "Algunos precios pueden variar según el tipo, tamaño, suciedad, condición o alcance del servicio, siempre de acuerdo con lo que PMC tenga publicado."
+      },
+      {
+        "id": "precio_marca_premium",
+        "preguntas": [
+          "¿Por ser Audi cuesta más?",
+          "por ser bmw cobran mas",
+          "marca premium cuesta mas"
+        ],
+        "respuesta": "La marca por sí sola no determina el precio. Decua utiliza las categorías y condiciones publicadas por PMC."
+      }
+    ],
+    "lavado": [
+      {
+        "id": "lavado_basico",
+        "preguntas": [
+          "¿Qué incluye un lavado básico?",
+          "lavado normal",
+          "lavado sencillo",
+          "solo quiero lavar mi carro"
+        ],
+        "respuesta": "PMC tiene opciones de lavado básico. Puedo revisar el catálogo publicado y mostrarte exactamente qué incluye y cuánto cuesta según tu vehículo."
+      },
+      {
+        "id": "lavado_muy_sucio",
+        "preguntas": [
+          "mi carro está muy sucio",
+          "esta lleno de tierra",
+          "tiene mucho polvo",
+          "quiero una limpieza profunda"
+        ],
+        "respuesta": "Si la suciedad es considerable, primero conviene saber si necesitas atención principalmente exterior, interior, chasis o una limpieza general."
+      }
+    ],
+    "pintura": [
+      {
+        "id": "pintura_opaca",
+        "preguntas": [
+          "mi pintura está opaca",
+          "ya no brilla",
+          "perdio brillo",
+          "se ve apagada"
+        ],
+        "respuesta": "La pérdida de brillo puede deberse a contaminación, microarañazos u otros factores. Puedo ayudarte a comparar opciones como pulido o corrección según el estado que describes."
+      },
+      {
+        "id": "rayones",
+        "preguntas": [
+          "tiene rayones",
+          "quiero quitar rayones",
+          "mi carro está rayado",
+          "tiene raspones"
+        ],
+        "respuesta": "La posibilidad de reducir un rayón depende de su profundidad. Si quieres, dime si solo se ve bajo la luz o si también se siente al pasar suavemente la uña."
+      },
+      {
+        "id": "swirls",
+        "preguntas": [
+          "tiene swirls",
+          "tiene remolinos",
+          "se ven rayitas con el sol",
+          "marcas circulares"
+        ],
+        "respuesta": "Ese tipo de marcas puede relacionarse con microarañazos de lavado. Dependiendo de su severidad, un pulido o una corrección podrían ser opciones."
+      },
+      {
+        "id": "pintura_aspera",
+        "preguntas": [
+          "la pintura se siente áspera",
+          "esta rasposa",
+          "se siente rugosa",
+          "tiene cosas pegadas"
+        ],
+        "respuesta": "Una superficie áspera puede tener contaminación adherida. Antes de proteger o pulir, puede ser necesario descontaminar."
+      }
+    ],
+    "pulido": [
+      {
+        "id": "que_es_pulido",
+        "preguntas": [
+          "¿Qué es un pulido?",
+          "que hace el pulido",
+          "para que sirve pulir"
+        ],
+        "respuesta": "El pulido busca mejorar brillo y reducir ciertos defectos superficiales mediante abrasión controlada."
+      },
+      {
+        "id": "pulido_quita_rayones",
+        "preguntas": [
+          "¿El pulido quita rayones?",
+          "con pulido salen los rayones",
+          "pulir quita todo"
+        ],
+        "respuesta": "No todos los rayones desaparecen con pulido. Depende de la profundidad y de la condición de la pintura."
+      },
+      {
+        "id": "pulido_vs_correccion",
+        "preguntas": [
+          "¿Pulido o corrección?",
+          "diferencia entre pulido y correccion",
+          "que es mejor pulido o correccion"
+        ],
+        "respuesta": "El pulido básico se enfoca más en brillo y defectos ligeros. La corrección de pintura busca trabajar defectos más visibles. La elección depende del estado real del vehículo."
+      }
+    ],
+    "ceramicos": [
+      {
+        "id": "que_es_ceramico",
+        "preguntas": [
+          "¿Qué es un cerámico?",
+          "que es coating",
+          "para que sirve el ceramico"
+        ],
+        "respuesta": "Un recubrimiento cerámico está orientado a proteger superficies y facilitar su mantenimiento. No reemplaza una corrección si la pintura ya tiene defectos."
+      },
+      {
+        "id": "ceramico_rayones",
+        "preguntas": [
+          "¿El cerámico quita rayones?",
+          "el ceramic elimina rayones",
+          "con ceramico ya no se raya"
+        ],
+        "respuesta": "No. El cerámico protege y facilita mantenimiento, pero no elimina defectos existentes ni vuelve la pintura inmune a rayones."
+      },
+      {
+        "id": "silver_gold_diamond",
+        "preguntas": [
+          "¿Cuál cerámico me conviene?",
+          "silver gold o diamond",
+          "diferencia entre silver gold y diamond",
+          "cual es mejor ceramic"
+        ],
+        "respuesta": "PMC tiene diferentes niveles de protección. Puedo compararte Silver, Gold y Diamond según duración, superficies protegidas, corrección incluida y presupuesto."
+      },
+      {
+        "id": "silver",
+        "preguntas": [
+          "¿Qué incluye Ceramic Silver?",
+          "ceramic silver",
+          "silver"
+        ],
+        "respuesta": "Ceramic Silver aparece en el catálogo actual como una opción de protección cerámica con referencia de 1 año y corrección de pintura al 80%. Puedo mostrarte el precio según tu tipo de vehículo."
+      },
+      {
+        "id": "gold",
+        "preguntas": [
+          "¿Qué incluye Ceramic Gold?",
+          "ceramic gold",
+          "gold"
+        ],
+        "respuesta": "Ceramic Gold aparece con protección de referencia de 3 años y corrección de pintura al 90%, además de protección en varias superficies."
+      },
+      {
+        "id": "diamond",
+        "preguntas": [
+          "¿Qué incluye Ceramic Diamond?",
+          "ceramic diamond",
+          "diamond"
+        ],
+        "respuesta": "Ceramic Diamond aparece como la opción cerámica más completa del catálogo actual, con referencia de 5 años y corrección de pintura al 95%."
+      }
+    ],
+    "ppf": [
+      {
+        "id": "que_es_ppf",
+        "preguntas": [
+          "¿Qué es PPF?",
+          "que es paint protection film",
+          "para que sirve el ppf"
+        ],
+        "respuesta": "El PPF es una película protectora que ayuda a proteger la pintura frente a desgaste e impactos ligeros."
+      },
+      {
+        "id": "ppf_vs_ceramico",
+        "preguntas": [
+          "¿PPF o cerámico?",
+          "que conviene ppf o ceramic",
+          "diferencia entre ppf y ceramico"
+        ],
+        "respuesta": "No cumplen exactamente la misma función. El cerámico trabaja como protección superficial y facilita mantenimiento, mientras el PPF agrega una barrera física."
+      },
+      {
+        "id": "ppf_auto_nuevo",
+        "preguntas": [
+          "acabo de comprar un carro nuevo",
+          "mi auto acaba de salir de agencia",
+          "quiero proteger mi carro nuevo"
+        ],
+        "respuesta": "Si tu vehículo acaba de salir de agencia y la pintura está en buenas condiciones, puede ser buen momento para pensar en protección. Puedo mostrarte opciones de cerámico y PPF publicadas por PMC."
+      },
+      {
+        "id": "ppf_carretera",
+        "preguntas": [
+          "viajo mucho en carretera",
+          "quiero proteger el frente",
+          "me pegan muchas piedras"
+        ],
+        "respuesta": "Si utilizas mucho el vehículo en carretera, puede tener sentido revisar PPF para zonas de mayor impacto, como el frente del vehículo."
+      }
+    ],
+    "motor": [
+      {
+        "id": "lavar_motor",
+        "preguntas": [
+          "quiero lavar el motor",
+          "motor sucio",
+          "motor con grasa",
+          "limpieza de motor"
+        ],
+        "respuesta": "PMC tiene opciones de limpieza de motor con vapor y con agua. Puedo explicarte las diferencias."
+      },
+      {
+        "id": "motor_vapor_vs_agua",
+        "preguntas": [
+          "¿Vapor o agua?",
+          "diferencia motor vapor agua",
+          "que es mejor vapor o agua"
+        ],
+        "respuesta": "El detallado con vapor incluye trabajo más detallado con brochas, hidratación de plásticos y acabado de componentes. El servicio con agua utiliza desengrasante y lavado controlado."
+      },
+      {
+        "id": "motor_falla",
+        "preguntas": [
+          "mi motor falla",
+          "no enciende",
+          "check engine",
+          "pierde aceite",
+          "se calienta"
+        ],
+        "respuesta": "Eso corresponde a una posible falla mecánica. PMC Auto Detailing se enfoca en cuidado estético, por lo que conviene revisar ese problema con un taller mecánico antes del detailing."
+      }
+    ],
+    "interior": [
+      {
+        "id": "interior_sucio",
+        "preguntas": [
+          "mi interior está muy sucio",
+          "quiero limpiar asientos",
+          "limpieza profunda interior",
+          "quiero lavar por dentro"
+        ],
+        "respuesta": "Si buscas una limpieza profunda, puedo revisar Supreme Interior y mostrarte qué incluye según el catálogo."
+      },
+      {
+        "id": "manchas_asientos",
+        "preguntas": [
+          "tengo manchas en asientos",
+          "asientos manchados",
+          "tapiceria sucia"
+        ],
+        "respuesta": "El resultado depende del material y del tipo de mancha. Si necesitas limpieza profunda, Supreme Interior puede ser una opción relacionada."
+      },
+      {
+        "id": "olor",
+        "preguntas": [
+          "huele mal",
+          "tiene olor a humedad",
+          "olor a cigarro",
+          "quiero quitar el olor"
+        ],
+        "respuesta": "Los olores pueden tener diferentes causas. Antes de prometer eliminación, conviene identificar si provienen de humedad, tabaco, alimentos, mascotas u otra fuente."
+      },
+      {
+        "id": "mascotas",
+        "preguntas": [
+          "tengo perro",
+          "hay pelo de mascota",
+          "tiene pelos en los asientos"
+        ],
+        "respuesta": "El pelo de mascota puede requerir una limpieza interior más profunda. Puedo revisar contigo las opciones disponibles."
+      }
+    ],
+    "faros": [
+      {
+        "id": "faros_opacos",
+        "preguntas": [
+          "faros opacos",
+          "faros amarillos",
+          "mis faros ya no se ven bien",
+          "quiero pulir faros"
+        ],
+        "respuesta": "PMC tiene Pulido de Faros en el catálogo actual. El proceso incluye corrección de la superficie, lijado cuando es necesario, pulido y protección cerámica."
+      },
+      {
+        "id": "faros_quedan_nuevos",
+        "preguntas": [
+          "¿Quedan como nuevos?",
+          "se pueden recuperar totalmente",
+          "quedan transparentes"
+        ],
+        "respuesta": "El resultado depende del estado del faro. Puede mejorar considerablemente si el daño es superficial, pero no conviene prometer recuperación total sin evaluarlo."
+      }
+    ],
+    "vidrios": [
+      {
+        "id": "vidrios_manchados",
+        "preguntas": [
+          "vidrios manchados",
+          "lluvia acida",
+          "marcas de agua",
+          "parabrisas manchado"
+        ],
+        "respuesta": "El catálogo actual incluye Pulido de Vidrios, con descontaminación, tratamiento de lluvia ácida, corrección y protección cerámica."
+      },
+      {
+        "id": "vidrio_rayado",
+        "preguntas": [
+          "vidrio rayado",
+          "rayon en parabrisas",
+          "se puede pulir el cristal"
+        ],
+        "respuesta": "Algunos defectos superficiales pueden mejorar, pero no todos los rayones pueden eliminarse mediante pulido."
+      }
+    ],
+    "chasis": [
+      {
+        "id": "lavado_chasis",
+        "preguntas": [
+          "quiero lavar el chasis",
+          "parte de abajo sucia",
+          "tiene lodo abajo",
+          "lavado por debajo"
+        ],
+        "respuesta": "PMC tiene opciones de lavado de chasis. Puedo mostrarte el precio publicado según el tipo de vehículo."
+      },
+      {
+        "id": "oxido_chasis",
+        "preguntas": [
+          "tiene oxido abajo",
+          "chasis oxidado",
+          "pueden quitar el oxido"
+        ],
+        "respuesta": "La limpieza puede mejorar suciedad superficial, pero no debe confundirse con reparación estructural de corrosión."
+      }
+    ],
+    "ventaVehiculo": [
+      {
+        "id": "quiero_vender",
+        "preguntas": [
+          "quiero vender mi carro",
+          "lo voy a vender",
+          "quiero prepararlo para venta",
+          "lo voy a publicar"
+        ],
+        "respuesta": "PMC tiene Ready to Sell, un servicio orientado a mejorar la presentación del vehículo antes de venderlo. Puedo mostrarte qué incluye y revisar si necesitas algún complemento."
+      },
+      {
+        "id": "ready_to_sell",
+        "preguntas": [
+          "¿Qué es Ready to Sell?",
+          "que incluye ready to sell",
+          "servicio para vender carro"
+        ],
+        "respuesta": "Ready to Sell está orientado a preparación estética para venta e incluye lavado, descontaminación, pulido básico, limpieza de motor, hidratación de plásticos, Quick Detailer, neumáticos y cera premium."
+      },
+      {
+        "id": "aumenta_valor",
+        "preguntas": [
+          "¿Esto aumenta el valor?",
+          "va a valer mas mi carro",
+          "lo voy a vender mas caro"
+        ],
+        "respuesta": "Una mejor presentación puede ayudar a mostrar mejor el vehículo, pero Decua no puede garantizar un aumento de valor ni una venta más rápida."
+      }
+    ],
+    "vehiculoNuevo": [
+      {
+        "id": "reciensalido_agencia",
+        "preguntas": [
+          "recién salido de agencia",
+          "recien salido de agencia",
+          "auto nuevo",
+          "acabo de comprarlo"
+        ],
+        "respuesta": "Si está recién salido de agencia y la pintura está en buenas condiciones, normalmente conviene pensar en conservación y protección antes que en una corrección fuerte."
+      },
+      {
+        "id": "nuevo_necesita_pulido",
+        "preguntas": [
+          "¿Un auto nuevo necesita pulido?",
+          "debo pulirlo nuevo",
+          "recién comprado hay que pulirlo"
+        ],
+        "respuesta": "No necesariamente. Primero conviene evaluar el estado real de la pintura."
+      }
+    ],
+    "vehiculoUsado": [
+      {
+        "id": "seminuevo",
+        "preguntas": [
+          "es seminuevo",
+          "tiene pocos años",
+          "es usado pero reciente"
+        ],
+        "respuesta": "Un vehículo seminuevo puede estar en excelente estado o presentar desgaste. Lo mejor es revisar qué quieres mejorar antes de recomendar un proceso."
+      },
+      {
+        "id": "carro_viejo",
+        "preguntas": [
+          "mi carro ya está viejo",
+          "es modelo antiguo",
+          "tiene muchos años"
+        ],
+        "respuesta": "La antigüedad por sí sola no determina el estado. Si está bien cuidado, puede no necesitar procesos correctivos."
+      }
+    ],
+    "cuidadosDespues": [
+      {
+        "id": "lavar_despues_ceramico",
+        "preguntas": [
+          "¿Cuándo puedo lavar después del cerámico?",
+          "puedo lavarlo despues",
+          "cuidados despues del ceramic"
+        ],
+        "respuesta": "El tiempo exacto depende del producto utilizado por PMC. Decua solo debe dar un tiempo concreto cuando esa indicación oficial esté publicada."
+      },
+      {
+        "id": "como_cuidar_ceramico",
+        "preguntas": [
+          "como cuido el ceramico",
+          "mantenimiento ceramic",
+          "como hago que dure"
+        ],
+        "respuesta": "En general, conviene usar lavados adecuados y evitar químicos agresivos incompatibles. Para indicaciones exactas, debe seguirse el mantenimiento definido por PMC."
+      },
+      {
+        "id": "como_cuidar_ppf",
+        "preguntas": [
+          "como cuido el ppf",
+          "mantenimiento ppf"
+        ],
+        "respuesta": "El mantenimiento depende del material instalado. Decua debe seguir las recomendaciones oficiales que PMC defina para ese PPF."
+      }
+    ],
+    "comparaciones": [
+      {
+        "id": "lavado_vs_detailing",
+        "preguntas": [
+          "¿Lavado o detailing?",
+          "diferencia lavado detailing"
+        ],
+        "respuesta": "El lavado se enfoca principalmente en retirar suciedad. El detailing puede incluir limpieza profunda, corrección estética y protección."
+      },
+      {
+        "id": "supreme_vs_lavado",
+        "preguntas": [
+          "¿Supreme Interior o lavado básico?",
+          "diferencia interior y lavado"
+        ],
+        "respuesta": "El lavado básico incluye limpieza general. Supreme Interior es mucho más profundo e incluye desmontaje de asientos, limpieza por inyección y succión y atención detallada de varias zonas."
+      },
+      {
+        "id": "silver_vs_gold",
+        "preguntas": [
+          "silver o gold",
+          "que cambia de silver a gold"
+        ],
+        "respuesta": "En el catálogo actual, Silver tiene referencia de 1 año y Gold de 3 años. Gold también incluye protección cerámica en más superficies."
+      },
+      {
+        "id": "gold_vs_diamond",
+        "preguntas": [
+          "gold o diamond",
+          "diferencia gold diamond"
+        ],
+        "respuesta": "Gold tiene referencia de 3 años y Diamond de 5 años. Diamond también amplía el nivel de corrección y las superficies protegidas."
+      }
+    ],
+    "objeciones": [
+      {
+        "id": "muy_caro",
+        "preguntas": [
+          "está muy caro",
+          "esta caro",
+          "no tengo tanto dinero"
+        ],
+        "respuesta": "Podemos enfocarnos en la necesidad principal de tu vehículo y revisar una opción más sencilla si existe."
+      },
+      {
+        "id": "quiero_economico",
+        "preguntas": [
+          "quiero lo más barato",
+          "algo barato",
+          "lo más económico"
+        ],
+        "respuesta": "Claro. Dime qué quieres mejorar y te muestro la opción más sencilla que realmente tenga relación con esa necesidad."
+      },
+      {
+        "id": "solo_pregunto",
+        "preguntas": [
+          "solo estoy preguntando",
+          "todavía no quiero agendar",
+          "solo quiero información"
+        ],
+        "respuesta": "No hay problema. Puedes preguntarme todo lo que necesites y cuando estés listo revisamos la agenda."
+      }
+    ],
+    "limites": [
+      {
+        "id": "servicio_no_ofrecido",
+        "preguntas": [
+          "¿Hacen wrap?",
+          "hacen pintura completa",
+          "hacen mecanica"
+        ],
+        "respuesta": "Puedo explicarte el concepto, pero solo puedo afirmar que PMC ofrece un servicio cuando aparece publicado y activo en el catálogo."
+      },
+      {
+        "id": "mecanica",
+        "preguntas": [
+          "arreglan frenos",
+          "reparan motor",
+          "cambian aceite",
+          "hacen afinacion"
+        ],
+        "respuesta": "PMC Auto Detailing se enfoca en cuidado estético y detailing. Decua no debe afirmar que ofrece servicios mecánicos si no están publicados."
+      }
+    ]
+  },
+  "frasesGenerales": {
+    "pedirVehiculo": "Para orientarte mejor, dime marca, modelo y año de tu vehículo.",
+    "pedirObjetivo": "¿Qué quieres mejorar principalmente: pintura, interior, protección, motor, chasis, faros o vidrios?",
+    "pedirEstado": "¿Cómo describirías el estado actual de esa zona?",
+    "invitarCatalogo": "Puedo mostrarte únicamente las opciones que PMC tenga publicadas.",
+    "invitarAgenda": "Si quieres, después podemos pasar a la agenda para revisar horarios disponibles.",
+    "sinInformacion": "No tengo información oficial suficiente para responder eso sin inventarla."
+  }
+}

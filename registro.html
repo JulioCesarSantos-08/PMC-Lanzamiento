@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Crea tu cuenta de PMC Auto Detailing para administrar tus citas, vehículos e historial de servicios."
+    >
+
+    <meta
+        name="theme-color"
+        content="#05070a"
+    >
+
+    <title>Crear cuenta | PMC Auto Detailing</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/auth.css"
+    >
+</head>
+
+<body data-auth-page="register">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+        aria-hidden="true"
+    >
+        <div class="page-loader__content">
+
+            <img
+                src="imagenes/logo.png"
+                alt=""
+                class="page-loader__logo"
+            >
+
+            <div class="page-loader__line">
+                <span></span>
+            </div>
+
+        </div>
+    </div>
+
+    <header
+        class="site-header is-scrolled"
+        id="siteHeader"
+    >
+        <div class="site-header__inner container">
+
+            <a
+                href="index.html"
+                class="brand"
+                aria-label="PMC Auto Detailing - Inicio"
+            >
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="brand__logo"
+                >
+            </a>
+
+            <nav
+                class="desktop-nav"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="index.html"
+                    class="desktop-nav__link"
+                >
+                    Inicio
+                </a>
+
+                <a
+                    href="servicios.html"
+                    class="desktop-nav__link"
+                >
+                    Servicios
+                </a>
+
+                <a
+                    href="agenda.html"
+                    class="desktop-nav__link"
+                >
+                    Agenda
+                </a>
+
+                <a
+                    href="index.html#contacto"
+                    class="desktop-nav__link"
+                >
+                    Contacto
+                </a>
+
+            </nav>
+
+            <div class="site-header__actions">
+
+                <button
+                    type="button"
+                    class="menu-button"
+                    id="menuButton"
+                    aria-label="Abrir menú"
+                    aria-expanded="false"
+                    aria-controls="mobileMenu"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+    </header>
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu"
+        aria-hidden="true"
+    >
+        <div class="mobile-menu__backdrop"></div>
+
+        <div class="mobile-menu__panel">
+
+            <div class="mobile-menu__top">
+
+                <img
+                    src="imagenes/logo.png"
+                    alt="PMC Auto Detailing"
+                    class="mobile-menu__logo"
+                >
+
+                <button
+                    type="button"
+                    class="mobile-menu__close"
+                    id="menuClose"
+                    aria-label="Cerrar menú"
+                >
+                    <i data-lucide="x"></i>
+                </button>
+
+            </div>
+
+            <nav class="mobile-menu__nav">
+
+                <a href="index.html">
+                    <span>01</span>
+                    Inicio
+                </a>
+
+                <a href="servicios.html">
+                    <span>02</span>
+                    Servicios
+                </a>
+
+                <a href="agenda.html">
+                    <span>03</span>
+                    Agenda
+                </a>
+
+                <a href="index.html#contacto">
+                    <span>04</span>
+                    Contacto
+                </a>
+
+            </nav>
+
+            <div class="mobile-menu__actions">
+
+                <a
+                    href="login.html"
+                    class="button button--ghost button--full"
+                >
+                    Iniciar sesión
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+
+    <main class="auth-page">
+
+        <section class="auth-layout">
+
+            <div class="auth-visual">
+
+                <div class="auth-visual__glow"></div>
+
+                <div class="auth-visual__content">
+
+                    <a
+                        href="index.html"
+                        class="auth-back"
+                    >
+                        <i data-lucide="arrow-left"></i>
+                        Volver al inicio
+                    </a>
+
+                    <div class="auth-visual__eyebrow">
+                        <span></span>
+                        PMC Auto Detailing
+                    </div>
+
+                    <h1>
+                        Todo tu cuidado
+                        <span>automotriz</span>
+                        en un solo lugar.
+                    </h1>
+
+                    <p>
+                        Crea tu cuenta y conserva la información
+                        de tus vehículos, citas, servicios,
+                        avances y recibos.
+                    </p>
+
+                    <div class="auth-benefits">
+
+                        <div class="auth-benefit">
+
+                            <div class="auth-benefit__icon">
+                                <i data-lucide="calendar-plus-2"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Agenda más rápido
+                                </strong>
+
+                                <span>
+                                    Conserva tus vehículos y evita
+                                    capturar la misma información cada vez.
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="auth-benefit">
+
+                            <div class="auth-benefit__icon">
+                                <i data-lucide="scan-search"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Sigue tus servicios
+                                </strong>
+
+                                <span>
+                                    Consulta el estado de los trabajos
+                                    realizados a tu vehículo.
+                                </span>
+                            </div>
+
+                        </div>
+
+                        <div class="auth-benefit">
+
+                            <div class="auth-benefit__icon">
+                                <i data-lucide="history"></i>
+                            </div>
+
+                            <div>
+                                <strong>
+                                    Conserva tu historial
+                                </strong>
+
+                                <span>
+                                    Consulta servicios anteriores,
+                                    vehículos y recibos PMC.
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="auth-panel auth-panel--register">
+
+                <div class="auth-panel__inner">
+
+                    <div class="auth-logo-mobile">
+
+                        <img
+                            src="imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                    </div>
+
+                    <div class="auth-heading">
+
+                        <span class="auth-heading__eyebrow">
+                            Nueva cuenta
+                        </span>
+
+                        <h2>
+                            Crea tu cuenta
+                        </h2>
+
+                        <p>
+                            Regístrate para agendar servicios y
+                            administrar tu experiencia con PMC.
+                        </p>
+
+                    </div>
+
+                    <div
+                        class="auth-message"
+                        id="authMessage"
+                        hidden
+                    >
+                        <i
+                            data-lucide="circle-alert"
+                            id="authMessageIcon"
+                        ></i>
+
+                        <span id="authMessageText"></span>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="auth-google"
+                        id="googleRegisterButton"
+                    >
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+                            <path
+                                fill="#4285F4"
+                                d="M21.6 12.227c0-.709-.064-1.391-.182-2.045H12v3.868h5.382a4.6 4.6 0 0 1-1.996 3.018v2.509h3.232c1.891-1.741 2.982-4.305 2.982-7.35Z"
+                            ></path>
+
+                            <path
+                                fill="#34A853"
+                                d="M12 22c2.7 0 4.964-.895 6.618-2.423l-3.232-2.509c-.895.6-2.041.955-3.386.955-2.605 0-4.809-1.759-5.596-4.123H3.064v2.591A9.998 9.998 0 0 0 12 22Z"
+                            ></path>
+
+                            <path
+                                fill="#FBBC05"
+                                d="M6.404 13.9A6.012 6.012 0 0 1 6.091 12c0-.659.114-1.3.313-1.9V7.509h-3.34A9.996 9.996 0 0 0 2 12c0 1.614.386 3.141 1.064 4.491L6.404 13.9Z"
+                            ></path>
+
+                            <path
+                                fill="#EA4335"
+                                d="M12 5.977c1.468 0 2.786.505 3.823 1.496l2.868-2.868C16.959 2.991 14.695 2 12 2a9.998 9.998 0 0 0-8.936 5.509l3.34 2.591C7.191 7.736 9.395 5.977 12 5.977Z"
+                            ></path>
+                        </svg>
+
+                        <span>
+                            Registrarme con Google
+                        </span>
+                    </button>
+
+                    <div class="auth-divider">
+
+                        <span></span>
+
+                        <small>
+                            o crea tu cuenta con correo
+                        </small>
+
+                        <span></span>
+
+                    </div>
+
+                    <form
+                        class="auth-form"
+                        id="registerForm"
+                    >
+
+                        <div class="auth-field">
+
+                            <label for="registerName">
+                                Nombre completo
+                            </label>
+
+                            <div class="auth-field__control">
+
+                                <i data-lucide="user-round"></i>
+
+                                <input
+                                    type="text"
+                                    id="registerName"
+                                    name="name"
+                                    placeholder="Tu nombre completo"
+                                    autocomplete="name"
+                                    minlength="3"
+                                    maxlength="80"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="auth-field">
+
+                            <label for="registerPhone">
+                                Número de celular
+                            </label>
+
+                            <div class="auth-field__control">
+
+                                <i data-lucide="phone"></i>
+
+                                <input
+                                    type="tel"
+                                    id="registerPhone"
+                                    name="phone"
+                                    placeholder="10 dígitos"
+                                    autocomplete="tel"
+                                    inputmode="numeric"
+                                    minlength="10"
+                                    maxlength="10"
+                                    pattern="[0-9]{10}"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="auth-field">
+
+                            <label for="registerEmail">
+                                Correo electrónico
+                            </label>
+
+                            <div class="auth-field__control">
+
+                                <i data-lucide="mail"></i>
+
+                                <input
+                                    type="email"
+                                    id="registerEmail"
+                                    name="email"
+                                    placeholder="correo@ejemplo.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+                        <div class="auth-field">
+
+                            <label for="registerPassword">
+                                Contraseña
+                            </label>
+
+                            <div class="auth-field__control">
+
+                                <i data-lucide="lock-keyhole"></i>
+
+                                <input
+                                    type="password"
+                                    id="registerPassword"
+                                    name="password"
+                                    placeholder="Mínimo 6 caracteres"
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="auth-password-toggle"
+                                    id="registerPasswordToggle"
+                                    aria-label="Mostrar contraseña"
+                                >
+                                    <i data-lucide="eye"></i>
+                                </button>
+
+                            </div>
+
+                            <div class="auth-password-strength">
+
+                                <div class="auth-password-strength__bars">
+
+                                    <span data-strength-bar="1"></span>
+                                    <span data-strength-bar="2"></span>
+                                    <span data-strength-bar="3"></span>
+                                    <span data-strength-bar="4"></span>
+
+                                </div>
+
+                                <small id="passwordStrengthText">
+                                    Usa al menos 6 caracteres.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="auth-field">
+
+                            <label for="registerPasswordConfirm">
+                                Confirma tu contraseña
+                            </label>
+
+                            <div class="auth-field__control">
+
+                                <i data-lucide="shield-check"></i>
+
+                                <input
+                                    type="password"
+                                    id="registerPasswordConfirm"
+                                    name="passwordConfirm"
+                                    placeholder="Repite tu contraseña"
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="auth-password-toggle"
+                                    id="registerPasswordConfirmToggle"
+                                    aria-label="Mostrar contraseña"
+                                >
+                                    <i data-lucide="eye"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                        <label class="auth-checkbox">
+
+                            <input
+                                type="checkbox"
+                                id="registerTerms"
+                                required
+                            >
+
+                            <span class="auth-checkbox__control">
+                                <i data-lucide="check"></i>
+                            </span>
+
+                            <span class="auth-checkbox__text">
+                                Acepto el uso de mis datos para la
+                                administración de citas, vehículos,
+                                servicios y comunicación relacionada
+                                con PMC Auto Detailing.
+                            </span>
+
+                        </label>
+
+                        <button
+                            type="submit"
+                            class="button button--primary button--full auth-submit"
+                            id="registerSubmit"
+                        >
+                            Crear mi cuenta
+
+                            <i data-lucide="user-round-plus"></i>
+                        </button>
+
+                    </form>
+
+                    <div class="auth-register">
+
+                        <span>
+                            ¿Ya tienes una cuenta?
+                        </span>
+
+                        <a
+                            href="login.html"
+                            id="loginLink"
+                        >
+                            Iniciar sesión
+                        </a>
+
+                    </div>
+
+                    <div class="auth-security">
+
+                        <i data-lucide="shield-check"></i>
+
+                        <span>
+                            Tu contraseña es administrada de forma
+                            segura mediante Firebase Authentication.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script
+        src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"
+    ></script>
+
+    <script
+        type="module"
+        src="js/auth.js"
+    ></script>
+
+</body>
+</html>

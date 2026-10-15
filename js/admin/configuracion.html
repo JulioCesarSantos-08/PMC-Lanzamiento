@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#030609"
+    >
+
+    <title>
+        Configuración | Administración PMC
+    </title>
+
+    <meta
+        name="robots"
+        content="noindex, nofollow"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../imagenes/logo.png"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/global.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../css/admin.css"
+    >
+</head>
+
+<body class="admin-body">
+
+    <div
+        class="page-loader"
+        id="pageLoader"
+    >
+
+        <div class="page-loader__glow"></div>
+
+        <img
+            src="../../imagenes/logo.png"
+            alt="PMC Auto Detailing"
+            class="page-loader__logo"
+        >
+
+        <div class="page-loader__line">
+            <span></span>
+        </div>
+
+        <p>
+            Cargando configuración
+        </p>
+
+    </div>
+
+    <div
+        class="admin-shell"
+        id="adminShell"
+        hidden
+    >
+
+        <aside
+            class="admin-sidebar"
+            id="adminSidebar"
+        >
+
+            <div
+                class="admin-sidebar__backdrop"
+                id="adminSidebarBackdrop"
+            ></div>
+
+            <div class="admin-sidebar__panel">
+
+                <div class="admin-sidebar__top">
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-brand"
+                    >
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt="PMC Auto Detailing"
+                        >
+
+                        <div>
+
+                            <strong>
+                                PMC
+                            </strong>
+
+                            <span>
+                                Administración
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__close"
+                        id="adminSidebarClose"
+                        aria-label="Cerrar menú"
+                    >
+
+                        <i data-lucide="x"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="admin-sidebar__profile">
+
+                    <div class="admin-sidebar__avatar">
+
+                        <img
+                            src="../../imagenes/logo.png"
+                            alt=""
+                            id="adminAvatar"
+                            hidden
+                        >
+
+                        <span id="adminInitials">
+                            PMC
+                        </span>
+
+                    </div>
+
+                    <div class="admin-sidebar__profile-info">
+
+                        <span>
+                            Sesión administrativa
+                        </span>
+
+                        <strong id="adminName">
+                            Administrador
+                        </strong>
+
+                        <small id="adminEmail">
+                            Cargando...
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <nav class="admin-nav">
+
+                    <span class="admin-nav__label">
+                        Principal
+                    </span>
+
+                    <a
+                        href="../../admin.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="layout-dashboard"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Operación
+                    </span>
+
+                    <a
+                        href="citas.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span>
+                            Citas
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="ordenes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="clipboard-list"></i>
+
+                        <span>
+                            Órdenes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="recibos.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="receipt-text"></i>
+
+                        <span>
+                            Recibos y pagos
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="servicios.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="sparkles"></i>
+
+                        <span>
+                            Servicios
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Personas
+                    </span>
+
+                    <a
+                        href="clientes.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="users"></i>
+
+                        <span>
+                            Clientes
+                        </span>
+
+                    </a>
+
+                    <a
+                        href="empleados.html"
+                        class="admin-nav__item"
+                    >
+
+                        <i data-lucide="badge-check"></i>
+
+                        <span>
+                            Empleados
+                        </span>
+
+                    </a>
+
+                    <span class="admin-nav__label">
+                        Sistema
+                    </span>
+
+                    <a
+                        href="configuracion.html"
+                        class="admin-nav__item is-active"
+                    >
+
+                        <i data-lucide="settings-2"></i>
+
+                        <span>
+                            Configuración
+                        </span>
+
+                    </a>
+
+                </nav>
+
+                <div class="admin-sidebar__bottom">
+
+                    <a
+                        href="https://pmcautodetailing.vercel.app/"
+                        class="admin-sidebar__finance"
+                        id="financeButton"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        hidden
+                    >
+
+                        <i data-lucide="landmark"></i>
+
+                        <span>
+                            Ir a sistema de Finanzas
+                        </span>
+
+                        <i data-lucide="external-link"></i>
+
+                    </a>
+
+                    <a
+                        href="../../index.html"
+                        class="admin-sidebar__public"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+
+                        <i data-lucide="external-link"></i>
+
+                        <span>
+                            Ver sitio público
+                        </span>
+
+                    </a>
+
+                    <button
+                        type="button"
+                        class="admin-sidebar__logout"
+                        id="adminLogout"
+                    >
+
+                        <i data-lucide="log-out"></i>
+
+                        <span>
+                            Cerrar sesión
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <div class="admin-main">
+
+            <header class="admin-header">
+
+                <div class="admin-header__left">
+
+                    <button
+                        type="button"
+                        class="admin-menu-button"
+                        id="adminMenuButton"
+                        aria-label="Abrir menú"
+                    >
+
+                        <i data-lucide="menu"></i>
+
+                    </button>
+
+                    <div class="admin-header__title">
+
+                        <span>
+                            Sistema
+                        </span>
+
+                        <strong>
+                            Configuración
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <div class="admin-header__right">
+
+                    <div class="admin-header__date">
+
+                        <i data-lucide="calendar-days"></i>
+
+                        <span id="adminCurrentDate">
+                            Hoy
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="admin-header__action"
+                        id="saveConfigurationButton"
+                    >
+
+                        <i data-lucide="save"></i>
+
+                        <span>
+                            Guardar
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </header>
+
+            <main class="admin-content">
+
+                <section class="admin-page-heading">
+
+                    <div>
+
+                        <div class="admin-eyebrow">
+
+                            <span></span>
+
+                            CONTROL DEL SISTEMA
+
+                        </div>
+
+                        <h1>
+                            Configuración
+                        </h1>
+
+                        <p>
+                            Define cómo funciona la agenda de PMC,
+                            los horarios disponibles y los datos generales
+                            utilizados por el sistema.
+                        </p>
+
+                    </div>
+
+                    <div class="admin-page-heading__actions">
+
+                        <button
+                            type="button"
+                            class="button button-primary"
+                            id="saveConfigurationButtonHero"
+                        >
+
+                            <i data-lucide="save"></i>
+
+                            Guardar cambios
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <div class="admin-configuration-grid">
+
+                    <div class="admin-configuration-main">
+
+                        <section class="admin-panel admin-configuration-section">
+
+                            <div class="admin-configuration-section__heading">
+
+                                <div class="admin-configuration-section__icon">
+
+                                    <i data-lucide="calendar-clock"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        AGENDA
+                                    </span>
+
+                                    <h2>
+                                        Reglas de reservación
+                                    </h2>
+
+                                    <p>
+                                        Controla cómo se calculan los horarios disponibles.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-configuration-form-grid">
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Intervalo de agenda
+                                    </span>
+
+                                    <select id="configAgendaInterval">
+
+                                        <option value="15">
+                                            Cada 15 minutos
+                                        </option>
+
+                                        <option value="30">
+                                            Cada 30 minutos
+                                        </option>
+
+                                        <option value="45">
+                                            Cada 45 minutos
+                                        </option>
+
+                                        <option value="60">
+                                            Cada 60 minutos
+                                        </option>
+
+                                    </select>
+
+                                    <small>
+                                        Espacio utilizado para dividir los horarios.
+                                    </small>
+
+                                </label>
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Anticipación mínima
+                                    </span>
+
+                                    <select id="configAgendaAdvance">
+
+                                        <option value="0">
+                                            Sin anticipación mínima
+                                        </option>
+
+                                        <option value="60">
+                                            1 hora
+                                        </option>
+
+                                        <option value="120">
+                                            2 horas
+                                        </option>
+
+                                        <option value="180">
+                                            3 horas
+                                        </option>
+
+                                        <option value="360">
+                                            6 horas
+                                        </option>
+
+                                        <option value="720">
+                                            12 horas
+                                        </option>
+
+                                        <option value="1440">
+                                            1 día
+                                        </option>
+
+                                        <option value="2880">
+                                            2 días
+                                        </option>
+
+                                    </select>
+
+                                    <small>
+                                        Tiempo mínimo entre la reservación y la cita.
+                                    </small>
+
+                                </label>
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Meses disponibles
+                                    </span>
+
+                                    <select id="configAgendaMonths">
+
+                                        <option value="1">
+                                            1 mes
+                                        </option>
+
+                                        <option value="2">
+                                            2 meses
+                                        </option>
+
+                                        <option value="3">
+                                            3 meses
+                                        </option>
+
+                                        <option value="6">
+                                            6 meses
+                                        </option>
+
+                                        <option value="12">
+                                            12 meses
+                                        </option>
+
+                                    </select>
+
+                                    <small>
+                                        Hasta qué fecha futura se podrán crear citas.
+                                    </small>
+
+                                </label>
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Zona horaria
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="configTimezone"
+                                        value="America/Mexico_City"
+                                        readonly
+                                    >
+
+                                    <small>
+                                        Zona utilizada para fechas y horarios del sistema.
+                                    </small>
+
+                                </label>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-panel admin-configuration-section">
+
+                            <div class="admin-configuration-section__heading">
+
+                                <div class="admin-configuration-section__icon">
+
+                                    <i data-lucide="clock-3"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        HORARIOS
+                                    </span>
+
+                                    <h2>
+                                        Semana de trabajo
+                                    </h2>
+
+                                    <p>
+                                        Activa los días en que PMC recibe citas y define la apertura y cierre.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-business-hours">
+
+                                <article
+                                    class="admin-business-day"
+                                    data-day="lunes"
+                                >
+
+                                    <div class="admin-business-day__name">
+
+                                        <strong>
+                                            Lunes
+                                        </strong>
+
+                                        <span>
+                                            Día de servicio
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-business-day__toggle">
+
+                                        <input
+                                            type="checkbox"
+                                            id="configMondayActive"
+                                        >
+
+                                        <span class="admin-switch"></span>
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Apertura
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configMondayOpen"
+                                        >
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Cierre
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configMondayClose"
+                                        >
+
+                                    </label>
+
+                                </article>
+
+                                <article
+                                    class="admin-business-day"
+                                    data-day="martes"
+                                >
+
+                                    <div class="admin-business-day__name">
+
+                                        <strong>
+                                            Martes
+                                        </strong>
+
+                                        <span>
+                                            Día de servicio
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-business-day__toggle">
+
+                                        <input
+                                            type="checkbox"
+                                            id="configTuesdayActive"
+                                        >
+
+                                        <span class="admin-switch"></span>
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Apertura
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configTuesdayOpen"
+                                        >
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Cierre
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configTuesdayClose"
+                                        >
+
+                                    </label>
+
+                                </article>
+
+                                <article
+                                    class="admin-business-day"
+                                    data-day="miercoles"
+                                >
+
+                                    <div class="admin-business-day__name">
+
+                                        <strong>
+                                            Miércoles
+                                        </strong>
+
+                                        <span>
+                                            Día de servicio
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-business-day__toggle">
+
+                                        <input
+                                            type="checkbox"
+                                            id="configWednesdayActive"
+                                        >
+
+                                        <span class="admin-switch"></span>
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Apertura
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configWednesdayOpen"
+                                        >
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Cierre
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configWednesdayClose"
+                                        >
+
+                                    </label>
+
+                                </article>
+
+                                <article
+                                    class="admin-business-day"
+                                    data-day="jueves"
+                                >
+
+                                    <div class="admin-business-day__name">
+
+                                        <strong>
+                                            Jueves
+                                        </strong>
+
+                                        <span>
+                                            Día de servicio
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-business-day__toggle">
+
+                                        <input
+                                            type="checkbox"
+                                            id="configThursdayActive"
+                                        >
+
+                                        <span class="admin-switch"></span>
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Apertura
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configThursdayOpen"
+                                        >
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Cierre
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configThursdayClose"
+                                        >
+
+                                    </label>
+
+                                </article>
+
+                                <article
+                                    class="admin-business-day"
+                                    data-day="viernes"
+                                >
+
+                                    <div class="admin-business-day__name">
+
+                                        <strong>
+                                            Viernes
+                                        </strong>
+
+                                        <span>
+                                            Día de servicio
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-business-day__toggle">
+
+                                        <input
+                                            type="checkbox"
+                                            id="configFridayActive"
+                                        >
+
+                                        <span class="admin-switch"></span>
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Apertura
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configFridayOpen"
+                                        >
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Cierre
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configFridayClose"
+                                        >
+
+                                    </label>
+
+                                </article>
+
+                                <article
+                                    class="admin-business-day"
+                                    data-day="sabado"
+                                >
+
+                                    <div class="admin-business-day__name">
+
+                                        <strong>
+                                            Sábado
+                                        </strong>
+
+                                        <span>
+                                            Día de servicio
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-business-day__toggle">
+
+                                        <input
+                                            type="checkbox"
+                                            id="configSaturdayActive"
+                                        >
+
+                                        <span class="admin-switch"></span>
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Apertura
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configSaturdayOpen"
+                                        >
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Cierre
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configSaturdayClose"
+                                        >
+
+                                    </label>
+
+                                </article>
+
+                                <article
+                                    class="admin-business-day"
+                                    data-day="domingo"
+                                >
+
+                                    <div class="admin-business-day__name">
+
+                                        <strong>
+                                            Domingo
+                                        </strong>
+
+                                        <span>
+                                            Día de servicio
+                                        </span>
+
+                                    </div>
+
+                                    <label class="admin-business-day__toggle">
+
+                                        <input
+                                            type="checkbox"
+                                            id="configSundayActive"
+                                        >
+
+                                        <span class="admin-switch"></span>
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Apertura
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configSundayOpen"
+                                        >
+
+                                    </label>
+
+                                    <label class="admin-business-day__time">
+
+                                        <span>
+                                            Cierre
+                                        </span>
+
+                                        <input
+                                            type="time"
+                                            id="configSundayClose"
+                                        >
+
+                                    </label>
+
+                                </article>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-panel admin-configuration-section">
+
+                            <div class="admin-configuration-section__heading">
+
+                                <div class="admin-configuration-section__icon">
+
+                                    <i data-lucide="calendar-x-2"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        BLOQUEOS
+                                    </span>
+
+                                    <h2>
+                                        Fechas no disponibles
+                                    </h2>
+
+                                    <p>
+                                        Bloquea días completos por descanso, eventos o mantenimiento.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-blocked-date-form">
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Fecha
+                                    </span>
+
+                                    <input
+                                        type="date"
+                                        id="blockedDateInput"
+                                    >
+
+                                </label>
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Motivo
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="blockedDateReason"
+                                        maxlength="120"
+                                        placeholder="Ej. Día festivo"
+                                    >
+
+                                </label>
+
+                                <button
+                                    type="button"
+                                    class="button button-secondary"
+                                    id="addBlockedDateButton"
+                                >
+
+                                    <i data-lucide="plus"></i>
+
+                                    Bloquear fecha
+
+                                </button>
+
+                            </div>
+
+                            <div
+                                class="admin-blocked-dates"
+                                id="blockedDatesList"
+                            >
+
+                                <div class="admin-configuration-empty">
+
+                                    <i data-lucide="calendar-check-2"></i>
+
+                                    <div>
+
+                                        <strong>
+                                            Sin fechas bloqueadas
+                                        </strong>
+
+                                        <span>
+                                            Todos los días activos de la semana están disponibles.
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-panel admin-configuration-section">
+
+                            <div class="admin-configuration-section__heading">
+
+                                <div class="admin-configuration-section__icon">
+
+                                    <i data-lucide="building-2"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        NEGOCIO
+                                    </span>
+
+                                    <h2>
+                                        Información pública
+                                    </h2>
+
+                                    <p>
+                                        Datos utilizados para contacto y comunicación con clientes.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                            <div class="admin-configuration-form-grid">
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Nombre comercial
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="configBusinessName"
+                                        maxlength="120"
+                                        placeholder="PMC Auto Detailing"
+                                    >
+
+                                </label>
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        WhatsApp
+                                    </span>
+
+                                    <input
+                                        type="tel"
+                                        id="configBusinessPhone"
+                                        maxlength="30"
+                                        placeholder="9542038099"
+                                    >
+
+                                </label>
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Correo
+                                    </span>
+
+                                    <input
+                                        type="email"
+                                        id="configBusinessEmail"
+                                        maxlength="160"
+                                        placeholder="correo@pmc.com"
+                                    >
+
+                                </label>
+
+                                <label class="admin-editor-field">
+
+                                    <span>
+                                        Instagram
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="configBusinessInstagram"
+                                        maxlength="160"
+                                        placeholder="@pmcautodetailing"
+                                    >
+
+                                </label>
+
+                                <label class="admin-editor-field admin-editor-field--full">
+
+                                    <span>
+                                        Enlace de Google Maps
+                                    </span>
+
+                                    <input
+                                        type="url"
+                                        id="configBusinessMaps"
+                                        maxlength="500"
+                                        placeholder="https://maps.app.goo.gl/..."
+                                    >
+
+                                </label>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                    <aside class="admin-configuration-sidebar">
+
+                        <section class="admin-panel admin-configuration-status">
+
+                            <div class="admin-configuration-status__icon">
+
+                                <i data-lucide="settings-2"></i>
+
+                            </div>
+
+                            <span>
+                                ESTADO
+                            </span>
+
+                            <h3>
+                                Configuración PMC
+                            </h3>
+
+                            <p>
+                                Los cambios de agenda afectarán las nuevas reservaciones del sistema.
+                            </p>
+
+                            <div class="admin-configuration-status__rows">
+
+                                <div>
+
+                                    <span>
+                                        Agenda
+                                    </span>
+
+                                    <strong>
+                                        Activa
+                                    </strong>
+
+                                </div>
+
+                                <div>
+
+                                    <span>
+                                        Documento
+                                    </span>
+
+                                    <strong>
+                                        configuracion/agenda
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </section>
+
+                        <section class="admin-panel admin-configuration-warning">
+
+                            <div>
+
+                                <i data-lucide="triangle-alert"></i>
+
+                            </div>
+
+                            <span>
+                                IMPORTANTE
+                            </span>
+
+                            <h3>
+                                Citas existentes
+                            </h3>
+
+                            <p>
+                                Cambiar horarios o bloquear fechas no eliminará ni moverá automáticamente las citas que ya fueron creadas.
+                            </p>
+
+                        </section>
+
+                        <section class="admin-panel admin-configuration-actions">
+
+                            <span>
+                                CAMBIOS
+                            </span>
+
+                            <h3>
+                                ¿Todo listo?
+                            </h3>
+
+                            <p>
+                                Guarda la configuración para que la agenda utilice los nuevos valores.
+                            </p>
+
+                            <button
+                                type="button"
+                                class="button button-primary"
+                                id="saveConfigurationButtonSidebar"
+                            >
+
+                                <i data-lucide="save"></i>
+
+                                Guardar cambios
+
+                            </button>
+
+                        </section>
+
+                    </aside>
+
+                </div>
+
+            </main>
+
+            <footer class="admin-footer">
+
+                <span>
+                    ©
+                    <span id="currentYear"></span>
+                    PMC Auto Detailing
+                </span>
+
+                <span>
+                    Configuración del sistema
+                </span>
+
+            </footer>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-access-denied"
+        id="adminAccessDenied"
+        hidden
+    >
+
+        <div class="admin-access-denied__card">
+
+            <div class="admin-access-denied__icon">
+
+                <i data-lucide="shield-alert"></i>
+
+            </div>
+
+            <span>
+                ACCESO RESTRINGIDO
+            </span>
+
+            <h1>
+                No tienes permisos.
+            </h1>
+
+            <p>
+                Esta sección está disponible únicamente para administradores de PMC.
+            </p>
+
+            <a
+                href="../../index.html"
+                class="button button-primary"
+            >
+
+                Volver al sitio
+
+                <i data-lucide="arrow-left"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <div
+        class="admin-toast"
+        id="adminToast"
+        hidden
+    >
+
+        <i data-lucide="circle-check"></i>
+
+        <span>
+            Configuración guardada.
+        </span>
+
+    </div>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script
+        type="module"
+        src="configuracion.js"
+    ></script>
+
+</body>
+
+</html>
