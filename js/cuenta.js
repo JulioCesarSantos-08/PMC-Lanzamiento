@@ -2126,17 +2126,18 @@ function renderReceipts() {
                                 </h3>
 
                                 <p>
-                                    ${
-                                        date
-                                            ? escapeHTML(
-                                                capitalize(
-                                                    formatDate(
-                                                        date
-                                                    )
-                                                )
-                                            : "Fecha no disponible"
-                                    }
-                                </p>
+    ${
+        date
+            ? escapeHTML(
+                capitalize(
+                    formatDate(
+                        date
+                    )
+                )
+            )
+            : "Fecha no disponible"
+    }
+</p>
 
                             </div>
 
